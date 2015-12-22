@@ -1,2 +1,22 @@
-{{ciudad.nombre}}
-{{ciudad.habitantes}}
+nombre: {{ciudad.nombre}}<br>
+habitantes: {{ciudad.habitantes}}<br>
+region = {{ciudad.get_region_display}}<br>
+clima = {{ciudad.clima}}<br>
+
+<br>
+{% for indicador in indicadores %}
+Categoria: {{indicador.categoria.nombre}}<br>
+Variable: {{indicador.variable}}<br>
+Valor: 
+{% if indicador.tipo_variable == "char" %}
+{{indicador.var_char}}
+{%endif%}
+{% if indicador.tipo_variable == "int" %}
+{{indicador.var_int}}
+{%endif%}
+{% if indicador.tipo_variable == "float" %}
+{{indicador.var_float}}
+{%endif%}<br>
+Fecha de medicion: {{indicador.fecha_indicador}}<br>
+<br>
+{% endfor %}

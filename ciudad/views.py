@@ -1,5 +1,5 @@
 from django.shortcuts import render_to_response, redirect
-from ciudad.models import Ciudad
+from ciudad.models import Ciudad, Indicador
 # Create your views here.
 
 def index(request):
@@ -10,4 +10,5 @@ def detalle(request, ciudad=""):
 	if ciudad == "":
 		return redirect("/")
 	uno = Ciudad.objects.get(nombre=ciudad)
-	return render_to_response('detalle.html',{'ciudad':uno})
+	indicadores = Indicador.objects.filter(ciudad=uno).order_by('categoria')
+	return render_to_response('detalle.html',{'ciudad':uno,'indicadores':indicadores})
