@@ -84,4 +84,12 @@ TEMPLATE_DIRS = (
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
+
+STATIC_ROOT = PROJECT_PATH + '/../static/'
+
+STATICFILES_DIRS = (
+	PROJECT_PATH + '/../staticfiles/',
+)
+
+ADMIN_MEDIA_PREFIX = PROJECT_PATH + '/../static/admin/' 
