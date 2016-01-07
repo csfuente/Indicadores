@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -6,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Le styles -->
-    <link href="/cristian/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="{{STATIC_URL}}css/bootstrap.css" rel="stylesheet" type="text/css">
 
 
-    <script src="/cristian/js/jquery.js"></script>
+    <script src="{{STATIC_URL}}js/jquery.js"></script>
     <!-- google maps -->
     <script type='text/javascript' src="http://maps.googleapis.com/maps/api/js?sensor=false&extension=.js&output=embed"></script>
     
@@ -142,8 +143,8 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/cristian/mapa.php">Mapa</a></li>
-            <li><a href="/cristian/info.php">Info</a></li>
+            <li class="active"><a href="#">Mapa</a></li>
+            <li><a href="#">Info</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -156,10 +157,22 @@
 
 
 
-<div class="row">
+<div class="row" style="padding-top:60px;">
   <div class="col-md-4"></div>
-  <div class="col-md-4"><div id="map_canvas" style="width:400px; height:800px;"></div></div>
-  <div class="col-md-4"></div>
+  <div class="col-md-4"><div id="map_canvas" style="width:320px; height:800px;"></div></div>
+  <div class="col-md-4">
+      <table>
+        <tbody>
+          {% for ciudad in ciudades %}
+          <tr>
+            <td style="padding-top:5px;">
+              <a href="/{{ciudad.nombre}}"><button type="button" class="btn btn-default" >{{ciudad.nombre}}</button></a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
 </div>
 
       
