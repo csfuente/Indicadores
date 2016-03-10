@@ -2,6 +2,8 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from ciudad.views import index, detalle
 
+admin.autodiscover()
+
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'indicadores.views.home', name='home'),
