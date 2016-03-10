@@ -159,7 +159,6 @@
 
 <div class="row" style="padding-top:60px;">
   <div class="col-md-4"></div>
-  <div class="col-md-4"><div id="map_canvas" style="width:320px; height:800px;"></div></div>
   <div class="col-md-4">
       <table>
         <tbody>
@@ -173,6 +172,7 @@
         </tbody>
       </table>
     </div>
+    <div class="col-md-4"><div id="map_canvas" style="width:320px; height:800px;"></div></div>
 </div>
 
       

@@ -27,12 +27,12 @@ class Ciudad(models.Model):
 	clima = models.CharField(max_length=20)
 	url = models.CharField(max_length=20,default="")
 	imagen = models.ImageField(null=True,blank=True)
-	def __str__(self):
+	def __unicode__(self):
 		return self.nombre
 
 class Categoria(models.Model):
         nombre = models.CharField(max_length=100)
-	def __str__(self):
+	def __unicode__(self):
 		return self.nombre
 
 class Indicador(models.Model):
@@ -40,7 +40,7 @@ class Indicador(models.Model):
 	descripcion = models.CharField(max_length=500)
 	estado = models.CharField(max_length=10) #provisorio
 	categoria = models.ForeignKey(Categoria)
-	def __str__(self):
+	def __unicode__(self):
 		return self.variable
 
 class Dato(models.Model):
@@ -63,5 +63,5 @@ class Dato(models.Model):
 			self.created = timezone.now()
 		self.modified = timezone.now()
 		return super(Dato,self).save(*args, **kwargs)
-	def __str__(self):
+	def __unicode__(self):
 		return self.ciudad.nombre + ' ' +self.indicador.variable 
