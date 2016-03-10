@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """
 Django settings for indicadores project.
 
@@ -92,4 +94,7 @@ STATICFILES_DIRS = (
 	PROJECT_PATH + '/../template/static/',
 )
 
-ADMIN_MEDIA_PREFIX = '/static/admin/' 
+ADMIN_MEDIA_PREFIX = '/static/admin/'
+
+MEDIA_ROOT = PROJECT_PATH + '/../media/'
+MEDIA_URL = '/media/'

@@ -1,6 +1,4 @@
-#!/usr/local/bin/python
 # -*- coding: utf-8 -*-
-
 from django.db import models
 from django.utils import timezone
 
@@ -27,17 +25,19 @@ class Ciudad(models.Model):
 	habitantes = models.IntegerField()
 	region = models.CharField(max_length=10, choices=REGIONES)
 	clima = models.CharField(max_length=20)
+	url = models.CharField(max_length=20,default="")
+	imagen = models.ImageField(null=True,blank=True)
 	def __str__(self):
 		return self.nombre
 
 class Categoria(models.Model):
-        nombre = models.CharField(max_length=50)
+        nombre = models.CharField(max_length=100)
 	def __str__(self):
 		return self.nombre
 
 class Indicador(models.Model):
-	variable = models.CharField(max_length=50)
-	descripcion = models.CharField(max_length=300)
+	variable = models.CharField(max_length=100)
+	descripcion = models.CharField(max_length=500)
 	estado = models.CharField(max_length=10) #provisorio
 	categoria = models.ForeignKey(Categoria)
 	def __str__(self):

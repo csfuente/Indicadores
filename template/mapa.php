@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Cristian</title>
+    <title>Indicadores</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Le styles -->
@@ -166,7 +166,7 @@
           {% for ciudad in ciudades %}
           <tr>
             <td style="padding-top:5px;">
-              <a href="/{{ciudad.nombre}}"><button type="button" class="btn btn-default" >{{ciudad.nombre}}</button></a>
+              <a href="/{{ciudad.url}}"><button type="button" class="btn btn-default" >{{ciudad.nombre}}</button></a>
             </td>
           </tr>
           {% endfor %}

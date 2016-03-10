@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from django.shortcuts import render_to_response, redirect
 from ciudad.models import Ciudad, Indicador, Dato, Categoria
 from django.template.context import RequestContext
@@ -11,7 +13,7 @@ def index(request):
 def detalle(request, ciudad=""):
 	if ciudad == "":
 		return redirect("/")
-	uno = Ciudad.objects.get(nombre=ciudad)
+	uno = Ciudad.objects.get(url=ciudad)
 	cat = Categoria.objects.all()
 	ind = Indicador.objects.all()
 	datos = ultimosDatos(uno)

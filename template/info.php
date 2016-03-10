@@ -52,13 +52,13 @@
 
         <div class="panel panel-default" style="margin-top:20px;">
             <div class="panel-heading">
-              <h3 class="panel-title">Santiago</h3>
+              <h3 class="panel-title">{{ciudad.nombre}}</h3>
             </div>
             <div class="panel-body">
               <table>
                 <tbody>
                   <tr>
-                    <td><img src="images/santiago.jpg" alt="Smiley face" height="200" width="200"></td>  
+                    <td><img src="{{ciudad.imagen.url}}" alt="Smiley face" height="200" width="200"></td>  
                     <td style="padding-left:40px;">
                       <strong>Nombre:</strong> {{ciudad.nombre}}</br>
                       <strong>Habitantes:</strong> {{ciudad.habitantes}}</br>
