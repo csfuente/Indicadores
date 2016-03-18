@@ -21,11 +21,11 @@ class Ciudad(models.Model):
 		('XIV','Los Rios'),
 		('XV','Arica y parinacota'),
 	)
-	nombre = models.CharField(max_length=20)
+	nombre = models.CharField(max_length=100)
 	habitantes = models.IntegerField()
 	region = models.CharField(max_length=10, choices=REGIONES)
-	clima = models.CharField(max_length=20)
-	url = models.CharField(max_length=20,default="")
+	clima = models.CharField(max_length=100)
+	url = models.CharField(max_length=100,default="")
 	imagen = models.ImageField(null=True,blank=True)
 	def __unicode__(self):
 		return self.nombre
