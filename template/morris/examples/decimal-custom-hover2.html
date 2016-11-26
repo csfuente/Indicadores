@@ -1,0 +1,66 @@
+<!doctype html>
+<head>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+  <script src="../morris.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
+  <script src="lib/example.js"></script>
+  <link rel="stylesheet" href="lib/example.css">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css">
+  <link rel="stylesheet" href="../morris.css">
+</head>
+<body>
+<h1>Decimal DataAA</h1>
+<div id="graph"></div>
+<script>
+
+var names;
+
+names=$.ajax({ 
+                type: 'GET', 
+                url: '/memoria/pages/data.php', 
+                data: { get_param: 'value' }, 
+                dataType:'json',
+                success: function (data) { 
+                                  window.m = Morris.Line({
+       element: 'graph',
+       data:data,
+       xkey: 'tiempo',
+       ykeys: ['acc'],
+       labels: ['sin(x)'],
+       parseTime: false,
+       hoverCallback: function (index, options, default_content, row) {
+         return default_content.replace("as");
+       },
+       xLabelMargin: 10,
+       integerYLabels: true
+       });
+                }
+            });
+
+
+
+//function graficar(dat){
+//       window.m = Morris.Line({
+//       element: 'graph',
+//       data:names,
+//       xkey: 'tiempo',
+//       ykeys: ['acc'],
+//       labels: ['sin(x)'],
+//       parseTime: false,
+//       hoverCallback: function (index, options, default_content, row) {
+//         return default_content.replace("as");
+//       },
+//       xLabelMargin: 10,
+//       integerYLabels: true
+//       });
+//
+//}
+//
+//  $.getJSON('/memoria/pages/data.php', function(json) {
+//        graficar(json);
+//    });
+
+
+</script>
+</body>

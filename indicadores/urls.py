@@ -3,7 +3,7 @@
 
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from ciudad.views import index, detalle
+from ciudad.views import index, ciudad, ciudad_indicador, ciudades, santiago
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.static import static
 import settings
@@ -17,7 +17,10 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', index),
-    url(r'^(?P<ciudad>[0-9a-zA-Z_]+)/$', detalle),
+    url(r'^ciudad/$', ciudad),
+    url(r'^ciudadindicador/$', ciudad_indicador),
+    url(r'^ciudades/$',ciudades),
+    url(r'^santiago/$',santiago),
 )
 
 urlpatterns += staticfiles_urlpatterns()

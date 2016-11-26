@@ -91,7 +91,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = PROJECT_PATH + '/../static/'
 
 STATICFILES_DIRS = (
-	PROJECT_PATH + '/../template/static/',
+	PROJECT_PATH + '/../template/',
 )
 
 ADMIN_MEDIA_PREFIX = '/static/admin/'

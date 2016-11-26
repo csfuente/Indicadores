@@ -7,15 +7,16 @@ from ciudad.utils import ultimosDatos
 # Create your views here.
 
 def index(request):
-	ciudades = Ciudad.objects.all()
-	return render_to_response('mapa.php',{'ciudades':ciudades},context_instance=RequestContext(request))
+	return render_to_response('pages/principal-horizontal4.php',context_instance=RequestContext(request))
 
-def detalle(request, ciudad=""):
-	if ciudad == "":
-		return redirect("/")
-	uno = Ciudad.objects.get(url=ciudad)
-	cat = Categoria.objects.all()
-	ind = Indicador.objects.all()
-	datos = ultimosDatos(uno)
-	return render_to_response('info.php',{'ciudad':uno,'datos':datos,'indicadores':ind,'categorias':cat},context_instance=RequestContext(request))
+def ciudad(request):
+	return render_to_response('pages/ciudad.php',context_instance=RequestContext(request))
 
+def ciudad_indicador(request):
+	return render_to_response('pages/ciudad-indicador.php',context_instance=RequestContext(request))
+
+def ciudades(request):
+	return render_to_response('pages/ciudades.php',context_instance=RequestContext(request))
+
+def santiago(request):
+	return render_to_response('pages/santiago.php',context_instance=RequestContext(request))
