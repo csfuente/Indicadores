@@ -72,9 +72,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="principal-horizontal4.php" style="color:#3D99CD;font-size:25px;">CEDEUS</a>
-                <a class="navbar-brand" href="principal-horizontal4.php" style="color:#3D99CD;font-size:25px;"><p><img src="{% static 'images/globe-4-xxl.png' %}" alt="Mapa" style="width:28px;"> MAPA</p></a>
-                <a class="navbar-brand" href="ciudades.php" style="color:#3D99CD;font-size:25px;"><p><img src="{% static 'images/home-5-xxl.png' %}" alt="Mapa" style="width:28px;"> CIUDADES</p></a>
+                <a class="navbar-brand" href="/" style="color:#3D99CD;font-size:25px;">CEDEUS</a>
+                <a class="navbar-brand" href="/" style="color:#3D99CD;font-size:25px;"><p><img src="{% static 'images/globe-4-xxl.png' %}" alt="Mapa" style="width:28px;"> MAPA</p></a>
+                <a class="navbar-brand" href="/ciudades" style="color:#3D99CD;font-size:25px;"><p><img src="{% static 'images/home-5-xxl.png' %}" alt="Mapa" style="width:28px;"> CIUDADES</p></a>
                 <a class="navbar-brand" href="#" style="color:#3D99CD;font-size:25px;"><p><img src="{% static 'images/bar-chart-5-xxl.png' %}" alt="Mapa" style="width:28px;"> INDICADORES</p></a>
             </div>
             <!-- /.navbar-header -->
@@ -92,7 +92,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="/admin"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -111,46 +111,44 @@
             
             <div class="row" style="padding-top:10px;">
                 <div class="col-lg-12">
-                    <div class="panel panel-info">
-                        <div class="panel-heading text-center" style="font-family: 'Open Sans Condensed Bold';font-size: 34px;background-color:#007DC3;color:#ffffff;">
 
-                            <p>Gran Santiago</p>
 
-                        </div>
-                        <div class="panel-body">
+                            <p style="font-family: 'Open Sans Condensed Bold';font-size: 34px;background-color:#007DC3;color:#ffffff;text-align: center;margin-left: 15px;margin-right: 15px;">Gran Santiago</p>
+
+
                            <div class="col-lg-5">
-<div id="myCarousel" class="carousel slide" data-ride="carousel" >
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src="{% static 'images/santiago.jpg' %}" alt="Santiago1">
-    </div>
-    <div class="item">
-      <img src="{% static 'images/santiago3.jpg' %}" alt="Santiago2">
-    </div>
-
-  </div>
-
-  <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+                              <div id="myCarousel" class="carousel slide" data-ride="carousel" >
+                                <!-- Indicators -->
+                                <ol class="carousel-indicators">
+                                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                  <li data-target="#myCarousel" data-slide-to="1"></li>
+                                </ol>
+                              
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner" role="listbox">
+                                  <div class="item active">
+                                    <img src="{% static 'images/santiago.jpg' %}" alt="Santiago1">
+                                  </div>
+                                  <div class="item">
+                                    <img src="{% static 'images/santiago3.jpg' %}" alt="Santiago2">
+                                  </div>
+                              
+                                </div>
+                              
+                                <!-- Left and right controls -->
+                                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                  <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                  <span class="sr-only">Next</span>
+                                </a>
+                              </div>
                             </div>
                             <div class="col-lg-7">
                             <p>
-                                Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 
+                                La ciudad de Santiago está emplazada principalmente en un llano conocido como «cuenca de Santiago». Esta cuenca es parte de la Depresión Intermedia y está delimitada claramente por el cordón de Chacabuco por el norte, la Cordillera de los Andes por el oriente, la angostura de Paine por el sur y la Cordillera de la Costa. Aproximadamente, tiene una longitud de 80 km en dirección norte-sur y de 35 km de este a oeste.
                             </p>
                               <table class="table" style="font-size:20px;">
                                 <tbody>
@@ -173,116 +171,116 @@
                                 </tbody>
                               </table>
                             </div>
-<div class="col-lg-12">
-  <h1 style="font-family: 'Open Sans Condensed Bold';">Indicadores</h1>
+                              <div class="col-md-12">
+                                <h1 style="font-family: 'Open Sans Condensed Bold';">Indicadores</h1>
+                              
+                                <table class="table table-bordered" style="margin-bottom:0px;">
+                                  <thead>
+                                    <tr style="font-size:18px;font-family: 'Open Sans Condensed Bold';color:#000000;" background="{% static 'images/participacion.PNG' %}">
+                                      <th colspan="4">Clasificaci&oacute;n 1 <span class="glyphicon glyphicon-user"></th>
+                                    </tr>
+                                    <tr style="font-size:18px;font-family: 'Open Sans Condensed Bold';">
+                                      <th style="text-align:center;width:16%;">Nombre:</th>
+                                      <th style="text-align:center;width:8%;">Valor:</th>
+                                      <th style="text-align:center;width:16%;">Estado:</th>
+                                      <th style="text-align:center;width:60%;">Descripci&oacute;n:</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody style="text-align:center;font-size:16px;">
+                                    <tr>
+                                      <td>Participación Ciudadana</td>
+                                      <td>99,2%</td>
+                                      <td><div class="alert alert-success">
+                                            <strong>OK</strong> 
+                                          </div></td>
+                                      <td>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem 
+                                        <a href="/ciudadindicador"><button type="button" class="btn btn-default">Ver M&aacute;s                               <span class="glyphicon glyphicon-chevron-right"></button></a></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Indicador2</td>
+                                      <td>54,4%</td>
+                                      <td><div class="alert alert-warning">
+                                            <strong>Advertencia</strong> 
+                                          </div></td>
+                                      <td>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem 
+                                        <button type="button" class="btn btn-default">Ver M&aacute;s <span class="glyphicon                               glyphicon-chevron-right"></button></td>
+                                    </tr>
+                                  </tbody>
+                                </table>  
+                              
+                                <table class="table table-bordered" style="margin-bottom:0px;">
+                                  <thead>
+                                    <tr style="font-size:18px;font-family: 'Open Sans Condensed Bold';color:#ffffff;" background="{% static 'images/hojas.jpg' %}">
+                                      <th colspan="4">Clasificaci&oacute;n 2 <span class="glyphicon glyphicon-leaf"></th>
+                                    </tr>
+                                    <tr style="font-size:18px;font-family: 'Open Sans Condensed Bold';">
+                                      <th style="text-align:center;width:16%;">Nombre:</th>
+                                      <th style="text-align:center;width:8%;">Valor:</th>
+                                      <th style="text-align:center;width:16%;">Estado:</th>
+                                      <th style="text-align:center;width:60%;">Descripci&oacute;n:</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody style="text-align:center;font-size:16px;">
+                                    <tr>
+                                      <td>Indicador1</td>
+                                      <td>99,2%</td>
+                                      <td><div class="alert alert-success">
+                                            <strong>OK</strong> 
+                                          </div></td>
+                                      <td>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem 
+                                        <button type="button" class="btn btn-default">Ver M&aacute;s <span class="glyphicon                               glyphicon-chevron-right"></button></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Indicador2</td>
+                                      <td>54,4%</td>
+                                      <td><div class="alert alert-danger">
+                                            <strong>CR&Iacute;TICO</strong> 
+                                          </div></td>
+                                      <td>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem 
+                                        <button type="button" class="btn btn-default">Ver M&aacute;s <span class="glyphicon                               glyphicon-chevron-right"></button></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              
+                                <table class="table table-bordered" style="margin-bottom:0px;">
+                                  <thead>
+                                    <tr style="font-size:18px;font-family: 'Open Sans Condensed Bold';color:#ffffff;" background="{% static 'images/agua.jpg' %}">
+                                      <th colspan="4">Clasificaci&oacute;n 3 <span class="glyphicon glyphicon-tint"></th>
+                                    </tr>
+                                    <tr style="font-size:18px;font-family: 'Open Sans Condensed Bold';">
+                                      <th style="text-align:center;width:16%;">Nombre:</th>
+                                      <th style="text-align:center;width:8%;">Valor:</th>
+                                      <th style="text-align:center;width:16%;">Estado:</th>
+                                      <th style="text-align:center;width:60%;">Descripci&oacute;n:</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody style="text-align:center;font-size:16px;">
+                                    <tr>
+                                      <td>Indicador1</td>
+                                      <td>99,2%</td>
+                                      <td><div class="alert alert-success">
+                                            <strong>OK</strong> 
+                                          </div></td>
+                                      <td>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem 
+                                        <button type="button" class="btn btn-default">Ver M&aacute;s <span class="glyphicon                               glyphicon-chevron-right"></button></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Indicador2</td>
+                                      <td>54,4%</td>
+                                      <td><div class="alert alert-warning">
+                                            <strong>Advertencia</strong> 
+                                          </div></td>
+                                      <td>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem 
+                                        <button type="button" class="btn btn-default">Ver M&aacute;s <span class="glyphicon                               glyphicon-chevron-right"></button></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              
+                              
+                              </div>
 
-  <table class="table table-bordered">
-    <thead>
-      <tr style="font-size:18px;font-family: 'Open Sans Condensed Bold';color:#000000;" background="{% static 'images/participacion.PNG' %}">
-        <th colspan="4">Clasificaci&oacute;n 1 <span class="glyphicon glyphicon-user"></th>
-      </tr>
-      <tr style="font-size:18px;font-family: 'Open Sans Condensed Bold';">
-        <th style="text-align:center;">Nombre:</th>
-        <th style="text-align:center;">Valor:</th>
-        <th style="text-align:center;">Estado:</th>
-        <th style="text-align:center;">Descripci&oacute;n:</th>
-      </tr>
-    </thead>
-    <tbody style="text-align:center;font-size:16px;">
-      <tr>
-        <td>Participación Ciudadana</td>
-        <td>99,2%</td>
-        <td><div class="alert alert-success">
-              <strong>OK</strong> 
-            </div></td>
-        <td>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem 
-          <a href="ciudad-indicador.php"><button type="button" class="btn btn-default">Ver M&aacute;s <span class="glyphicon glyphicon-chevron-right"></button></a></td>
-      </tr>
-      <tr>
-        <td>Indicador2</td>
-        <td>54,4%</td>
-        <td><div class="alert alert-warning">
-              <strong>Advertencia</strong> 
-            </div></td>
-        <td>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem 
-          <button type="button" class="btn btn-default">Ver M&aacute;s <span class="glyphicon glyphicon-chevron-right"></button></td>
-      </tr>
-    </tbody>
-  </table>  
 
-  <table class="table table-bordered">
-    <thead>
-      <tr style="font-size:18px;font-family: 'Open Sans Condensed Bold';color:#ffffff;" background="{% static 'images/hojas.jpg' %}">
-        <th colspan="4">Clasificaci&oacute;n 2 <span class="glyphicon glyphicon-leaf"></th>
-      </tr>
-      <tr style="font-size:18px;font-family: 'Open Sans Condensed Bold';">
-        <th style="text-align:center;">Nombre:</th>
-        <th style="text-align:center;">Valor:</th>
-        <th style="text-align:center;">Estado:</th>
-        <th style="text-align:center;">Descripci&oacute;n:</th>
-      </tr>
-    </thead>
-    <tbody style="text-align:center;font-size:16px;">
-      <tr>
-        <td>Indicador1</td>
-        <td>99,2%</td>
-        <td><div class="alert alert-success">
-              <strong>OK</strong> 
-            </div></td>
-        <td>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem 
-          <button type="button" class="btn btn-default">Ver M&aacute;s <span class="glyphicon glyphicon-chevron-right"></button></td>
-      </tr>
-      <tr>
-        <td>Indicador2</td>
-        <td>54,4%</td>
-        <td><div class="alert alert-danger">
-              <strong>CR&Iacute;TICO</strong> 
-            </div></td>
-        <td>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem 
-          <button type="button" class="btn btn-default">Ver M&aacute;s <span class="glyphicon glyphicon-chevron-right"></button></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <table class="table table-bordered">
-    <thead>
-      <tr style="font-size:18px;font-family: 'Open Sans Condensed Bold';color:#ffffff;" background="{% static 'images/agua.jpg' %}">
-        <th colspan="4">Clasificaci&oacute;n 3 <span class="glyphicon glyphicon-tint"></th>
-      </tr>
-      <tr style="font-size:18px;font-family: 'Open Sans Condensed Bold';">
-        <th style="text-align:center;">Nombre:</th>
-        <th style="text-align:center;">Valor:</th>
-        <th style="text-align:center;">Estado:</th>
-        <th style="text-align:center;">Descripci&oacute;n:</th>
-      </tr>
-    </thead>
-    <tbody style="text-align:center;font-size:16px;">
-      <tr>
-        <td>Indicador1</td>
-        <td>99,2%</td>
-        <td><div class="alert alert-success">
-              <strong>OK</strong> 
-            </div></td>
-        <td>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem 
-          <button type="button" class="btn btn-default">Ver M&aacute;s <span class="glyphicon glyphicon-chevron-right"></button></td>
-      </tr>
-      <tr>
-        <td>Indicador2</td>
-        <td>54,4%</td>
-        <td><div class="alert alert-warning">
-              <strong>Advertencia</strong> 
-            </div></td>
-        <td>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem 
-          <button type="button" class="btn btn-default">Ver M&aacute;s <span class="glyphicon glyphicon-chevron-right"></button></td>
-      </tr>
-    </tbody>
-  </table>
-
-
-</div>
-
-
-                        </div>
+                        
                     </div>                                               
                 </div>
 

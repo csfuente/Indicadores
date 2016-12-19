@@ -20,3 +20,12 @@ def ciudades(request):
 
 def santiago(request):
 	return render_to_response('pages/santiago.php',context_instance=RequestContext(request))
+
+def categoria(request):
+        return render_to_response('pages/categoria.php',context_instance=RequestContext(request))
+
+def indicador(request):
+        return render_to_response('pages/indicador.php',context_instance=RequestContext(request))
+
+def indicadores(request):
+        return render_to_response('pages/indicadores.php',context_instance=RequestContext(request))

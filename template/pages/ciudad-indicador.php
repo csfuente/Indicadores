@@ -72,9 +72,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="principal-horizontal4.php" style="color:#3D99CD;font-size:25px;">CEDEUS</a>
-                <a class="navbar-brand" href="principal-horizontal4.php" style="color:#3D99CD;font-size:25px;"><p><img src="{% static 'images/globe-4-xxl.png' %}" alt="Mapa" style="width:28px;"> MAPA</p></a>
-                <a class="navbar-brand" href="ciudades.php" style="color:#3D99CD;font-size:25px;"><p><img src="{% static 'images/home-5-xxl.png' %}" alt="Mapa" style="width:28px;"> CIUDADES</p></a>
+                <a class="navbar-brand" href="/" style="color:#3D99CD;font-size:25px;">CEDEUS</a>
+                <a class="navbar-brand" href="/" style="color:#3D99CD;font-size:25px;"><p><img src="{% static 'images/globe-4-xxl.png' %}" alt="Mapa" style="width:28px;"> MAPA</p></a>
+                <a class="navbar-brand" href="/ciudades" style="color:#3D99CD;font-size:25px;"><p><img src="{% static 'images/home-5-xxl.png' %}" alt="Mapa" style="width:28px;"> CIUDADES</p></a>
                 <a class="navbar-brand" href="#" style="color:#3D99CD;font-size:25px;"><p><img src="{% static 'images/bar-chart-5-xxl.png' %}" alt="Mapa" style="width:28px;"> INDICADORES</p></a>
             </div>
             <!-- /.navbar-header -->
@@ -92,7 +92,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="/admin"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -113,8 +113,8 @@
                 <div class="col-md-12">
                 <div class="col-md-4" >
                     <ol class="breadcrumb" style="font-size:12px;">
-                      <li><a href="ciudades.php">Ciudades</a></li>
-                      <li><a href="santiago.php">Santiago</a></li>
+                      <li><a href="/ciudades">Ciudades</a></li>
+                      <li><a href="/santiago">Santiago</a></li>
                       <li class="active">Participación ciudadana</li>
                     </ol>
                         <div class="well">

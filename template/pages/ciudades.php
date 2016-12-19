@@ -72,9 +72,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="principal-horizontal4.php" style="color:#3D99CD;font-size:25px;">CEDEUS</a>
-                <a class="navbar-brand" href="principal-horizontal4.php" style="color:#3D99CD;font-size:25px;"><p><img src="{% static 'images/globe-4-xxl.png' %}" alt="Mapa" style="width:28px;"> MAPA</p></a>
-                <a class="navbar-brand" href="ciudades.php" style="color:#3D99CD;font-size:25px;"><p><img src="{% static 'images/home-5-xxl.png' %}" alt="Mapa" style="width:28px;"> CIUDADES</p></a>
+                <a class="navbar-brand" href="" style="color:#3D99CD;font-size:25px;">CEDEUS</a>
+                <a class="navbar-brand" href="" style="color:#3D99CD;font-size:25px;"><p><img src="{% static 'images/globe-4-xxl.png' %}" alt="Mapa" style="width:28px;"> MAPA</p></a>
+                <a class="navbar-brand" href="/ciudades" style="color:#3D99CD;font-size:25px;"><p><img src="{% static 'images/home-5-xxl.png' %}" alt="Mapa" style="width:28px;"> CIUDADES</p></a>
                 <a class="navbar-brand" href="#" style="color:#3D99CD;font-size:25px;"><p><img src="{% static 'images/bar-chart-5-xxl.png' %}" alt="Mapa" style="width:28px;"> INDICADORES</p></a>
             </div>
             <!-- /.navbar-header -->
@@ -146,7 +146,7 @@
 <div class="col-lg-12">
                 <div class="col-md-4">
                      <div class="thumbnail">
-                       <a href="santiago.php">
+                       <a href="/santiago">
                          <img src="{% static 'images/santiago.jpg' %}" alt="Lights" style="width:100%;">
                          <div class="caption">
                            <p>Santiago</p>
