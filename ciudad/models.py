@@ -27,19 +27,24 @@ class Ciudad(models.Model):
 	clima = models.CharField(max_length=100)
 	url = models.CharField(max_length=100,default="")
 	imagen = models.ImageField(null=True,blank=True)
+	descripcion = models.CharField(max_length=600,default="")
 	def __unicode__(self):
 		return self.nombre
 
 class Categoria(models.Model):
         nombre = models.CharField(max_length=100)
+        icono = models.ImageField(null=True,blank=True)
+        background = models.ImageField(null=True,blank=True)
 	def __unicode__(self):
 		return self.nombre
 
 class Indicador(models.Model):
 	variable = models.CharField(max_length=100)
 	descripcion = models.CharField(max_length=500)
+	unidad_medida = models.CharField(max_length=100,blank=True,null=True,default='')
 	estado = models.CharField(max_length=10) #provisorio
 	categoria = models.ForeignKey(Categoria)
+	icono = models.ImageField(null=True,blank=True)
 	def __unicode__(self):
 		return self.variable
 

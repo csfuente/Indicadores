@@ -64,7 +64,7 @@
    <div id="wrapper">
 
         <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0;background-color:#002B43;">
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0;background-color:#002B43;position:fixed;width:100%;">
             <div class="navbar-header" style="font-family: 'Open Sans Condensed Bold';">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -72,13 +72,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/" style="color:#3D99CD;font-size:25px;">CEDEUS</a>
-                <a class="navbar-brand" href="/" style="color:#3D99CD;font-size:25px;"><p><img src="{% static 'images/globe-4-xxl.png' %}" alt="Mapa" style="width:28px;"> MAPA</p></a>
-                <a class="navbar-brand" href="/ciudades" style="color:#3D99CD;font-size:25px;"><p><img src="{% static 'images/home-5-xxl.png' %}" alt="Mapa" style="width:28px;"> CIUDADES</p></a>
-                <a class="navbar-brand" href="#" style="color:#3D99CD;font-size:25px;"><p><img src="{% static 'images/bar-chart-5-xxl.png' %}" alt="Mapa" style="width:28px;"> INDICADORES</p></a>
             </div>
             <!-- /.navbar-header -->
+            <div class="collapse navbar-collapse" id="navcoll">
+            <ul class="nav navbar-top-links navbar-left" style="font-family: 'Open Sans Condensed Bold';">
+               <a class="navbar-brand" href="/" style="color:#3D99CD;font-size:25px;">CEDEUS</a>
+                <a class="navbar-brand" href="/" style="color:#3D99CD;font-size:25px;"><p><img src="{% static 'images/globe-4-xxl.png' %}" alt="Mapa" style="width:28px;"> MAPA</p></a>
+                <a class="navbar-brand" href="/ciudades" style="color:#3D99CD;font-size:25px;"><p><img src="{% static 'images/home-5-xxl.png' %}" alt="Mapa" style="width:28px;"> CIUDADES</p></a>
+                <a class="navbar-brand" href="/indicadores" style="color:#3D99CD;font-size:25px;"><p><img src="{% static 'images/bar-chart-5-xxl.png' %}" alt="Mapa" style="width:28px;"> INDICADORES</p></a>
 
+            </ul>
             <ul class="nav navbar-top-links navbar-right">
                 
                 <!-- /.dropdown -->
@@ -97,19 +100,16 @@
                     </ul>
                     <!-- /.dropdown-user -->
                 </li>
-                <li>
-                    <img src="{% static 'images/logoUC_color.png' %}" alt="Mapa" style="width:28px;">
-                </li>
                 <!-- /.dropdown -->
             </ul>
             <!-- /.navbar-top-links -->
-
+            </div>
 
             <!-- /.navbar-static-side -->
-        </nav>
-         <div id="page-wrapper" style="margin:0;">
+        </nav>         
+<div id="page-wrapper" style="margin:0;">
             
-            <div class="row" style="padding-top:10px;">
+            <div class="row" style="padding-top:55px;">
                 <div class="col-lg-12">
                     <div class="panel panel-info">
                         <div class="panel-heading text-center" style="font-family: 'Open Sans Condensed Bold';font-size: 34px;background-color:#007DC3;color:#ffffff;">

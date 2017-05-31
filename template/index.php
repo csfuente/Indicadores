@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="refresh" content="0;url=pages/index.php">
-<title>Red de monitoreo de sismos</title>
+<meta http-equiv="refresh" content="0;url=pages/principal_ol.php">
+<title>Indicadores</title>
 <script language="javascript">
-    window.location.href = "pages/principal-horizontal4.php"
+    window.location.href = "pages/principal_ol.php"
 </script>
 </head>
 <body>
-Go to <a href="pages/principal-horizontal4.php">principal-horizontal4.php</a>
+Go to <a href="pages/principal_ol.php">pages/principal_ol.php</a>
 </body>
 </html>
