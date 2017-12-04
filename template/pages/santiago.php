@@ -51,7 +51,7 @@
  <div id="wrapper">
 
   <!-- Navigation -->
-  <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0;background-color:#002B43;position:fixed;width:100%;">
+  <nav class="navbar_indicadores navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0;background-color:#002B43;position:fixed;width:100%;">
     <div class="navbar-header" style="font-family: 'Open Sans Condensed Bold';">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
@@ -68,6 +68,9 @@
        <a class="navbar-brand" href="/categoria" style="color:#3D99CD;font-size:25px;"><p><img src="{% static 'images/bar-chart-5-xxl.png' %}" alt="Mapa" style="width:28px;"> INDICADORES</p></a>
 
      </ul>
+    <ul class="nav navbar-top-links navbar-right" style="font-family: 'open-sans condensed bold';">
+        <a class="navbar-brand" href="/nosotros" style=""><p><img src="{% static 'images/person.png' %}" alt="" style="width:25px;"> NOSOTROS</p></a>
+    </ul>
      <!--
      <ul class="nav navbar-top-links navbar-right">
       <li class="dropdown">
@@ -85,11 +88,11 @@
         </ul>
       </li>
     </ul>
-      -->
-    <!-- /.navbar-top-links -->
-  </div>
+  -->
+  <!-- /.navbar-top-links -->
+</div>
 
-  <!-- /.navbar-static-side -->
+<!-- /.navbar-static-side -->
 </nav>        
 <div id="page-wrapper" style="margin:0;">
 
@@ -149,63 +152,92 @@
           </div>
         </div>
       </div>
--->
+    -->
 
-      <div class="col-xs-12 col-md-12 col-lg-12">
-       <h1 style="font-family: 'Open Sans Condensed Bold';text-align:center;">Indicadores</h1>
-       <p style="text-align:center;">
-        <img src="{% static 'images/sustentable2.png' %}" style="width:8%;">
-        <img src="{% static 'images/casi_sustentable2.png' %}" style="width:8%;">
-        <img src="{% static 'images/no_sustentable2.png' %}" style="width:8%;">
-       </p>
+    <div class="col-xs-12 col-md-12 col-lg-12">
+     <h1 style="font-family: 'Open Sans Condensed Bold';text-align:center;">Indicadores</h1>
+     <p style="text-align:center;">
+      <img src="{% static 'images/sustentable2.png' %}" style="width:6%;">
+      <img src="{% static 'images/casi_sustentable2.png' %}" style="width:6%;">
+      <img src="{% static 'images/no_sustentable2.png' %}" style="width:6%;">
+    </p>
 
-       {% for categoria in categorias %} 
-       <div id="{{categoria.nombre}}">
-       </div>
-       <table class="table table-borderless" style="margin-bottom:0px;">
-         <thead>
-           <tr>
-            <th colspan="4" style="text-align:center;font-size:26px;">{{categoria.nombre}}</th>
-           </tr>
-           <tr style="font-size:18px;font-family: 'Open Sans Condensed Bold';border-bottom-style:hidden;">
-             <th style="text-align:center;width:30%;">Nombre</th>
-             <th style="text-align:center;width:22%;">Valor</th>
-             <th style="text-align:center;width:40%;">Información</th>
-             <th style="width:8%"></th>
-           </tr>
-         </thead>
-         <tbody style="text-align:center;font-size:16px;">
-          {% for indicador in indicadores %}
-          {% if indicador.categoria == categoria %}
-          {% for dato in datos %}
-          {% if dato.indicador == indicador %}
-          <tr style="border-bottom-style:hidden;">
-            <td>{{dato.indicador}}</td>
-            {% if dato.tipo_variable == 'caracter' %}
-            <td>{{dato.var_char}} [unidad medida]</td>
-            {% elif dato.tipo_variable == 'numero entero'%}
-            <td>{{dato.var_int}} [unidad medida]</td>
-            {% else %}
-            <td>{{dato.var_float}} [unidad medida]</td>
-            {% endif%}
-            <td>
-              {{indicador.descripcion}} {{dato.fecha_indicador}}
-              <a href="/ciudadindicador/?i={{indicador.id}}&c={{ciudad.id}}"><button type="button" class="btn btn-default">Ver M&aacute;s<span class="glyphicon glyphicon-chevron-right"></button></a>
-            </td>
-            {% if categoria.nombre == 'Medio Ambiente' %}
-            <td>
-              <img src="{% static 'images/sustentable.png' %}" alt="{{ciudad.nombre}}" style="width:50%;">
-            </td>
-            {% elif categoria.nombre == 'Salud' %}
-            <td>
-              <img src="{% static 'images/casi_sustentable.png' %}" alt="{{ciudad.nombre}}" style="width:50%;">
-            </td>
-            {% else %}
-            <td>
-              <img src="{% static 'images/no_sustentable.png' %}" alt="{{ciudad.nombre}}" style="width:50%;">
-            </td>
-            {% endif %}
+    <div class="panel-group" id="accordion">
+     {% for categoria in categorias %} 
+     <div class="panel panel-default">
+      <a class="ciudad_collapse" data-toggle="collapse" data-parent="#accordion" href="#coll{{categoria.id}}">
+      <div class="panel-heading">
+        <h4 class="panel-title" style="font-size:26px;">
+            {{categoria.nombre}}
+          </h4>
+        </div>
+        </a>
+        <div id="coll{{categoria.id}}" class="panel-collapse collapse">
+          <div class="panel-body">
+           <table class="table table-borderless" style="margin-bottom:0px;">
+             <thead>
+               <tr>
+                <th colspan="4" style=""></th>
+              </tr>
+              <tr style="font-size:18px;font-family: 'Open Sans Condensed Bold';border-bottom-style:hidden;">
+               <th style="text-align:center;width:20%;">Nombre</th>
+               <th style="text-align:center;width:20%;">Valor</th>
+               <th style="text-align:center;width:30%;">Información</th>
+               <th style="text-align:center;width:30%">Estado</th>
+             </tr>
+           </thead>
+           <tbody style="text-align:center;font-size:16px;">
+            {% for indicador in indicadores %}
+            {% if indicador.categoria == categoria %}
+            {% for dato in datos %}
+            {% if dato.indicador == indicador %}
+            <tr style="border-bottom-style:hidden;">
+              <td>{{dato.indicador}}</td>
+              {% if dato.tipo_variable == 'caracter' %}
+              <td>{{dato.var_char}} [unidad medida]</td>
+              {% elif dato.tipo_variable == 'numero entero'%}
+              <td>{{dato.var_int}} [unidad medida]</td>
+              {% else %}
+              <td>{{dato.var_float}} [unidad medida]</td>
+              {% endif%}
 
+              <td style="font-size:12px;">
+                {{indicador.descripcion}} {{dato.fecha_indicador}}
+                <a href="/ciudadindicador/?i={{indicador.id}}&c={{ciudad.id}}"><button type="button" class="btn btn-default btn-xs">Ver M&aacute;s<span class="glyphicon glyphicon-chevron-right"></button></a>
+              </td>
+
+              <!--
+              {% if categoria.nombre == 'Medio Ambiente' %}
+              <td>
+                <img src="{% static 'images/sustentable.png' %}" alt="{{ciudad.nombre}}" style="width:50%;">
+              </td>
+              {% elif categoria.nombre == 'Salud' %}
+              <td>
+                <img src="{% static 'images/casi_sustentable.png' %}" alt="{{ciudad.nombre}}" style="width:50%;">
+              </td>
+              {% else %}
+              <td>
+                <img src="{% static 'images/no_sustentable.png' %}" alt="{{ciudad.nombre}}" style="width:50%;">
+              </td>
+              {% endif %}
+              -->
+              <td>
+                {% if indicador.limite_superior and indicador.limite_inferior_semi and indicador.limite_semi_superior and indicador.limite_inferior%}
+                        <div class="progress" style="">
+                        <div class="progress-bar progress-bar-danger" style="width: 40%;color:#000;">
+                            ({{indicador.limite_inferior}}%)
+                        </div>
+                        <div class="progress-bar progress-bar-warning" style="width: 40%;color:#000;">
+                            ({{indicador.limite_inferior_semi}}%)
+                        </div>
+                        <div class="progress-bar progress-bar-success" style="width: 0%;color:#000;">
+                            ({{indicador.limite_semi_superior}}%)
+                        </div>
+                        </div>
+                {% else %}
+                No disponible
+                {% endif %}
+              </td>
             </tr>
             {% endif %}
             {% endfor %}
@@ -213,10 +245,14 @@
             {% endfor %}
           </tbody>
         </table>
-        {% endfor %}  
       </div>
-    </div>                                               
+    </div>
   </div>
+  {% endfor %}  
+</div>
+</div>
+</div>                                               
+</div>
 </div>
 </div>       
 </body>

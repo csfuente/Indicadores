@@ -3,7 +3,7 @@
 
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from ciudad.views import index, ciudad_indicador, devuelve_indicadores_json,comparar_ciudades, ciudades, santiago, categoria, indicador, indicadores
+from ciudad.views import index, ciudad_indicador, nosotros,devuelve_indicadores_json,comparar_ciudades, ciudades, santiago, categoria, indicador, indicadores
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.static import static
 import settings
@@ -20,6 +20,7 @@ urlpatterns = patterns('',
     url(r'^ciudad/$', santiago),
     url(r'^ciudadindicador/$', ciudad_indicador),
     url(r'^ciudades/$',ciudades),
+    url(r'^nosotros/$',nosotros),
     url(r'^categoria/$',categoria),
     url(r'^indicador/$',indicador),
     url(r'^comparar_ciudades/$',comparar_ciudades),

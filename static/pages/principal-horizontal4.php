@@ -103,7 +103,7 @@
 
    <div id="wrapper">
 
-<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0;background-color:#002B43;position:static;width:100%;">
+<nav class="navbar_indicadores navbar navbar-default navbar-static-top" role="navigation" style="">
             <div class="navbar-header" style="font-family: 'Open Sans Condensed Bold';">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -115,9 +115,12 @@
             <!-- /.navbar-header -->
             <div class="collapse navbar-collapse" id="navcoll">
             <ul class="nav navbar-top-links navbar-left" style="font-family: 'open-sans condensed bold';">
-                <a class="navbar-brand" href="/ciudades" style="color:#3D99CD;font-size:25px;"><p><img src="{% static 'images/home-5-xxl.png' %}" alt="Mapa" style="width:28px;"> CIUDADES</p></a>
-                <a class="navbar-brand" href="/categoria" style="color:#3D99CD;font-size:25px;"><p><img src="{% static 'images/bar-chart-5-xxl.png' %}" alt="Mapa" style="width:28px;"> INDICADORES</p></a>
+                <a class="navbar-brand" href="/ciudades" style=""><p><img src="{% static 'images/home-5-xxl.png' %}" alt="Mapa" style="width:28px;"> CIUDADES</p></a>
+                <a class="navbar-brand" href="/categoria" style=""><p><img src="{% static 'images/bar-chart-5-xxl.png' %}" alt="Mapa" style="width:28px;"> INDICADORES</p></a>
 
+            </ul>
+            <ul class="nav navbar-top-links navbar-right" style="font-family: 'open-sans condensed bold';">
+                <a class="navbar-brand" href="/nosotros" style=""><p><img src="{% static 'images/person.png' %}" alt="" style="width:25px;"> NOSOTROS</p></a>
             </ul>
             <!--
             <ul class="nav navbar-top-links navbar-right">
@@ -155,12 +158,12 @@
          <div id="page-wrapper" style="margin:0;">
 
 
-                <div class="col-xs-8 col-md-4 col-lg-4" style="-webkit-transform: translate(42px,80px);z-index:1000;">
+                <div class="map_panel">
                     <div class="panel panel-info" style="background-color:rgba(255, 255, 255, 0);border-color:rgba(255, 255, 255, 0);">
-                        <div class="panel-body">
-                                <h3 style="font-family: 'Open Sans Condensed Bold';">Bienvenido</h3>
-                                <p style="padding-right:55px;">
-                                En esta plataforma hay indicadores de sustentabilidad para:
+                        <div class="panel-body" style="background-color:rgba(236, 236, 236, 0.49);">
+                                <h3>Bienvenido</h3>
+                                <p>
+                                En esta plataforma encontrará indicadores de:
                                 </p>
                             <div class="tagcloud02">
                               <ul>
@@ -181,176 +184,7 @@
 </div>
 
 </div>
- <script>
-var container = document.getElementById('popup');
-var content = document.getElementById('popup-content');
-var closer = document.getElementById('popup-closer');
-
-/**
- * Create an overlay to anchor the popup to the map.
- */
-var overlaypop = new ol.Overlay(/** @type {olx.OverlayOptions} */ ({
-  element: container,
-  autoPan: true,
-  autoPanAnimation: {
-    duration: 250
-  }
-}));
-
-
-/**
- * Add a click handler to hide the popup.
- * @return {boolean} Don't follow the href.
- */
-closer.onclick = function() {
-  overlaypop.setPosition(undefined);
-  closer.blur();
-  return false;
-};
-
-
-var santiagoLonLat = [-70.654, -33.444];
-var santiagoWebMercator = ol.proj.fromLonLat(santiagoLonLat);
-
-var raster = new ol.layer.Tile({
-        source: new ol.source.OSM()
-      });
-
-var source = new ol.source.Vector({wrapX: false});
-
-var vector = new ol.layer.Vector({
-        source: source
-      });
-     
-var typeSelect = document.getElementById('type');
-
-var arreglo_puntos=[];
-var flag_puntos=false;
-
-var draw; // global so we can remove it later
-
-
-/////////////////marker ciudades///////////////////////
-var ciudades_features=[];
-var santiago = new ol.Feature({
-        geometry: new ol.geom.Point(ol.proj.fromLonLat([-70.654, -33.444])),
-        url:'/ciudad/?i=1',
-        nombre:'Santiago'
-      });
-var copiapo = new ol.Feature({
-        geometry: new ol.geom.Point(ol.proj.fromLonLat([-70.3236, -27.3697])),
-        url:'/ciudad/?i=4',
-        nombre:'Copiapo'
-      });
-var serena = new ol.Feature({
-        geometry: new ol.geom.Point(ol.proj.fromLonLat([-71.2449, -29.8995])),
-        url:'/ciudad/?i=5',
-        nombre:'La Serena'
-      });
-var temuco = new ol.Feature({
-        geometry: new ol.geom.Point(ol.proj.fromLonLat([-72.5534, -38.7273])),
-        url:'/ciudad/?i=3',
-        nombre:'Temuco'
-      });
-var valdivia = new ol.Feature({
-        geometry: new ol.geom.Point(ol.proj.fromLonLat([-73.2287, -39.8365])),
-        url:'/ciudad/?i=7',
-        nombre:'Valdivia'
-      });
-var concepcion = new ol.Feature({
-        geometry: new ol.geom.Point(ol.proj.fromLonLat([-73.0340, -36.8159])),
-        url:'/ciudad/?i=7',
-        nombre:'Concepcion'
-      });
-
-
-ciudades_features.push(santiago);
-ciudades_features.push(copiapo);
-ciudades_features.push(serena);
-ciudades_features.push(temuco);
-ciudades_features.push(valdivia);
-ciudades_features.push(concepcion);
-
-var vectorSource = new ol.source.Vector({
-  features: ciudades_features //add an array of features
-});
-var iconStyle = new ol.style.Style({
-  image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
-    anchor: [0.5, 46],
-    anchorXUnits: 'fraction',
-    anchorYUnits: 'pixels',
-    opacity: 0.75,
-    src: "{% static 'images/marker-icon.png' %}"
-  }))
-});
-var vectorLayer = new ol.layer.Vector({
-  source: vectorSource,
-  style: iconStyle
-});
-/////////////////////////////////////////////////////////
-
- var mousePositionControl = new ol.control.MousePosition({
-        coordinateFormat: ol.coordinate.createStringXY(4),
-        projection: 'EPSG:4326',
-        // comment the following two lines to have the mouse position
-        // be placed within the map.
-        className: 'custom-mouse-position',
-        target: document.getElementById('mouse-position'),
-        undefinedHTML: '&nbsp;'
-      });
-
-var osmmap = new ol.layer.Tile({
-        source: new ol.source.OSM({
-          attributions: [
-            'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
-            ol.source.OSM.ATTRIBUTION
-          ],
-          url: 'http://{a-c}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-        })
-      });
-
-var map = new ol.Map({
-        controls: ol.control.defaults({
-          attributionOptions: /** @type {olx.control.AttributionOptions} */ ({
-            collapsible: false
-          })
-        }).extend([mousePositionControl]),
-        layers: [
-          osmmap,raster,vector,vectorLayer
-        ],
-        overlays: [overlaypop],
-        target: 'map',
-        view: new ol.View({
-          center: santiagoWebMercator,
-          zoom: 5
-        })
-      });
-
-
-map.on("click", function(e) {
-    map.forEachFeatureAtPixel(e.pixel, function (feature, layer) {
-        var url= feature.getProperties('url');
-        window.location.href = ""+url.url;
-    })
-});
-
-
-
-// add popup
-map.on('pointermove', function(e) {
-    map.forEachFeatureAtPixel(e.pixel, function (feature, layer) {
-        var url= feature.getProperties('url');
-        var coordinate = e.coordinate;
-        var hdms = ol.coordinate.toStringHDMS(ol.proj.transform(
-            coordinate, 'EPSG:3857', 'EPSG:4326'));
-        content.innerHTML = '<p>Al entrar aquí, verá los indicadores de ' + url.nombre +
-            '</p>';
-        overlaypop.setPosition(coordinate);
-    })
-});
-
-    </script>
-
+<script type="text/javascript" src="{% static 'js/mapa.js' %}"></script>
 </body>
 </html>
 

@@ -97,7 +97,7 @@
          <div id="page-wrapper" style="margin:0;">
 
 
-                <div class="col-xs-8 col-md-3" style="-webkit-transform: translate(42px,80px);">
+                <div class="map_panel">
                     <div class="panel panel-info" style="background-color:rgba(255, 255, 255, 0);border-color:rgba(255, 255, 255, 0);">
                         <div class="panel-body">
 

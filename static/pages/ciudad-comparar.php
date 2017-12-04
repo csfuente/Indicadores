@@ -7,6 +7,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
+    <link href="{% static 'css/ciudad.css' %}" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
      <!-- Bootstrap Core CSS -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
@@ -62,7 +63,7 @@
    <div id="wrapper">
 
         <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0;background-color:#002B43;position:fixed;width:100%;">
+        <nav class="navbar_indicadores navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0;background-color:#002B43;position:fixed;width:100%;">
             <div class="navbar-header" style="font-family: 'Open Sans Condensed Bold';">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -74,10 +75,13 @@
             <!-- /.navbar-header -->
             <div class="collapse navbar-collapse" id="navcoll">
             <ul class="nav navbar-top-links navbar-left" style="font-family: 'Open Sans Condensed Bold';">
-                <a class="navbar-brand" href="/" style="color:#3D99CD;font-size:25px;"><p><img src="{% static 'images/globe-4-xxl.png' %}" alt="Mapa" style="width:28px;"> MAPA</p></a>
-                <a class="navbar-brand" href="/ciudades" style="color:#3D99CD;font-size:25px;"><p><img src="{% static 'images/home-5-xxl.png' %}" alt="Mapa" style="width:28px;"> CIUDADES</p></a>
-                <a class="navbar-brand" href="/categoria" style="color:#3D99CD;font-size:25px;"><p><img src="{% static 'images/bar-chart-5-xxl.png' %}" alt="Mapa" style="width:28px;"> INDICADORES</p></a>
+                <a class="navbar-brand" href="/" style=""><p><img src="{% static 'images/globe-4-xxl.png' %}" alt="Mapa" style="width:28px;"> MAPA</p></a>
+                <a class="navbar-brand" href="/ciudades" style=""><p><img src="{% static 'images/home-5-xxl.png' %}" alt="Mapa" style="width:28px;"> CIUDADES</p></a>
+                <a class="navbar-brand" href="/categoria" style=""><p><img src="{% static 'images/bar-chart-5-xxl.png' %}" alt="Mapa" style="width:28px;"> INDICADORES</p></a>
 
+            </ul>
+            <ul class="nav navbar-top-links navbar-right" style="font-family: 'open-sans condensed bold';">
+                <a class="navbar-brand" href="/nosotros" style=""><p><img src="{% static 'images/person.png' %}" alt="" style="width:25px;"> NOSOTROS</p></a>
             </ul>
             <!-- /.navbar-top-links -->
             </div>
@@ -86,8 +90,10 @@
         </nav>         
 <div id="page-wrapper" style="margin:0;">
 
-            <div class="row" style="padding-top:78px;">
+            <div class="row" style="padding-top:50px;">
                 <div class="col-xs-12 col-md-12 col-lg-12">
+
+<p style="font-family: 'Open Sans Condensed Bold';font-size: 34px;background-color:rgb(19, 161, 241);color:#ffffff;text-align: center;">Elija 2 ciudades para comparar</p>
 
                  <form method="get" action="/comparar_ciudades/">
                  <div id="custom-search-input" style="margin-bottom:20px;">
@@ -152,17 +158,18 @@
                     </div>
 
                     <div class="col-xs-4 col-md-4 col-lg-4">
-                        <h1 style="text-align:center;">{{ciudad1.nombre}}</h1>
+                        <h2 style="font-family: 'Open Sans Condensed Bold';font-size: 34px;background-color: rgb(19, 161, 241);color:#ffffff;text-align: center;">{{ciudad1.nombre}}</h2>
                     </div>
 
                     <div class="col-xs-4 col-md-4 col-lg-4">
-                        <h1 style="text-align:center;">{{ciudad2.nombre}}</h1>
+                        <h2 style="font-family: 'Open Sans Condensed Bold';font-size: 34px;background-color: rgb(19, 161, 241);color:#ffffff;text-align: center;">{{ciudad2.nombre}}</h2>
                     </div>
 
                     {% for i, j in zipped %}
-                        <div class="col-xs-12 col-md-12 col-lg-12">
+                        {% if i|length > 0 %}
+                        <div class="col-xs-12 col-md-12 col-lg-12" style="border-style:solid;border-bottom-style:none;border-color:rgb(19, 161, 241);">
 
-                        <div class="col-xs-4 col-md-4 col-lg-4">
+                        <div class="col-xs-4 col-md-4 col-lg-4" style="font-size:18px;">
                         {% for dato in i %}
                             {{dato.indicador}}
                         {% endfor %}
@@ -181,6 +188,7 @@
                         </div>
 
                         </div>
+                        {% endif %}
                     {% endfor %}
                     
 
