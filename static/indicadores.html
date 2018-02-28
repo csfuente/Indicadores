@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- inicio favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+    <!-- fin favicon -->
+    <title>Indicadores</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.min.css">
+  </head>
+
+  <body>
+    <!-- INICIO HEADER -->
+    <nav class="navbar navbar-expand-xl header navbar-light">
+      <!-- inicio logo -->
+      <a class="navbar-brand" href="index.html">
+        <img src="img/logo.svg" alt="logo indicadores" />
+      </a>
+      <!-- fin logo -->
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#contenidoNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="contenidoNavbar">
+        <!-- inicio menú -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="ciudades.html">
+              <img src="img/ciudades_icono.svg" /> Ciudades
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="indicadores.html">
+              <img src="img/indicadores_icono.svg" /> Indicadores
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="comparador.html">
+              <img src="img/compararindicadores_icono.svg" /> Comparar Ciudades
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="nosotros.html">
+              <img src="img/nosotros_icono.svg" /> Nosotros
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#myModal" data-toggle="modal" data-target="#myModal">
+              <img src="img/contacto_icono.svg" /> Contacto
+            </a>
+          </li>
+        </ul>
+        <div class="separador-nav">
+        </div>
+        <ul class="navbar-nav">
+          <li class="nav-item buscador">
+            <a class="nav-link" href="#">
+              <img src="img/busqueda_icono.svg" />
+            </a>
+          </li>
+        </ul>
+        <!-- fin menú -->
+      </div>
+    </nav>
+    <!-- FIN HEADER -->
+
+    <!-- INICIO MODAL CONTACTO -->
+    <div class="modal fade" id="myModal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Contacto</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form>
+            <div class="modal-body">
+              <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" class="form-control" placeholder="Alexis Sánchez">
+              </div>
+              <div class="form-group">
+                <label>Telefono</label>
+                <input type="tel" class="form-control" placeholder="9 1234 5678">
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" placeholder="mi@email.cl">
+              </div>
+              <div class="form-group">
+                <label>Mensaje</label>
+                <textarea class="form-control" rows="3" placeholder="Hola..."></textarea>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- FIN MODAL CONTACTO -->
+
+    <div class="container indicadores-ciudad">
+      <h1>INDICADORES</h1>
+      <div class="row">
+        <div class="col-xl-3 col-lg-12">
+          <!-- INICIO MENÚ CATEGORÍAS -->
+          <ul class="nav flex-column nav-tabs" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active cat-prin" data-toggle="tab" href="#ambiente" role="tab">
+                <img src="img/medioambiente_icon.svg" />
+                <div class="titulo-cat">MEDIO AMBIENTE</div>
+                <span class="titulo-catb">MEDIO AMBIENTE</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link cat-prin" data-toggle="tab" href="#salud" role="tab">
+                <img src="img/salud_icon.svg" />
+                <div class="titulo-cat">SALUD</div>
+                <span class="titulo-catb">SALUD</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link cat-prin" data-toggle="tab" href="#gobernanza" role="tab">
+                <img src="img/gobernancia_icon.svg" />
+                <div class="titulo-cat">GOBERNANZA</div>
+                <span class="titulo-catb">GOBERNANZA</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link cat-prin" data-toggle="tab" href="#equidad" role="tab">
+                <img src="img/equidad_icon.svg" />
+                <div class="titulo-cat">EQUIDAD</div>
+                <span class="titulo-catb">EQUIDAD</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link cat-prin" data-toggle="tab" href="#accesibilidad" role="tab">
+                <img src="img/accesibilidad_icon.svg" />
+                <div class="titulo-cat">ACCESIBILIDAD</div>
+                <span class="titulo-catb">ACCESIBILIDAD</span>
+              </a>
+            </li>
+          </ul>
+          <!-- FIN MENÚ CATEGORÍAS -->
+        </div>
+        <div class="col-xl-9 col-lg-12 contenedor-tabla">
+          <!-- INICIO CONTENIDO CATEGORÍAS -->
+          <div class="tab-content">
+            <div class="tab-pane active" id="ambiente" role="tabpanel">
+              <div id="accordion1" role="tablist" aria-multiselectable="true">
+                <div class="card">
+                  <div class="card-header" role="tab" id="headingAmbiente1">
+                    <h5 class="mb-0">
+                                        <a data-toggle="collapse" data-parent="#accordion1" href="#collapseAmbiente1" aria-expanded="true" aria-controls="collapseAmbiente1">
+                                        Calidad de agua
+                                        </a>
+                                    </h5>
+                  </div>
+                  <div id="collapseAmbiente1" class="collapse show" role="tabpanel" aria-labelledby="headingAmbiente1">
+                    <div class="card-block">
+                      <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" data-toggle="tab" href="#descpAmbiente1" role="tab">Descripción</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#fuentesAmbiente1" role="tab">Fuente</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#comentariosAmbiente1" role="tab">Comentarios</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="descpAmbiente1" role="tabpanel">Aquí lo referente a la descripción del indicador.</div>
+                        <div class="tab-pane" id="fuentesAmbiente1" role="tabpanel">Aquí las fuentes del indicador, el formato no ha sido definido.</div>
+                        <div class="tab-pane" id="comentariosAmbiente1" role="tabpanel">Aquí los comentarios, cuyo formato tampoco ha sido definido</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" role="tab" id="headingAmbiente2">
+                    <h5 class="mb-0">
+                                        <a data-toggle="collapse" data-parent="#accordion1" href="#collapseAmbiente2" aria-expanded="false" aria-controls="collapseAmbiente2">
+                                        Calidad de aguas servidas tratadas
+                                        </a>
+                                    </h5>
+                  </div>
+                  <div id="collapseAmbiente2" class="collapse" role="tabpanel" aria-labelledby="headingAmbiente2">
+                    <div class="card-block">
+                      <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" data-toggle="tab" href="#descpAmbiente2" role="tab">Descripción</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#fuentesAmbiente2" role="tab">Fuente</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#comentariosAmbiente2" role="tab">Comentarios</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="descpAmbiente2" role="tabpanel">Aquí lo referente a la descripción del indicador.</div>
+                        <div class="tab-pane" id="fuentesAmbiente2" role="tabpanel">Aquí las fuentes del indicador, el formato no ha sido definido.</div>
+                        <div class="tab-pane" id="comentariosAmbiente2" role="tabpanel">Aquí los comentarios, cuyo formato tampoco ha sido definido</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" role="tab" id="headingAmbiente3">
+                    <h5 class="mb-0">
+                                        <a data-toggle="collapse" data-parent="#accordion1" href="#collapseAmbiente3" aria-expanded="false" aria-controls="collapseAmbiente3">
+                                        Consumo de agua
+                                        </a>
+                                    </h5>
+                  </div>
+                  <div id="collapseAmbiente3" class="collapse" role="tabpanel" aria-labelledby="headingAmbiente3">
+                    <div class="card-block">
+                      <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" data-toggle="tab" href="#descpAmbiente3" role="tab">Descripción</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#fuentesAmbiente3" role="tab">Fuente</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#comentariosAmbiente3" role="tab">Comentarios</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="descpAmbiente3" role="tabpanel">Aquí lo referente a la descripción del indicador.</div>
+                        <div class="tab-pane" id="fuentesAmbiente3" role="tabpanel">Aquí las fuentes del indicador, el formato no ha sido definido.</div>
+                        <div class="tab-pane" id="comentariosAmbiente3" role="tabpanel">Aquí los comentarios, cuyo formato tampoco ha sido definido</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" role="tab" id="headingAmbiente4">
+                    <h5 class="mb-0">
+                                        <a data-toggle="collapse" data-parent="#accordion1" href="#collapseAmbiente4" aria-expanded="false" aria-controls="collapseAmbiente4">
+                                        Calidad de aire
+                                        </a>
+                                    </h5>
+                  </div>
+                  <div id="collapseAmbiente4" class="collapse" role="tabpanel" aria-labelledby="headingAmbiente4">
+                    <div class="card-block">
+                      <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" data-toggle="tab" href="#descpAmbiente4" role="tab">Descripción</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#fuentesAmbiente4" role="tab">Fuente</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#comentariosAmbiente4" role="tab">Comentarios</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="descpAmbiente4" role="tabpanel">Aquí lo referente a la descripción del indicador.</div>
+                        <div class="tab-pane" id="fuentesAmbiente4" role="tabpanel">Aquí las fuentes del indicador, el formato no ha sido definido.</div>
+                        <div class="tab-pane" id="comentariosAmbiente4" role="tabpanel">Aquí los comentarios, cuyo formato tampoco ha sido definido</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" role="tab" id="headingAmbiente5">
+                    <h5 class="mb-0">
+                                        <a data-toggle="collapse" data-parent="#accordion1" href="#collapseAmbiente5" aria-expanded="false" aria-controls="collapseAmbiente5">
+                                        Generación de residuos sólidos
+                                        </a>
+                                    </h5>
+                  </div>
+                  <div id="collapseAmbiente5" class="collapse" role="tabpanel" aria-labelledby="headingAmbiente5">
+                    <div class="card-block">
+                      <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" data-toggle="tab" href="#descpAmbiente5" role="tab">Descripción</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#fuentesAmbiente5" role="tab">Fuente</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#comentariosAmbiente5" role="tab">Comentarios</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="descpAmbiente5" role="tabpanel">Aquí lo referente a la descripción del indicador.</div>
+                        <div class="tab-pane" id="fuentesAmbiente5" role="tabpanel">Aquí las fuentes del indicador, el formato no ha sido definido.</div>
+                        <div class="tab-pane" id="comentariosAmbiente5" role="tabpanel">Aquí los comentarios, cuyo formato tampoco ha sido definido</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" role="tab" id="headingAmbiente6">
+                    <h5 class="mb-0">
+                                        <a data-toggle="collapse" data-parent="#accordion1" href="#collapseAmbiente6" aria-expanded="false" aria-controls="collapseAmbiente6">
+                                        Superficie de áreas verdes per cápita
+                                        </a>
+                                    </h5>
+                  </div>
+                  <div id="collapseAmbiente6" class="collapse" role="tabpanel" aria-labelledby="headingAmbiente6">
+                    <div class="card-block">
+                      <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" data-toggle="tab" href="#descpAmbiente6" role="tab">Descripción</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#fuentesAmbiente6" role="tab">Fuente</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#comentariosAmbiente6" role="tab">Comentarios</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="descpAmbiente6" role="tabpanel">Aquí lo referente a la descripción del indicador.</div>
+                        <div class="tab-pane" id="fuentesAmbiente6" role="tabpanel">Aquí las fuentes del indicador, el formato no ha sido definido.</div>
+                        <div class="tab-pane" id="comentariosAmbiente6" role="tabpanel">Aquí los comentarios, cuyo formato tampoco ha sido definido</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="salud" role="tabpanel">
+              <div id="accordion2" role="tablist" aria-multiselectable="true">
+                <div class="card">
+                  <div class="card-header" role="tab" id="headingSalud1">
+                    <h5 class="mb-0">
+                                        <a data-toggle="collapse" data-parent="#accordion2" href="#collapseSalud1" aria-expanded="true" aria-controls="collapseSalud1">
+                                        Calidad de salud
+                                        </a>
+                                    </h5>
+                  </div>
+                  <div id="collapseSalud1" class="collapse show" role="tabpanel" aria-labelledby="headingSalud1">
+                    <div class="card-block">
+                      <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" data-toggle="tab" href="#descpSalud1" role="tab">Descripción</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#fuentesSalud1" role="tab">Fuente</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#comentariosSalud1" role="tab">Comentarios</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="descpSalud1" role="tabpanel">Aquí lo referente a la descripción del indicador.</div>
+                        <div class="tab-pane" id="fuentesSalud1" role="tabpanel">Aquí las fuentes del indicador, el formato no ha sido definido.</div>
+                        <div class="tab-pane" id="comentarios" role="tabpanelSalud1">Aquí los comentarios, cuyo formato tampoco ha sido definido</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" role="tab" id="headingSalud2">
+                    <h5 class="mb-0">
+                                        <a data-toggle="collapse" data-parent="#accordion2" href="#collapseSalud2" aria-expanded="false" aria-controls="collapseSalud2">
+                                        Estado de salud del adulto
+                                        </a>
+                                    </h5>
+                  </div>
+                  <div id="collapseSalud2" class="collapse" role="tabpanel" aria-labelledby="headingSalud2">
+                    <div class="card-block">
+                      <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" data-toggle="tab" href="#descpSalud2" role="tab">Descripción</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#fuentesSalud2" role="tab">Fuente</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#comentariosSalud2" role="tab">Comentarios</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="descpSalud2" role="tabpanel">Aquí lo referente a la descripción del indicador.</div>
+                        <div class="tab-pane" id="fuentesSalud2" role="tabpanel">Aquí las fuentes del indicador, el formato no ha sido definido.</div>
+                        <div class="tab-pane" id="comentariosSalud2" role="tabpanel">Aquí los comentarios, cuyo formato tampoco ha sido definido</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" role="tab" id="headingSalud3">
+                    <h5 class="mb-0">
+                                        <a data-toggle="collapse" data-parent="#accordion2" href="#collapseSalud3" aria-expanded="false" aria-controls="collapseSalud3">
+                                        Estado de salud del infante
+                                        </a>
+                                    </h5>
+                  </div>
+                  <div id="collapseSalud3" class="collapse" role="tabpanel" aria-labelledby="headingSalud3">
+                    <div class="card-block">
+                      <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" data-toggle="tab" href="#descpSalud3" role="tab">Descripción</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#fuentesSalud3" role="tab">Fuente</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#comentariosSalud3" role="tab">Comentarios</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="descpSalud3" role="tabpanel">Aquí lo referente a la descripción del indicador.</div>
+                        <div class="tab-pane" id="fuentesSalud3" role="tabpanel">Aquí las fuentes del indicador, el formato no ha sido definido.</div>
+                        <div class="tab-pane" id="comentariosSalud3" role="tabpanel">Aquí los comentarios, cuyo formato tampoco ha sido definido</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="gobernanza" role="tabpanel">
+              <div id="accordion3" role="tablist" aria-multiselectable="true">
+                <div class="card">
+                  <div class="card-header" role="tab" id="headingGobernanza1">
+                    <h5 class="mb-0">
+                                        <a data-toggle="collapse" data-parent="#accordion3" href="#collapseGobernanza1" aria-expanded="true" aria-controls="collapseGobernanza1">
+                                        Participación ciudadana: % participación electoral
+                                        </a>
+                                    </h5>
+                  </div>
+                  <div id="collapseGobernanza1" class="collapse show" role="tabpanel" aria-labelledby="headingGobernanza1">
+                    <div class="card-block">
+                      <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" data-toggle="tab" href="#descpGobernanza1" role="tab">Descripción</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#fuentesGobernanza1" role="tab">Fuente</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#comentariosGobernanza1" role="tab">Comentarios</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="descpGobernanza1" role="tabpanel">Aquí lo referente a la descripción del indicador.</div>
+                        <div class="tab-pane" id="fuentesGobernanza1" role="tabpanel">Aquí las fuentes del indicador, el formato no ha sido definido.</div>
+                        <div class="tab-pane" id="comentariosGobernanza1" role="tabpanel">Aquí los comentarios, cuyo formato tampoco ha sido definido</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" role="tab" id="headingGobernanza2">
+                    <h5 class="mb-0">
+                                        <a data-toggle="collapse" data-parent="#accordion3" href="#collapseGobernanza2" aria-expanded="false" aria-controls="collapseGobernanza2">
+                                        Participación ciudadana: % Solicitudes transparencia respondida
+                                        </a>
+                                    </h5>
+                  </div>
+                  <div id="collapseGobernanza2" class="collapse" role="tabpanel" aria-labelledby="headingGobernanza2">
+                    <div class="card-block">
+                      <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" data-toggle="tab" href="#descpGobernanza2" role="tab">Descripción</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#fuentesGobernanza2" role="tab">Fuente</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#comentariosGobernanza2" role="tab">Comentarios</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="descpGobernanza2" role="tabpanel">Aquí lo referente a la descripción del indicador.</div>
+                        <div class="tab-pane" id="fuentesGobernanza2" role="tabpanel">Aquí las fuentes del indicador, el formato no ha sido definido.</div>
+                        <div class="tab-pane" id="comentariosGobernanza2" role="tabpanel">Aquí los comentarios, cuyo formato tampoco ha sido definido</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" role="tab" id="headingGobernanza3">
+                    <h5 class="mb-0">
+                                        <a data-toggle="collapse" data-parent="#accordion3" href="#collapseGobernanza3" aria-expanded="false" aria-controls="collapseGobernanza3">
+                                        Dependencia del fondo común municipal
+                                        </a>
+                                    </h5>
+                  </div>
+                  <div id="collapseGobernanza3" class="collapse" role="tabpanel" aria-labelledby="headingGobernanza3">
+                    <div class="card-block">
+                      <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" data-toggle="tab" href="#descpGobernanza3" role="tab">Descripción</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#fuentesGobernanza3" role="tab">Fuente</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#comentariosGobernanza3" role="tab">Comentarios</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="descpGobernanza3" role="tabpanel">Aquí lo referente a la descripción del indicador.</div>
+                        <div class="tab-pane" id="fuentesGobernanza3" role="tabpanel">Aquí las fuentes del indicador, el formato no ha sido definido.</div>
+                        <div class="tab-pane" id="comentariosGobernanza3" role="tabpanel">Aquí los comentarios, cuyo formato tampoco ha sido definido</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" role="tab" id="headingGobernanza4">
+                    <h5 class="mb-0">
+                                        <a data-toggle="collapse" data-parent="#accordion3" href="#collapseGobernanza4" aria-expanded="false" aria-controls="collapseGobernanza4">
+                                        Capacidad de respuesta organismos de seguridad - Carabineros
+                                        </a>
+                                    </h5>
+                  </div>
+                  <div id="collapseGobernanza4" class="collapse" role="tabpanel" aria-labelledby="headingGobernanza4">
+                    <div class="card-block">
+                      <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" data-toggle="tab" href="#descpGobernanza4" role="tab">Descripción</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#fuentesGobernanza4" role="tab">Fuente</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#comentariosGobernanza4" role="tab">Comentarios</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="descpGobernanza4" role="tabpanel">Aquí lo referente a la descripción del indicador.</div>
+                        <div class="tab-pane" id="fuentesGobernanza4" role="tabpanel">Aquí las fuentes del indicador, el formato no ha sido definido.</div>
+                        <div class="tab-pane" id="comentariosGobernanza4" role="tabpanel">Aquí los comentarios, cuyo formato tampoco ha sido definido</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="equidad" role="tabpanel">
+              <div id="accordion4" role="tablist" aria-multiselectable="true">
+                <div class="card">
+                  <div class="card-header" role="tab" id="headingEquidad1">
+                    <h5 class="mb-0">
+                                        <a data-toggle="collapse" data-parent="#accordion4" href="#collapseEquidad1" aria-expanded="true" aria-controls="collapseEquidad1">
+                                        Pobreza infantil
+                                        </a>
+                                    </h5>
+                  </div>
+                  <div id="collapseEquidad1" class="collapse show" role="tabpanel" aria-labelledby="headingEquidad1">
+                    <div class="card-block">
+                      <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" data-toggle="tab" href="#descpEquidad1" role="tab">Descripción</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#fuentesEquidad1" role="tab">Fuente</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#comentariosEquidad1" role="tab">Comentarios</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="descpEquidad1" role="tabpanel">Aquí lo referente a la descripción del indicador.</div>
+                        <div class="tab-pane" id="fuentesEquidad1" role="tabpanel">Aquí las fuentes del indicador, el formato no ha sido definido.</div>
+                        <div class="tab-pane" id="comentariosEquidad1" role="tabpanel">Aquí los comentarios, cuyo formato tampoco ha sido definido</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" role="tab" id="headingEquidad2">
+                    <h5 class="mb-0">
+                                        <a data-toggle="collapse" data-parent="#accordion4" href="#collapseEquidad2" aria-expanded="false" aria-controls="collapseEquidad2">
+                                        Acceso a tecnologías de la información
+                                        </a>
+                                    </h5>
+                  </div>
+                  <div id="collapseEquidad2" class="collapse" role="tabpanel" aria-labelledby="headingEquidad2">
+                    <div class="card-block">
+                      <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" data-toggle="tab" href="#descpEquidad2" role="tab">Descripción</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#fuentesEquidad2" role="tab">Fuente</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#comentariosEquidad2" role="tab">Comentarios</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="descpEquidad2" role="tabpanel">Aquí lo referente a la descripción del indicador.</div>
+                        <div class="tab-pane" id="fuentesEquidad2" role="tabpanel">Aquí las fuentes del indicador, el formato no ha sido definido.</div>
+                        <div class="tab-pane" id="comentariosEquidad2" role="tabpanel">Aquí los comentarios, cuyo formato tampoco ha sido definido</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" role="tab" id="headingEquidad3">
+                    <h5 class="mb-0">
+                                        <a data-toggle="collapse" data-parent="#accordion4" href="#collapseEquidad3" aria-expanded="false" aria-controls="collapseEquidad3">
+                                        Vivienda - Hogares en campamentos
+                                        </a>
+                                    </h5>
+                  </div>
+                  <div id="collapseEquidad3" class="collapse" role="tabpanel" aria-labelledby="headingEquidad3">
+                    <div class="card-block">
+                      <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" data-toggle="tab" href="#descpEquidad3" role="tab">Descripción</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#fuentesEquidad3" role="tab">Fuente</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#comentariosEquidad3" role="tab">Comentarios</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="descpEquidad3" role="tabpanel">Aquí lo referente a la descripción del indicador.</div>
+                        <div class="tab-pane" id="fuentesEquidad3" role="tabpanel">Aquí las fuentes del indicador, el formato no ha sido definido.</div>
+                        <div class="tab-pane" id="comentariosEquidad3" role="tabpanel">Aquí los comentarios, cuyo formato tampoco ha sido definido</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" role="tab" id="headingEquidad4">
+                    <h5 class="mb-0">
+                                        <a data-toggle="collapse" data-parent="#accordion4" href="#collapseEquidad4" aria-expanded="false" aria-controls="collapseEquidad4">
+                                        Vivienda - Hacinamiento
+                                        </a>
+                                    </h5>
+                  </div>
+                  <div id="collapseEquidad4" class="collapse" role="tabpanel" aria-labelledby="headingEquidad4">
+                    <div class="card-block">
+                      <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" data-toggle="tab" href="#descpEquidad4" role="tab">Descripción</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#fuentesEquidad4" role="tab">Fuente</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#comentariosEquidad4" role="tab">Comentarios</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="descpEquidad4" role="tabpanel">Aquí lo referente a la descripción del indicador.</div>
+                        <div class="tab-pane" id="fuentesEquidad4" role="tabpanel">Aquí las fuentes del indicador, el formato no ha sido definido.</div>
+                        <div class="tab-pane" id="comentariosEquidad4" role="tabpanel">Aquí los comentarios, cuyo formato tampoco ha sido definido</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" role="tab" id="headingEquidad5">
+                    <h5 class="mb-0">
+                                        <a data-toggle="collapse" data-parent="#accordion4" href="#collapseEquidad5" aria-expanded="false" aria-controls="collapseEquidad5">
+                                        Acceso y calidad de educación
+                                        </a>
+                                    </h5>
+                  </div>
+                  <div id="collapseEquidad5" class="collapse" role="tabpanel" aria-labelledby="headingEquidad5">
+                    <div class="card-block">
+                      <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" data-toggle="tab" href="#descpEquidad5" role="tab">Descripción</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#fuentesEquidad5" role="tab">Fuente</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#comentariosEquidad5" role="tab">Comentarios</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="descpEquidad5" role="tabpanel">Aquí lo referente a la descripción del indicador.</div>
+                        <div class="tab-pane" id="fuentesEquidad5" role="tabpanel">Aquí las fuentes del indicador, el formato no ha sido definido.</div>
+                        <div class="tab-pane" id="comentariosEquidad5" role="tabpanel">Aquí los comentarios, cuyo formato tampoco ha sido definido</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" role="tab" id="headingEquidad6">
+                    <h5 class="mb-0">
+                                        <a data-toggle="collapse" data-parent="#accordion4" href="#collapseEquidad6" aria-expanded="false" aria-controls="collapseEquidad6">
+                                        Ocupación femenina: Mujeres trabajando/Mujeres en edad de trabajar
+                                        </a>
+                                    </h5>
+                  </div>
+                  <div id="collapseEquidad6" class="collapse" role="tabpanel" aria-labelledby="headingEquidad6">
+                    <div class="card-block">
+                      <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" data-toggle="tab" href="#descpEquidad6" role="tab">Descripción</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#fuentesEquidad6" role="tab">Fuente</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#comentariosEquidad6" role="tab">Comentarios</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="descpEquidad6" role="tabpanel">Aquí lo referente a la descripción del indicador.</div>
+                        <div class="tab-pane" id="fuentesEquidad6" role="tabpanel">Aquí las fuentes del indicador, el formato no ha sido definido.</div>
+                        <div class="tab-pane" id="comentariosEquidad6" role="tabpanel">Aquí los comentarios, cuyo formato tampoco ha sido definido</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" role="tab" id="headingEquidad7">
+                    <h5 class="mb-0">
+                                        <a data-toggle="collapse" data-parent="#accordion4" href="#collapseEquidad7" aria-expanded="false" aria-controls="collapseEquidad7">
+                                        Ocupación femenina: Mujeres trabajando/Hombres trabajando
+                                        </a>
+                                    </h5>
+                  </div>
+                  <div id="collapseEquidad7" class="collapse" role="tabpanel" aria-labelledby="headingEquidad7">
+                    <div class="card-block">
+                      <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" data-toggle="tab" href="#descpEquidad7" role="tab">Descripción</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#fuentesEquidad7" role="tab">Fuente</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#comentariosEquidad7" role="tab">Comentarios</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="descpEquidad7" role="tabpanel">Aquí lo referente a la descripción del indicador.</div>
+                        <div class="tab-pane" id="fuentesEquidad7" role="tabpanel">Aquí las fuentes del indicador, el formato no ha sido definido.</div>
+                        <div class="tab-pane" id="comentariosEquidad7" role="tabpanel">Aquí los comentarios, cuyo formato tampoco ha sido definido</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="accesibilidad" role="tabpanel">
+              <div id="accordion5" role="tablist" aria-multiselectable="true">
+                <div class="card">
+                  <div class="card-header" role="tab" id="headingAccesibilidad1">
+                    <h5 class="mb-0">
+                                        <a data-toggle="collapse" data-parent="#accordion5" href="#collapseAccesibilidad1" aria-expanded="true" aria-controls="collapseAccesibilidad1">
+                                        Acceso a equipamiento deportivo
+                                        </a>
+                                    </h5>
+                  </div>
+                  <div id="collapseAccesibilidad1" class="collapse show" role="tabpanel" aria-labelledby="headingAccesibilidad1">
+                    <div class="card-block">
+                      <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" data-toggle="tab" href="#descpAccesibilidad1" role="tab">Descripción</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#fuentesAccesibilidad1" role="tab">Fuente</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#comentariosAccesibilidad1" role="tab">Comentarios</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="descpAccesibilidad1" role="tabpanel">Aquí lo referente a la descripción del indicador.</div>
+                        <div class="tab-pane" id="fuentesAccesibilidad1" role="tabpanel">Aquí las fuentes del indicador, el formato no ha sido definido.</div>
+                        <div class="tab-pane" id="comentariosAccesibilidad1" role="tabpanel">Aquí los comentarios, cuyo formato tampoco ha sido definido</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" role="tab" id="headingAccesibilidad2">
+                    <h5 class="mb-0">
+                                        <a data-toggle="collapse" data-parent="#accordion5" href="#collapseAccesibilidad2" aria-expanded="false" aria-controls="collapseAccesibilidad2">
+                                        Tiempos de viaje
+                                        </a>
+                                    </h5>
+                  </div>
+                  <div id="collapseAccesibilidad2" class="collapse" role="tabpanel" aria-labelledby="headingAccesibilidad2">
+                    <div class="card-block">
+                      <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" data-toggle="tab" href="#descpAccesibilidad2" role="tab">Descripción</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#fuentesAccesibilidad2" role="tab">Fuente</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#comentariosAccesibilidad2" role="tab">Comentarios</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="descpAccesibilidad2" role="tabpanel">Aquí lo referente a la descripción del indicador.</div>
+                        <div class="tab-pane" id="fuentesAccesibilidad2" role="tabpanel">Aquí las fuentes del indicador, el formato no ha sido definido.</div>
+                        <div class="tab-pane" id="comentariosAccesibilidad2" role="tabpanel">Aquí los comentarios, cuyo formato tampoco ha sido definido</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" role="tab" id="headingAccesibilidad3">
+                    <h5 class="mb-0">
+                                        <a data-toggle="collapse" data-parent="#accordion5" href="#collapseAccesibilidad3" aria-expanded="false" aria-controls="collapseAccesibilidad3">
+                                        Accesibilidad áreas verdes
+                                        </a>
+                                    </h5>
+                  </div>
+                  <div id="collapseAccesibilidad3" class="collapse" role="tabpanel" aria-labelledby="headingAccesibilidad3">
+                    <div class="card-block">
+                      <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" data-toggle="tab" href="#descpAccesibilidad3" role="tab">Descripción</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#fuentesAccesibilidad3" role="tab">Fuente</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#comentariosAccesibilidad3" role="tab">Comentarios</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="descpAccesibilidad3" role="tabpanel">Aquí lo referente a la descripción del indicador.</div>
+                        <div class="tab-pane" id="fuentesAccesibilidad3" role="tabpanel">Aquí las fuentes del indicador, el formato no ha sido definido.</div>
+                        <div class="tab-pane" id="comentariosAccesibilidad3" role="tabpanel">Aquí los comentarios, cuyo formato tampoco ha sido definido</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FIN CONTENIDO CATEGORÍAS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- INICIO FOOTER -->
+    <footer>
+      <p><a href="http://www.cedeus.cl" target="_blank">Cedeus</a> <span id="anio"></span></p>
+    </footer>
+    <!-- FIN FOOTER -->
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+
+</html>

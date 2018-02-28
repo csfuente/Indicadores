@@ -1,0 +1,19 @@
+"city","year","avg_over_100","max_over_100","median_over_100"
+"Concepción","2013",0.25,1,0
+"Concepción","2014",0.75,2,0.5
+"Concepción","2015",0.5,2,0
+"Copiapo","2013",0,0,0
+"Copiapo","2014",0,0,0
+"Copiapo","2015",0,0,0
+"Gran Coquimbo","2013",0,0,0
+"Gran Coquimbo","2014",0,0,0
+"Gran Coquimbo","2015",0,0,0
+"Gran Santiago","2013",0,0,0
+"Gran Santiago","2014",3.3,15,1
+"Gran Santiago","2015",3.2,13,0.5
+"Temuco","2013",36.333,39,36
+"Temuco","2014",23,26,22
+"Temuco","2015",24.667,37,19
+"Valdivia","2013",18,18,18
+"Valdivia","2014",8,8,8
+"Valdivia","2015",21,21,21

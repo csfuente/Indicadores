@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- inicio favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'manifest.json' %}">
+    <link rel="mask-icon" href="{% static 'safari-pinned-tab.svg' %}" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+    <!-- fin favicon -->
+    <title>Ciudades</title>
+    <link rel="stylesheet" href="{% static 'css/ol.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.min.css' %}">
+  </head>
+
+  <body>
+    <!-- INICIO HEADER -->
+    <nav class="navbar navbar-expand-xl header navbar-light">
+      <!-- inicio logo -->
+      <a class="navbar-brand" href="/">
+        <img src="{% static 'img/logo.svg' %}" alt="logo indicadores" />
+      </a>
+      <!-- fin logo -->
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#contenidoNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="contenidoNavbar">
+        <!-- inicio menú -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/ciudades">
+              <img src="{% static 'img/ciudades_icono.svg' %}" /> Ciudades
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/indicadores">
+              <img src="{% static 'img/indicadores_icono.svg' %}" /> Indicadores
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/comparar_ciudades">
+              <img src="{% static 'img/compararindicadores_icono.svg' %}" /> Comparar Ciudades
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/nosotros">
+              <img src="{% static 'img/nosotros_icono.svg' %}" /> Nosotros
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#myModal" data-toggle="modal" data-target="#myModal">
+              <img src="{% static 'img/contacto_icono.svg' %}" /> Contacto
+            </a>
+          </li>
+        </ul>
+        <div class="separador-nav">
+        </div>
+        <ul class="navbar-nav">
+          <li class="nav-item buscador">
+            <a class="nav-link" href="#">
+              <img src="{% static 'img/busqueda_icono.svg' %}" />
+            </a>
+          </li>
+        </ul>
+        <!-- fin menú -->
+      </div>
+    </nav>
+    <!-- FIN HEADER -->
+
+    <!-- INICIO MODAL CONTACTO -->
+    <div class="modal fade" id="myModal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Contacto</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form>
+            <div class="modal-body">
+              <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" class="form-control" placeholder="Alexis Sánchez">
+              </div>
+              <div class="form-group">
+                <label>Telefono</label>
+                <input type="tel" class="form-control" placeholder="9 1234 5678">
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" placeholder="mi@email.cl">
+              </div>
+              <div class="form-group">
+                <label>Mensaje</label>
+                <textarea class="form-control" rows="3" placeholder="Hola..."></textarea>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- FIN MODAL CONTACTO -->
+
+    <div class="container listado-ciudades">
+      <div class="row">
+        <div class="col-xl-4 col-lg-6 col-md-6 col-xs-12">
+          <div class="ciudad-imagen">
+            <a href="/ciudad">
+              <img class="img-fluid" src="{% static 'img/santiago.jpg' %}" alt="imagen ciudad" />
+              <span>
+              <h4>GRAN SANTIAGO</h4>
+            </span>
+            </a>
+          </div>
+          <div class="ciudad-info">
+            <p><span>Población:</span> 616.080</p>
+            <p><span>Clima:</span> Mediterráneo contin.</p>
+            <p><span>Altura:</span> </p>
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-6 col-md-6 col-xs-12">
+          <div class="ciudad-imagen">
+            <a href="#">
+              <img class="img-fluid" src="{% static 'img/concepcion.jpg' %}" alt="imagen ciudad" />
+              <span>
+              <h4>GRAN CONCEPCIÓN</h4>
+            </span>
+            </a>
+          </div>
+          <div class="ciudad-info">
+            <p><span>Población:</span> 1.080.000</p>
+            <p><span>Clima:</span> Templado marítimo</p>
+            <p><span>Altura:</span> </p>
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-6 col-md-6 col-xs-12">
+          <div class="ciudad-imagen">
+            <a href="#">
+              <img class="img-fluid" src="{% static 'img/copiapo.jpg' %}" alt="imagen ciudad" />
+              <span>
+              <h4>COPIAPÓ</h4>
+            </span>
+            </a>
+          </div>
+          <div class="ciudad-info">
+            <p><span>Población:</span> 160.000</p>
+            <p><span>Clima:</span> Árido</p>
+            <p><span>Altura:</span> </p>
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-6 col-md-6 col-xs-12">
+          <div class="ciudad-imagen">
+            <a href="#">
+              <img class="img-fluid" src="{% static 'img/laserena.jpg' %}" alt="imagen ciudad" />
+              <span>
+              <h4>LA SERENA</h4>
+            </span>
+            </a>
+          </div>
+          <div class="ciudad-info">
+            <p><span>Población:</span> 211.080</p>
+            <p><span>Clima:</span> Semiárido</p>
+            <p><span>Altura:</span> </p>
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-6 col-md-6 col-xs-12">
+          <div class="ciudad-imagen">
+            <a href="#">
+              <img class="img-fluid" src="{% static 'img/temuco.jpg' %}" alt="imagen ciudad" />
+              <span>
+              <h4>TEMUCO</h4>
+            </span>
+            </a>
+          </div>
+          <div class="ciudad-info">
+            <p><span>Población:</span> 280.000</p>
+            <p><span>Clima:</span> Oceánico</p>
+            <p><span>Altura:</span> </p>
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-6 col-md-6 col-xs-12">
+          <div class="ciudad-imagen">
+            <a href="#">
+              <img class="img-fluid" src="{% static 'img/valdivia.jpg' %}" alt="imagen ciudad" />
+              <span>
+              <h4>VALDIVIA</h4>
+            </span>
+            </a>
+          </div>
+          <div class="ciudad-info">
+            <p><span>Población:</span> 155.000</p>
+            <p><span>Clima:</span> Oceánico</p>
+            <p><span>Altura:</span> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INICIO FOOTER -->
+    <footer>
+      <p><a href="http://www.cedeus.cl" target="_blank">Cedeus</a> <span id="anio"></span></p>
+    </footer>
+    <!-- FIN FOOTER -->
+
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+
+</html>

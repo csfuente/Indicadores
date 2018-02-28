@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- inicio favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+    <!-- fin favicon -->
+    <title>Ciudad</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.min.css">
+  </head>
+
+  <body>
+    <!-- INICIO HEADER -->
+    <nav class="navbar navbar-expand-xl header navbar-light">
+      <!-- inicio logo -->
+      <a class="navbar-brand" href="index.html">
+        <img src="img/logo.svg" alt="logo indicadores" />
+      </a>
+      <!-- fin logo -->
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#contenidoNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="contenidoNavbar">
+        <!-- inicio menú -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="ciudades.html">
+              <img src="img/ciudades_icono.svg" /> Ciudades
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="indicadores.html">
+              <img src="img/indicadores_icono.svg" /> Indicadores
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="comparador.html">
+              <img src="img/compararindicadores_icono.svg" /> Comparar Ciudades
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="nosotros.html">
+              <img src="img/nosotros_icono.svg" /> Nosotros
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#myModal" data-toggle="modal" data-target="#myModal">
+              <img src="img/contacto_icono.svg" /> Contacto
+            </a>
+          </li>
+        </ul>
+        <div class="separador-nav">
+        </div>
+        <ul class="navbar-nav">
+          <li class="nav-item buscador">
+            <a class="nav-link" href="#">
+              <img src="img/busqueda_icono.svg" />
+            </a>
+          </li>
+        </ul>
+        <!-- fin menú -->
+      </div>
+    </nav>
+    <!-- FIN HEADER -->
+
+    <!-- INICIO MODAL CONTACTO -->
+    <div class="modal fade" id="myModal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Contacto</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form>
+            <div class="modal-body">
+              <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" class="form-control" placeholder="Alexis Sánchez">
+              </div>
+              <div class="form-group">
+                <label>Telefono</label>
+                <input type="tel" class="form-control" placeholder="9 1234 5678">
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" placeholder="mi@email.cl">
+              </div>
+              <div class="form-group">
+                <label>Mensaje</label>
+                <textarea class="form-control" rows="3" placeholder="Hola..."></textarea>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- FIN MODAL CONTACTO -->
+
+    <!-- INICIO BANNER -->
+    <div class="banner-ciudad">
+      <img class="img-fluid" src="img/santiago-banner.jpg" alt="imagen ciudad" />
+      <span>
+              <h2>GRAN SANTIAGO</h2>
+        </span>
+    </div>
+    <!-- FIN BANNER -->
+
+    <div class="container indicadores-ciudad">
+      <div class="row">
+        <div class="col-xl-3 col-lg-12">
+          <!-- INICIO MENÚ CATEGORÍAS -->
+          <ul class="nav flex-column nav-tabs" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active cat-prin" data-toggle="tab" href="#ambiente" role="tab">
+                <img src="img/medioambiente_icon.svg" />
+                <div class="titulo-cat">MEDIO AMBIENTE</div>
+                <span class="titulo-catb">MEDIO AMBIENTE</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link cat-prin" data-toggle="tab" href="#salud" role="tab">
+                <img src="img/salud_icon.svg" />
+                <div class="titulo-cat">SALUD</div>
+                <span class="titulo-catb">SALUD</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link cat-prin" data-toggle="tab" href="#gobernancia" role="tab">
+                <img src="img/gobernancia_icon.svg" />
+                <div class="titulo-cat">GOBERNANCIA</div>
+                <span class="titulo-catb">GOBERNANCIA</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link cat-prin" data-toggle="tab" href="#equidad" role="tab">
+                <img src="img/equidad_icon.svg" />
+                <div class="titulo-cat">EQUIDAD</div>
+                <span class="titulo-catb">EQUIDAD</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link cat-prin" data-toggle="tab" href="#accesibilidad" role="tab">
+                <img src="img/accesibilidad_icon.svg" />
+                <div class="titulo-cat">ACCESIBILIDAD</div>
+                <span class="titulo-catb">ACCESIBILIDAD</span>
+              </a>
+            </li>
+          </ul>
+          <!-- FIN MENÚ CATEGORÍAS -->
+        </div>
+        <div class="col-xl-9 col-lg-12 contenedor-tabla">
+          <!-- INICIO CONTENIDO CATEGORÍAS -->
+          <div class="tab-content contenedor-tab">
+            <div class="tab-pane active table-responsive" id="ambiente" role="tabpanel">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Nombre</th>
+                    <th>Valor</th>
+                    <th>Información</th>
+                    <th>Estado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Calidad de agua</td>
+                    <td>0.97 [unidad medida]</td>
+                    <td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
+                    <td>
+                      <img src="img/sustentablex.svg" alt="grado de sustentabilidad" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Calidad de aguas servidas tratadas</td>
+                    <td>0.97 [unidad medida]</td>
+                    <td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
+                    <td>
+                      <img src="img/caminoasersustentable_icono.svg" alt="grado de sustentabilidad" " />
+									</td>									
+								</tr>
+								<tr>
+									<td>Consumo de gua</td>
+									<td>0.97 [unidad medida]</td>
+									<td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
+									<td>
+										<img src="img/sustentable_icono.svg " alt="grado de sustentabilidad "" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Calidad de aire</td>
+                    <td>0.97 [unidad medida]</td>
+                    <td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
+                    <td>
+                      <img src="img/sustentable_icono.svg" alt="grado de sustentabilidad" " />
+									</td>									
+								</tr>
+								<tr>
+									<td>Generación de residuos sólidos</td>
+									<td>0.97 [unidad medida]</td>
+									<td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
+									<td>
+										<img src="img/nosustentable_icono.svg " alt="grado de sustentabilidad "" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Superficie de áreas verdes per cápita</td>
+                    <td>0.97 [unidad medida]</td>
+                    <td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
+                    <td>
+                      <img src="img/nosustentable_icono.svg" alt="grado de sustentabilidad" " />
+									</td>	
+								</tr>
+							</tbody>
+						</table>
+				    </div>
+				    <div class="tab-pane " id="salud " role="tabpanel ">
+						<table class="table ">
+							<thead>
+								<tr>
+									<th>Nombre</th>
+									<th>Valor</th>
+									<th>Información</th>
+									<th>Estado</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Calidad de salud</td>
+									<td>0.97 [unidad medida]</td>
+									<td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
+									<td>
+										<img src="img/caminoasersustentable_icono.svg " alt="grado de sustentabilidad " />
+									</td>
+								</tr>
+								<tr>
+									<td>Estado de salud del adulto</td>
+									<td>0.97 [unidad medida]</td>
+									<td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
+									<td>
+										<img src="img/caminoasersustentable_icono.svg " alt="grado de sustentabilidad "" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Estado de salud del infante</td>
+                    <td>0.97 [unidad medida]</td>
+                    <td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
+                    <td>
+                      <img src="img/sustentable_icono.svg" alt="grado de sustentabilidad" " />
+									</td>								
+								</tr>
+							</tbody>
+						</table>
+				    </div>
+				  	<div class="tab-pane " id="gobernancia " role="tabpanel ">
+						<table class="table ">
+							<thead>
+								<tr>
+									<th>Nombre</th>
+									<th>Valor</th>
+									<th>Información</th>
+									<th>Estado</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Participación ciudadana: % participación electoral</td>
+									<td>0.97 [unidad medida]</td>
+									<td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
+									<td>
+										<img src="img/caminoasersustentable_icono.svg " alt="grado de sustentabilidad " />
+									</td>
+								</tr>
+								<tr>
+									<td>Participación ciudadana: % Solicitudes transparencia respondida</td>
+									<td>0.97 [unidad medida]</td>
+									<td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
+									<td>
+										<img src="img/caminoasersustentable_icono.svg " alt="grado de sustentabilidad "" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Dependencia del fondo común municipal</td>
+                    <td>0.97 [unidad medida]</td>
+                    <td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
+                    <td>
+                      <img src="img/sustentable_icono.svg" alt="grado de sustentabilidad" " />
+									</td>								
+								</tr>
+								<tr>
+									<td>Capacidad de respuesta organismos de seguridad - Carabineros</td>
+									<td>0.97 [unidad medida]</td>
+									<td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
+									<td>
+										<img src="img/sustentable_icono.svg " alt="grado de sustentabilidad "" />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="tab-pane" id="equidad" role="tabpanel">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Nombre</th>
+                    <th>Valor</th>
+                    <th>Información</th>
+                    <th>Estado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Pobreza infantil</td>
+                    <td>0.97 [unidad medida]</td>
+                    <td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
+                    <td>
+                      <img src="img/caminoasersustentable_icono.svg" alt="grado de sustentabilidad" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Acceso a tecnologías de la información</td>
+                    <td>0.97 [unidad medida]</td>
+                    <td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
+                    <td>
+                      <img src="img/caminoasersustentable_icono.svg" alt="grado de sustentabilidad" " />
+									</td>									
+								</tr>
+								<tr>
+									<td>Vivienda - Hogares en campamentos</td>
+									<td>0.97 [unidad medida]</td>
+									<td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
+									<td>
+										<img src="img/sustentable_icono.svg " alt="grado de sustentabilidad "" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Vivienda - Hacinamiento</td>
+                    <td>0.97 [unidad medida]</td>
+                    <td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
+                    <td>
+                      <img src="img/sustentable_icono.svg" alt="grado de sustentabilidad" " />
+									</td>									
+								</tr>
+								<tr>
+									<td>Acceso y calidad de educación</td>
+									<td>0.97 [unidad medida]</td>
+									<td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
+									<td>
+										<img src="img/nosustentable_icono.svg " alt="grado de sustentabilidad "" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Ocupación femenina: Mujeres trabajando/Mujeres en edad de trabajar</td>
+                    <td>0.97 [unidad medida]</td>
+                    <td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
+                    <td>
+                      <img src="img/nosustentable_icono.svg" alt="grado de sustentabilidad" " />
+									</td>	
+								</tr>
+								<tr>
+									<td>Ocupación femenina: Mujeres trabajando/Hombres trabajando</td>
+									<td>0.97 [unidad medida]</td>
+									<td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
+									<td>
+										<img src="img/nosustentable_icono.svg " alt="grado de sustentabilidad "" />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="tab-pane" id="accesibilidad" role="tabpanel">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Nombre</th>
+                    <th>Valor</th>
+                    <th>Información</th>
+                    <th>Estado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Acceso a equipamiento deportivo</td>
+                    <td>0.97 [unidad medida]</td>
+                    <td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
+                    <td>
+                      <img src="img/caminoasersustentable_icono.svg" alt="grado de sustentabilidad" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Tiempos de viaje</td>
+                    <td>0.97 [unidad medida]</td>
+                    <td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
+                    <td>
+                      <img src="img/caminoasersustentable_icono.svg" alt="grado de sustentabilidad" " />
+									</td>									
+								</tr>
+								<tr>
+									<td>Accesibilidad áreas verdes</td>
+									<td>0.97 [unidad medida]</td>
+									<td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
+									<td>
+										<img src="img/sustentable_icono.svg " alt="grado de sustentabilidad "" />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- FIN CONTENIDO CATEGORÍAS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- INICIO FOOTER -->
+    <footer>
+      <p><a href="http://www.cedeus.cl" target="_blank">Cedeus</a> <span id="anio"></span></p>
+    </footer>
+    <!-- FIN FOOTER -->
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+
+</html>
