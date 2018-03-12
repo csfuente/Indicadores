@@ -122,24 +122,18 @@
             <label class="titulo-form">Ciudad 1</label>
             <select class="combobox input-large form-control" name="ciudad1">
               <option value="" selected="selected">Selecciona una ciudad</option>
-              <option>Gran Santiago</option>
-              <option>Temuco</option>
-              <option>Copiapó</option>
-              <option>La Serena</option>
-              <option>Gran Concepción</option>
-              <option>Valdivia</option>
+              {% for ciudad in ciudades %}
+              <option>{{ ciudad.nombre }}</option>
+              {% endfor %}
             </select>
           </div>
           <div class="col-sm-12 col-md-6">
             <label class="titulo-form">Ciudad 2</label>
             <select class="combobox input-large form-control" name="ciudad2">
               <option value="" selected="selected">Selecciona una ciudad</option>
-              <option>Gran Santiago</option>
-              <option>Temuco</option>
-              <option>Copiapó</option>
-              <option>La Serena</option>
-              <option>Gran Concepción</option>
-              <option>Valdivia</option>
+              {% for ciudad in ciudades %}
+              <option>{{ ciudad.nombre }}</option>
+              {% endfor %}
             </select>
           </div>
         </div>
@@ -147,37 +141,15 @@
           <div class="col-md-12 col-lg-11">
             <label class="titulo-form">Indicadores</label>
             <select id="indicadores-multiples" class="input-large form-control" multiple="multiple" name="indicadores">
-              <optgroup label="Medio Ambiente">
-                <option>Calidad de agua</option>
-                <option>Calidad de aguas servidas tratadas</option>
-                <option>Consumo de agua</option>
-                <option>Calidad de aire</option>
-                <option>Generación de residuos sólidos</option>
-                <option>Superficie de áreas verdes per cápita</option>
+{% for categoria in categorias %}
+              <optgroup label="{{categoria.nombre}}">
+{% for indicador in indicadores %}
+{% if indicador.categoria == categoria %}
+                <option>{{ indicador.variable }}</option>
+{% endif %}
+{% endfor %}
               </optgroup>
-              <optgroup label="Salud">
-                <option>Calidad de salud</option>
-                <option>Estado de salud del adulto</option>
-                <option>Estado de salud del infante</option>
-              </optgroup>
-              <optgroup label="Gobernancia">
-                <option>Participación ciudadana: % participación electoral</option>
-                <option>Participación ciudadana: % Solicitudes transparencia respondida</option>
-                <option>Dependencia del fondo común municipal</option>
-                <option>Capacidad de respuesta organismos de seguridad - Carabineros</option>
-              </optgroup>
-              <optgroup label="Equidad">
-                <option>Pobreza infantil</option>
-                <option>Acceso a tecnologías de la información</option>
-                <option>Vivienda - Hogares en campamentos</option>
-                <option>Vivienda - Hacinamiento</option>
-                <option>Acceso y calidad de educación</option>
-              </optgroup>
-              <optgroup label="Accesibilidad">
-                <option>Acceso a equipamiento deportivo</option>
-                <option>Tiempos de viaje</option>
-                <option>Accesibilidad áreas verdes</option>
-              </optgroup>
+{% endfor %}
             </select>
           </div>
           <div class="col-md-12 col-lg-1 boton-sbt">

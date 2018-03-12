@@ -28,6 +28,7 @@ class Ciudad(models.Model):
 	url = models.CharField(max_length=100,default="")
 	imagen = models.ImageField(null=True,blank=True)
 	descripcion = models.CharField(max_length=600,default="")
+	static_img = models.CharField(max_length=30,default="")
 	def __unicode__(self):
 		return self.nombre
 
@@ -35,6 +36,7 @@ class Categoria(models.Model):
         nombre = models.CharField(max_length=100)
         icono = models.ImageField(null=True,blank=True)
         background = models.ImageField(null=True,blank=True)
+	href = models.CharField(max_length=40, default="")
 	def __unicode__(self):
 		return self.nombre
 

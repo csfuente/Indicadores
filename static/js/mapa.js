@@ -30,37 +30,37 @@ var ciudades_valdivia=[];
 var santiago = new ol.Feature({
         geometry: new ol.geom.Point(ol.proj.fromLonLat([-70.654, -33.444])),
         //url:'/ciudad/?i=1',
-        url:'#',
+        url:'/ciudad',
         nombre:'Santiago'
       });
 var copiapo = new ol.Feature({
         geometry: new ol.geom.Point(ol.proj.fromLonLat([-70.3236, -27.3697])),
         //url:'/ciudad/?i=4',
-        url:'#',
+        url:'/ciudad',
         nombre:'Copiapo'
       });
 var serena = new ol.Feature({
         geometry: new ol.geom.Point(ol.proj.fromLonLat([-71.2449, -29.8995])),
         //url:'/ciudad/?i=5',
-        url:'#',
+        url:'/ciudad',
         nombre:'La Serena'
       });
 var temuco = new ol.Feature({
         geometry: new ol.geom.Point(ol.proj.fromLonLat([-72.5534, -38.7273])),
         //url:'/ciudad/?i=3',
-        url:'#',
+        url:'/ciudad',
         nombre:'Temuco'
       });
 var valdivia = new ol.Feature({
         geometry: new ol.geom.Point(ol.proj.fromLonLat([-73.2287, -39.8365])),
         //url:'/ciudad/?i=7',
-        url:'#',
+        url:'/ciudad',
         nombre:'Valdivia'
       });
 var concepcion = new ol.Feature({
         geometry: new ol.geom.Point(ol.proj.fromLonLat([-73.0340, -36.8159])),
         //url:'/ciudad/?i=7',
-        url:'#',
+        url:'/ciudad',
         nombre:'Concepcion'
       });
 
@@ -81,7 +81,7 @@ var iconStyle_santiago = new ol.style.Style({
     anchorXUnits: 'fraction',
     anchorYUnits: 'pixels',
     opacity: 0.75,
-    src: "img/icon_santiago.png"
+    src: "/static/img/icon_santiago.png"
   }))
 });
 
@@ -100,7 +100,7 @@ var iconStyle_concepcion = new ol.style.Style({
     anchorXUnits: 'fraction',
     anchorYUnits: 'pixels',
     opacity: 0.75,
-    src: "img/icon_concepcion.png"
+    src: "/static/img/icon_concepcion.png"
   }))
 });
 
@@ -119,7 +119,7 @@ var iconStyle_temuco = new ol.style.Style({
     anchorXUnits: 'fraction',
     anchorYUnits: 'pixels',
     opacity: 0.75,
-    src: "img/icon_temuco.png"
+    src: "/static/img/icon_temuco.png"
   }))
 });
 
@@ -138,7 +138,7 @@ var iconStyle_copiapo = new ol.style.Style({
     anchorXUnits: 'fraction',
     anchorYUnits: 'pixels',
     opacity: 0.75,
-    src: "img/icon_copiapo.png"
+    src: "/static/img/icon_copiapo.png"
   }))
 });
 
@@ -157,7 +157,7 @@ var iconStyle_serena = new ol.style.Style({
     anchorXUnits: 'fraction',
     anchorYUnits: 'pixels',
     opacity: 0.75,
-    src: "img/icon_serena.png"
+    src: "/static/img/icon_serena.png"
   }))
 });
 
@@ -176,7 +176,7 @@ var iconStyle_valdivia = new ol.style.Style({
     anchorXUnits: 'fraction',
     anchorYUnits: 'pixels',
     opacity: 0.75,
-    src: "img/icon_valdivia.png"
+    src: "/static/img/icon_valdivia.png"
   }))
 });
 
@@ -228,7 +228,7 @@ var map = new ol.Map({
 map.on("click", function(e) {
     map.forEachFeatureAtPixel(e.pixel, function (feature, layer) {
         var url= feature.getProperties('url');
-        window.location.href = "#";
+        window.location.href = "/ciudad";
         //window.location.href = ""+url.url;
     })
 });

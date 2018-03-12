@@ -118,24 +118,11 @@
       <div class="panel-mapa">
         <p>Bienvenido</p>
         <p>En esta plataforma encontrará indicadores de las siguientes ciudades</p>
-        <a href="#">
-          <button type="button" class="btn">Gran Santiago</button>
+        {% for ciudad in ciudades %}
+        <a href="/ciudad/{{ciudad.url}}">
+          <button type="button" class="btn">{{ciudad.nombre}}</button>
         </a>
-        <a href="#">
-          <button type="button" class="btn">La Serena</button>
-        </a>
-        <a href="#">
-          <button type="button" class="btn">Gran Concepción</button>
-        </a>
-        <a href="#">
-          <button type="button" class="btn">Temuco</button>
-        </a>
-        <a href="#">
-          <button type="button" class="btn">Copiapó</button>
-        </a>
-        <a href="#">
-          <button type="button" class="btn">Valdivia</button>
-        </a>
+        {% endfor %}
       </div>
     </div>
 

@@ -115,7 +115,7 @@
     <div class="banner-ciudad">
       <img class="img-fluid" src="{% static 'img/santiago-banner.jpg' %}" alt="imagen ciudad" />
       <span>
-              <h2>GRAN SANTIAGO</h2>
+              <h2>{{ciudad.nombre}}</h2>
         </span>
     </div>
     <!-- FIN BANNER -->
@@ -140,7 +140,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link cat-prin" data-toggle="tab" href="#gobernancia" role="tab">
+              <a class="nav-link cat-prin" data-toggle="tab" href="#gobernanza" role="tab">
                 <img src="{% static 'img/gobernancia_icon.svg' %}" />
                 <div class="titulo-cat">GOBERNANCIA</div>
                 <span class="titulo-catb">GOBERNANCIA</span>
@@ -166,7 +166,11 @@
         <div class="col-xl-9 col-lg-12 contenedor-tabla">
           <!-- INICIO CONTENIDO CATEGORÍAS -->
           <div class="tab-content contenedor-tab">
-            <div class="tab-pane active table-responsive" id="ambiente" role="tabpanel">
+            
+
+<!-- TRABAJAR EN BASE A ESTO ---!>
+            {% for categoria in categorias %}
+            <div class="tab-pane {% if forloop.counter == 1 %}active {% endif %}table-responsive" id="{{categoria.href}}" role="tabpanel">
               <table class="table">
                 <thead>
                   <tr>
@@ -177,249 +181,27 @@
                   </tr>
                 </thead>
                 <tbody>
+                  {% for indicador in indicadores %}
+                  {% if indicador.categoria == categoria %}
                   <tr>
-                    <td>Calidad de agua</td>
-                    <td>0.97 [unidad medida]</td>
-                    <td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
+                    <td>{{indicador.variable}}</td>
+                    <td>{% for dato in datos %}{%if dato.indicador == indicador %}{{dato.var_float}}{% endif %}{% endfor %}</td>
+                    <td>{{indicador.descripcion}}</td>
                     <td>
                       <img src="{% static 'img/sustentablex.svg' %}" alt="grado de sustentabilidad" />
+<!--                      <img src="{% static 'img/caminoasersustentable_icono.svg' %}" alt="grado de sustentabilidad" />
+                      <img src="{% static 'img/sustentable_icono.svg' %}" alt="grado de sustentabilidad" />
+                      <img src="{% static 'img/nosustentable_icono.svg' %}" alt="grado de sustentabilidad" /> -->
+
                     </td>
                   </tr>
-                  <tr>
-                    <td>Calidad de aguas servidas tratadas</td>
-                    <td>0.97 [unidad medida]</td>
-                    <td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
-                    <td>
-                      <img src="{% static 'img/caminoasersustentable_icono.svg' %}" alt="grado de sustentabilidad" " />
-									</td>									
-								</tr>
-								<tr>
-									<td>Consumo de gua</td>
-									<td>0.97 [unidad medida]</td>
-									<td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
-									<td>
-										<img src="{% static 'img/sustentable_icono.svg' %}" alt="grado de sustentabilidad "" />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Calidad de aire</td>
-                    <td>0.97 [unidad medida]</td>
-                    <td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
-                    <td>
-                      <img src="{% static 'img/sustentable_icono.svg' %}" alt="grado de sustentabilidad" " />
-									</td>									
-								</tr>
-								<tr>
-									<td>Generación de residuos sólidos</td>
-									<td>0.97 [unidad medida]</td>
-									<td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
-									<td>
-										<img src="{% static 'img/nosustentable_icono.svg' %}" alt="grado de sustentabilidad "" />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Superficie de áreas verdes per cápita</td>
-                    <td>0.97 [unidad medida]</td>
-                    <td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
-                    <td>
-                      <img src="{% static 'img/nosustentable_icono.svg' %}" alt="grado de sustentabilidad" " />
-									</td>	
-								</tr>
+                 {% endif %}
+                 {% endfor %}
 							</tbody>
 						</table>
 				    </div>
-				    <div class="tab-pane " id="salud " role="tabpanel ">
-						<table class="table ">
-							<thead>
-								<tr>
-									<th>Nombre</th>
-									<th>Valor</th>
-									<th>Información</th>
-									<th>Estado</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>Calidad de salud</td>
-									<td>0.97 [unidad medida]</td>
-									<td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
-									<td>
-										<img src="{% static 'img/caminoasersustentable_icono.svg' %}" alt="grado de sustentabilidad " />
-									</td>
-								</tr>
-								<tr>
-									<td>Estado de salud del adulto</td>
-									<td>0.97 [unidad medida]</td>
-									<td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
-									<td>
-										<img src="{% static 'img/caminoasersustentable_icono.svg' %}" alt="grado de sustentabilidad "" />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Estado de salud del infante</td>
-                    <td>0.97 [unidad medida]</td>
-                    <td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
-                    <td>
-                      <img src="{% static 'img/sustentable_icono.svg' %}" alt="grado de sustentabilidad" " />
-									</td>								
-								</tr>
-							</tbody>
-						</table>
-				    </div>
-				  	<div class="tab-pane " id="gobernancia " role="tabpanel ">
-						<table class="table ">
-							<thead>
-								<tr>
-									<th>Nombre</th>
-									<th>Valor</th>
-									<th>Información</th>
-									<th>Estado</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>Participación ciudadana: % participación electoral</td>
-									<td>0.97 [unidad medida]</td>
-									<td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
-									<td>
-										<img src="{% static 'img/caminoasersustentable_icono.svg' %}" alt="grado de sustentabilidad " />
-									</td>
-								</tr>
-								<tr>
-									<td>Participación ciudadana: % Solicitudes transparencia respondida</td>
-									<td>0.97 [unidad medida]</td>
-									<td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
-									<td>
-										<img src="{% static 'img/caminoasersustentable_icono.svg' %}" alt="grado de sustentabilidad "" />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Dependencia del fondo común municipal</td>
-                    <td>0.97 [unidad medida]</td>
-                    <td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
-                    <td>
-                      <img src="{% static 'img/sustentable_icono.svg' %}" alt="grado de sustentabilidad" " />
-									</td>								
-								</tr>
-								<tr>
-									<td>Capacidad de respuesta organismos de seguridad - Carabineros</td>
-									<td>0.97 [unidad medida]</td>
-									<td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
-									<td>
-										<img src="{% static 'img/sustentable_icono.svg' %}" alt="grado de sustentabilidad "" />
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="tab-pane" id="equidad" role="tabpanel">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th>Nombre</th>
-                    <th>Valor</th>
-                    <th>Información</th>
-                    <th>Estado</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Pobreza infantil</td>
-                    <td>0.97 [unidad medida]</td>
-                    <td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
-                    <td>
-                      <img src="{% static 'img/caminoasersustentable_icono.svg' %}" alt="grado de sustentabilidad" />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Acceso a tecnologías de la información</td>
-                    <td>0.97 [unidad medida]</td>
-                    <td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
-                    <td>
-                      <img src="{% static 'img/caminoasersustentable_icono.svg' %}" alt="grado de sustentabilidad" " />
-									</td>									
-								</tr>
-								<tr>
-									<td>Vivienda - Hogares en campamentos</td>
-									<td>0.97 [unidad medida]</td>
-									<td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
-									<td>
-										<img src="{% static 'img/sustentable_icono.svg' %} " alt="grado de sustentabilidad "" />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Vivienda - Hacinamiento</td>
-                    <td>0.97 [unidad medida]</td>
-                    <td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
-                    <td>
-                      <img src="{% static 'img/sustentable_icono.svg' %}" alt="grado de sustentabilidad" " />
-									</td>									
-								</tr>
-								<tr>
-									<td>Acceso y calidad de educación</td>
-									<td>0.97 [unidad medida]</td>
-									<td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
-									<td>
-										<img src="{% static 'img/nosustentable_icono.svg' %} " alt="grado de sustentabilidad "" />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Ocupación femenina: Mujeres trabajando/Mujeres en edad de trabajar</td>
-                    <td>0.97 [unidad medida]</td>
-                    <td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
-                    <td>
-                      <img src="{% static 'img/nosustentable_icono.svg' %}" alt="grado de sustentabilidad" " />
-									</td>	
-								</tr>
-								<tr>
-									<td>Ocupación femenina: Mujeres trabajando/Hombres trabajando</td>
-									<td>0.97 [unidad medida]</td>
-									<td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
-									<td>
-										<img src="{% static 'img/nosustentable_icono.svg' %} " alt="grado de sustentabilidad "" />
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="tab-pane" id="accesibilidad" role="tabpanel">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th>Nombre</th>
-                    <th>Valor</th>
-                    <th>Información</th>
-                    <th>Estado</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Acceso a equipamiento deportivo</td>
-                    <td>0.97 [unidad medida]</td>
-                    <td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
-                    <td>
-                      <img src="{% static 'img/caminoasersustentable_icono.svg' %}" alt="grado de sustentabilidad" />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Tiempos de viaje</td>
-                    <td>0.97 [unidad medida]</td>
-                    <td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
-                    <td>
-                      <img src="{% static 'img/caminoasersustentable_icono.svg' %}" alt="grado de sustentabilidad" " />
-									</td>									
-								</tr>
-								<tr>
-									<td>Accesibilidad áreas verdes</td>
-									<td>0.97 [unidad medida]</td>
-									<td>Esto es texto de ejemplo para la información de cada indicador, estoy agregando lo suficiente para ver como quedan los saltos de línea.</td>
-									<td>
-										<img src="{% static 'img/sustentable_icono.svg' %} " alt="grado de sustentabilidad "" />
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+
+{% endfor %} <!-- for categoria -->
           </div>
           <!-- FIN CONTENIDO CATEGORÍAS -->
         </div>

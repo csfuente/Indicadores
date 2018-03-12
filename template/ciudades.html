@@ -114,96 +114,23 @@
 
     <div class="container listado-ciudades">
       <div class="row">
+        {% for ciudad in ciudades %}
         <div class="col-xl-4 col-lg-6 col-md-6 col-xs-12">
           <div class="ciudad-imagen">
-            <a href="/ciudad">
-              <img class="img-fluid" src="{% static 'img/santiago.jpg' %}" alt="imagen ciudad" />
+            <a href="/ciudad/{{ciudad.url}}">
+              <img class="img-fluid" src="{% static ciudad.static_img %}" alt="imagen ciudad" />
               <span>
-              <h4>GRAN SANTIAGO</h4>
+              <h4>{{ciudad.nombre}}</h4>
             </span>
             </a>
           </div>
           <div class="ciudad-info">
-            <p><span>Población:</span> 616.080</p>
-            <p><span>Clima:</span> Mediterráneo contin.</p>
+            <p><span>Población:</span> {{ciudad.habitantes}}</p>
+            <p><span>Clima:</span> {{ciudad.clima}}</p>
             <p><span>Altura:</span> </p>
           </div>
         </div>
-        <div class="col-xl-4 col-lg-6 col-md-6 col-xs-12">
-          <div class="ciudad-imagen">
-            <a href="#">
-              <img class="img-fluid" src="{% static 'img/concepcion.jpg' %}" alt="imagen ciudad" />
-              <span>
-              <h4>GRAN CONCEPCIÓN</h4>
-            </span>
-            </a>
-          </div>
-          <div class="ciudad-info">
-            <p><span>Población:</span> 1.080.000</p>
-            <p><span>Clima:</span> Templado marítimo</p>
-            <p><span>Altura:</span> </p>
-          </div>
-        </div>
-        <div class="col-xl-4 col-lg-6 col-md-6 col-xs-12">
-          <div class="ciudad-imagen">
-            <a href="#">
-              <img class="img-fluid" src="{% static 'img/copiapo.jpg' %}" alt="imagen ciudad" />
-              <span>
-              <h4>COPIAPÓ</h4>
-            </span>
-            </a>
-          </div>
-          <div class="ciudad-info">
-            <p><span>Población:</span> 160.000</p>
-            <p><span>Clima:</span> Árido</p>
-            <p><span>Altura:</span> </p>
-          </div>
-        </div>
-        <div class="col-xl-4 col-lg-6 col-md-6 col-xs-12">
-          <div class="ciudad-imagen">
-            <a href="#">
-              <img class="img-fluid" src="{% static 'img/laserena.jpg' %}" alt="imagen ciudad" />
-              <span>
-              <h4>LA SERENA</h4>
-            </span>
-            </a>
-          </div>
-          <div class="ciudad-info">
-            <p><span>Población:</span> 211.080</p>
-            <p><span>Clima:</span> Semiárido</p>
-            <p><span>Altura:</span> </p>
-          </div>
-        </div>
-        <div class="col-xl-4 col-lg-6 col-md-6 col-xs-12">
-          <div class="ciudad-imagen">
-            <a href="#">
-              <img class="img-fluid" src="{% static 'img/temuco.jpg' %}" alt="imagen ciudad" />
-              <span>
-              <h4>TEMUCO</h4>
-            </span>
-            </a>
-          </div>
-          <div class="ciudad-info">
-            <p><span>Población:</span> 280.000</p>
-            <p><span>Clima:</span> Oceánico</p>
-            <p><span>Altura:</span> </p>
-          </div>
-        </div>
-        <div class="col-xl-4 col-lg-6 col-md-6 col-xs-12">
-          <div class="ciudad-imagen">
-            <a href="#">
-              <img class="img-fluid" src="{% static 'img/valdivia.jpg' %}" alt="imagen ciudad" />
-              <span>
-              <h4>VALDIVIA</h4>
-            </span>
-            </a>
-          </div>
-          <div class="ciudad-info">
-            <p><span>Población:</span> 155.000</p>
-            <p><span>Clima:</span> Oceánico</p>
-            <p><span>Altura:</span> </p>
-          </div>
-        </div>
+        {% endfor %}
       </div>
     </div>
 
