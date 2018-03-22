@@ -12,20 +12,9 @@ def index(request):
 	ciudades = Ciudad.objects.all()
 	return render_to_response('index.html',{'ciudades':ciudades},context_instance=RequestContext(request))
 
+# Definicion de CEDEUS "/nosotros"
 def nosotros(request):
 	return render_to_response('nosotros.html',context_instance=RequestContext(request))
-
-def ciudad_indicador(request):
-	id_ciudad = request.GET.get('c',False)
-	id_indicador = request.GET.get('i',False)
-	if id_ciudad and id_indicador:
-		ciudad = Ciudad.objects.get(id=id_ciudad)
-		indicador = Indicador.objects.get(id=id_indicador)
-		datos=Dato.objects.filter(ciudad=ciudad,indicador=indicador)
-		indicadores = Indicador.objects.all()
-		categorias = Categoria.objects.all()
-		return render_to_response('pages/ciudad-indicador.php',{'ciudad':ciudad,'indicador':indicador,'indicadores':indicadores,'categorias':categorias,'datos':datos},context_instance=RequestContext(request))
-	return index(request)
 
 # Pagina con la lista de ciudades desplayadas con una imagen "/ciudades"
 def ciudades(request):
@@ -55,6 +44,7 @@ def indicadores(request):
 	categorias = Categoria.objects.all()
 	return render_to_response('indicadores.html',{'indicadores':indicadores,'categorias':categorias},context_instance=RequestContext(request))
 
+# Compara indicadores entre dos ciudades "/comparar_ciudades"
 def comparar_ciudades(request):
 	ciudades = Ciudad.objects.all()
 	indicadores = Indicador.objects.all()
@@ -65,6 +55,37 @@ def comparar_ciudades(request):
 		'indicadores':indicadores,
 		'categorias': categorias,
 		'datos': datos,
+		'mostrar': False
 		}
+	if request.method == 'POST':
+		if not (request.POST['ciudad1'] == '' or request.POST['ciudad2'] == ''):
+			retorno['ciudad1'] = request.POST['ciudad1']
+			retorno['ciudad2'] = request.POST['ciudad2']
+			ciudad1 = Ciudad.objects.get(nombre=retorno['ciudad1'])
+			ciudad2 = Ciudad.objects.get(nombre=retorno['ciudad2'])
+			print ciudad1
+			print ciudad2
+
+			ind_a_considerar = request.POST.getlist('indicadores')
+			ind_resultantes = []
+			if ind_a_considerar == []:
+				considerados = indicadores
+			else:
+				considerados = []
+				for i in ind_a_considerar:
+					considerados.append(Indicador.objects.get(variable=i))
+			for i in considerados:
+				try:
+					dato1 = Dato.objects.get(ciudad=ciudad1.id,indicador=i.id).var_float
+				except:
+					dato1 = ''
+				try:
+					dato2 = Dato.objects.get(ciudad=ciudad2.id,indicador=i.id).var_float
+				except:
+					dato2 = ''
+				ind_resultantes.append([i.variable,dato1,dato2])
+
+			retorno['mostrar'] = True
+			retorno['indicadores_r'] = ind_resultantes
 
 	return render_to_response('comparador.html',retorno,context_instance=RequestContext(request))
