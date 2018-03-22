@@ -199,6 +199,10 @@
   filter: grayscale(0%);
 }
 
+.listado-ciudades .ciudad-imagen .listado {
+  padding-bottom: 40px;
+}
+
 .listado-ciudades .ciudad-imagen:hover {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
