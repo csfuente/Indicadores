@@ -117,7 +117,8 @@
     <!-- INICIO COMPARADOR -->
     <div class="container comparar">
       <h2>COMPARAR CIUDADES</h2>
-      <form id="formComparar">
+      <form id="formComparar" method="POST" action="/comparar_ciudades/">
+        {% csrf_token %}
         <div class="row">
           <div class="col-sm-12 col-md-6">
             <label class="titulo-form">Ciudad 1</label>
@@ -170,27 +171,19 @@
         <div class="row">
           <div class="col-lg-6 col-sm-0 espaciador"></div>
           <div class="col ciudad1">
-            <h3>Gran Santiago</h3>
+            <h3>{{ ciudad1 }}</h3>
           </div>
           <div class="col ciudad2">
-            <h3>Gran Concepción</h3>
+            <h3>{{ ciudad2 }}</h3>
           </div>
         </div>
+        {% for indicador in indicadores_r %}
         <div class="row">
-          <div class="col-lg-6 col-md-12 indicador">Nombre indicador</div>
-          <div class="col ciudada">Indicador ciudad1</div>
-          <div class="col ciudadb">Indicador ciudad2</div>
+          <div class="col-lg-6 col-md-12 indicador">{{ indicador.0 }}</div>
+          <div class="col ciudada">{{ indicador.1 }}</div>
+          <div class="col ciudadb">{{ indicador.2 }}</div>
         </div>
-        <div class="row">
-          <div class="col-lg-6 col-md-12 indicador">Nombre indicador</div>
-          <div class="col ciudada">Indicador ciudad1</div>
-          <div class="col ciudadb">Indicador ciudad2</div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6 col-md-12 indicador">Nombre indicador</div>
-          <div class="col ciudada">Indicador ciudad1</div>
-          <div class="col ciudadb">Indicador ciudad2</div>
-        </div>
+        {% endfor %}
       </div>
     </div>
     <!-- FIN RESULTADOS -->
@@ -221,6 +214,8 @@
       });
 
     </script>
+
+    {% if mostrar %}<script>$("#oculta").show();</script>{% endif %}
   </body>
 
 </html>
