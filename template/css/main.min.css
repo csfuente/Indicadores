@@ -199,7 +199,7 @@
   filter: grayscale(0%);
 }
 
-.listado-ciudades .ciudad-imagen .listado {
+.listado-ciudades .listado {
   padding-bottom: 40px;
 }
 
@@ -301,7 +301,13 @@
 }
 
 .indicadores-ciudad .nav-tabs .active {
-  opacity: 0.6;
+  border-color: #4470b4 !important;
+}
+
+.indicadores-ciudad .nav-tabs .active .titulo-cat,
+.indicadores-ciudad .nav-tabs .active .titulo-catb {
+  color: #4470b4 !important;
+  font-weight: bold;
 }
 
 .indicadores-ciudad ul {
@@ -652,4 +658,13 @@ footer p {
   text-align: center;
   font-size: 0.9rem;
   color: #6e6e6e;
+}
+
+/******************
+	FIX
+******************/
+
+.nav-tabs .nav-item .nav-link {
+  padding-right: 7px;
+  padding-left: 7px;
 }
