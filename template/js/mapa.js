@@ -30,37 +30,37 @@ var ciudades_valdivia=[];
 var santiago = new ol.Feature({
         geometry: new ol.geom.Point(ol.proj.fromLonLat([-70.654, -33.444])),
         //url:'/ciudad/?i=1',
-        url:'/ciudad',
+        url:'/ciudad/Gran_Santiago',
         nombre:'Santiago'
       });
 var copiapo = new ol.Feature({
         geometry: new ol.geom.Point(ol.proj.fromLonLat([-70.3236, -27.3697])),
         //url:'/ciudad/?i=4',
-        url:'/ciudad',
+        url:'/ciudad/Copiapo',
         nombre:'Copiapo'
       });
 var serena = new ol.Feature({
         geometry: new ol.geom.Point(ol.proj.fromLonLat([-71.2449, -29.8995])),
         //url:'/ciudad/?i=5',
-        url:'/ciudad',
+        url:'/ciudad/La_Serena',
         nombre:'La Serena'
       });
 var temuco = new ol.Feature({
         geometry: new ol.geom.Point(ol.proj.fromLonLat([-72.5534, -38.7273])),
         //url:'/ciudad/?i=3',
-        url:'/ciudad',
+        url:'/ciudad/Temuco',
         nombre:'Temuco'
       });
 var valdivia = new ol.Feature({
         geometry: new ol.geom.Point(ol.proj.fromLonLat([-73.2287, -39.8365])),
         //url:'/ciudad/?i=7',
-        url:'/ciudad',
+        url:'/ciudad/Valdivia',
         nombre:'Valdivia'
       });
 var concepcion = new ol.Feature({
         geometry: new ol.geom.Point(ol.proj.fromLonLat([-73.0340, -36.8159])),
         //url:'/ciudad/?i=7',
-        url:'/ciudad',
+        url:'/ciudad/Gran_Concepcion',
         nombre:'Concepcion'
       });
 
