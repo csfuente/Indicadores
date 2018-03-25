@@ -225,10 +225,3 @@ var map = new ol.Map({
 });
 
 
-map.on("click", function(e) {
-    map.forEachFeatureAtPixel(e.pixel, function (feature, layer) {
-        var url= feature.getProperties('url');
-        window.location.href = "/ciudad";
-        //window.location.href = ""+url.url;
-    })
-});
