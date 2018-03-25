@@ -191,6 +191,7 @@
 
 <!-- TRABAJAR EN BASE A ESTO ---!>
             {% for categoria in categorias %}
+            <h4 class="tab-tit">{{categoria}}</h4>
             <div class="tab-pane {% if forloop.counter == 1 %}active {% endif %}table-responsive" id="{{categoria.href}}" role="tabpanel">
               <table class="table">
                 <thead>
