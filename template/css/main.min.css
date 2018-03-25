@@ -697,7 +697,7 @@ footer p {
 }
 
 .active .tab-tit {
-  display: initial;
+  display: block;
   text-align: center;
   color: dimgrey;
 }
