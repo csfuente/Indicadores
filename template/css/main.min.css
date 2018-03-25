@@ -217,7 +217,30 @@
 }
 
 .ciudad-info {
-  padding-top: 30px;
+  padding-top: 0px;
+}
+
+.ciudad-info .perfil {
+  padding: 10px;
+  color: grey;
+  border: 2px solid #C9C9C9;
+  min-height: 50px;
+}
+
+.ciudad-info .perfil h3 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); 
+  text-align: center; 
+}
+
+.ciudad .perfi-detalles {
+  color: white;
+  background: #4470B4;
+  padding: 20px;
 }
 
 .listado-ciudades .ciudad-imagen:hover {
