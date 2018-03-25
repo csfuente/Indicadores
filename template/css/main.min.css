@@ -692,7 +692,12 @@ footer p {
   padding-left: 7px;
 }
 
-.tab-tit {
+.tab-tit { 
+  display: none;
+}
+
+.active .tab-tit {
+  display: initial;
   text-align: center;
   color: dimgrey;
 }
