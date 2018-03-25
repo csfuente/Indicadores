@@ -701,3 +701,24 @@ footer p {
   text-align: center;
   color: dimgrey;
 }
+
+#irTop {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: rgba(147, 147, 147, 0);
+  cursor: pointer;
+}
+
+#irTop img {
+  height: 50px;
+  width: 50px;
+}
+
+#irTop:hover {
+  opacity: 0.8;
+}
