@@ -55,7 +55,7 @@ class Indicador(models.Model):
 	icono = models.ImageField(null=True,blank=True)
         activado = models.BooleanField(default=True)
 	def __unicode__(self):
-		return self.variable
+		return self.categoria.nombre + ' - '  +self.variable
 
 class Dato(models.Model):
 	TIPO = (
@@ -78,4 +78,4 @@ class Dato(models.Model):
 		self.modified = timezone.now()
 		return super(Dato,self).save(*args, **kwargs)
 	def __unicode__(self):
-		return self.ciudad.nombre + ' ' +self.indicador.variable 
+		return self.ciudad.nombre + ' - ' + self.indicador.variable + ' - ' + str(self.var_float or 'Sin Dato')
