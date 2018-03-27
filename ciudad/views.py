@@ -25,9 +25,12 @@ def ciudades(request):
 def santiago(request,url):
 	if len(Ciudad.objects.filter(url=url))>0:
 		ciudad = Ciudad.objects.get(url=url)
-		indicadores = Indicador.objects.all()
+		indicadores = Indicador.objects.filter(activado=True)
 		categorias = Categoria.objects.all()
-		datos = Dato.objects.filter(ciudad=ciudad)
+		datos = []
+		for ind in indicadores:
+			datos.append(Dato.objects.filter(ciudad=ciudad,indicador=ind).last())
+		#datos = Dato.objects.filter(ciudad=ciudad)
 		retorno = {
                     'ciudad':ciudad,
                     'indicadores':indicadores,
@@ -41,13 +44,13 @@ def santiago(request,url):
 # Pagina que muestra todos los indicadores "/indicadores"
 def indicadores(request):
 	indicadores = Indicador.objects.all()
-	categorias = Categoria.objects.all()
+	categorias = Categoria.objects.filter(activado=True)
 	return render_to_response('indicadores.html',{'indicadores':indicadores,'categorias':categorias},context_instance=RequestContext(request))
 
 # Compara indicadores entre dos ciudades "/comparar_ciudades"
 def comparar_ciudades(request):
 	ciudades = Ciudad.objects.all()
-	indicadores = Indicador.objects.all()
+	indicadores = Indicador.objects.filter(activado=True)
 	categorias = Categoria.objects.all()
 	datos = Dato.objects.all()
 	retorno = {
@@ -76,11 +79,11 @@ def comparar_ciudades(request):
 					considerados.append(Indicador.objects.get(variable=i))
 			for i in considerados:
 				try:
-					dato1 = Dato.objects.get(ciudad=ciudad1.id,indicador=i.id).var_float
+					dato1 = Dato.objects.filter(ciudad=ciudad1.id,indicador=i.id).last().var_float
 				except:
 					dato1 = ''
 				try:
-					dato2 = Dato.objects.get(ciudad=ciudad2.id,indicador=i.id).var_float
+					dato2 = Dato.objects.filter(ciudad=ciudad2.id,indicador=i.id).last().var_float
 				except:
 					dato2 = ''
 				ind_resultantes.append([i.variable,dato1,dato2])

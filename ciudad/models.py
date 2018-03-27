@@ -53,6 +53,7 @@ class Indicador(models.Model):
 	descripcion_corta=models.CharField(max_length=250,blank=True,null=True,default='')
 	metodo=models.CharField(max_length=1500,blank=True,null=True,default='')
 	icono = models.ImageField(null=True,blank=True)
+        activado = models.BooleanField(default=True)
 	def __unicode__(self):
 		return self.variable
 
