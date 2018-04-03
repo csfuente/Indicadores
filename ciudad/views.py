@@ -9,7 +9,7 @@ from django.db.models import FloatField
 
 # Pagina principal con mapa de fondo "/"
 def index(request):
-	ciudades = Ciudad.objects.all()
+	ciudades = Ciudad.objects.filter(activado=True)
 	return render_to_response('index.html',{'ciudades':ciudades},context_instance=RequestContext(request))
 
 # Definicion de CEDEUS "/nosotros"
@@ -18,7 +18,7 @@ def nosotros(request):
 
 # Pagina con la lista de ciudades desplayadas con una imagen "/ciudades"
 def ciudades(request):
-	ciudades = Ciudad.objects.all()
+	ciudades = Ciudad.objects.filter(activado=True)
 	return render_to_response('ciudades.html',{'ciudades':ciudades},context_instance=RequestContext(request))
 
 # Pagina con los cados de una ciudad en especifica "/ciudad/<url>"
@@ -43,13 +43,13 @@ def santiago(request,url):
 
 # Pagina que muestra todos los indicadores "/indicadores"
 def indicadores(request):
-	indicadores = Indicador.objects.all()
-	categorias = Categoria.objects.filter(activado=True)
+	indicadores = Indicador.objects.filter(activado=True)
+	categorias = Categoria.objects.all()
 	return render_to_response('indicadores.html',{'indicadores':indicadores,'categorias':categorias},context_instance=RequestContext(request))
 
 # Compara indicadores entre dos ciudades "/comparar_ciudades"
 def comparar_ciudades(request):
-	ciudades = Ciudad.objects.all()
+	ciudades = Ciudad.objects.filter(activado=True)
 	indicadores = Indicador.objects.filter(activado=True)
 	categorias = Categoria.objects.all()
 	datos = Dato.objects.all()
@@ -66,8 +66,6 @@ def comparar_ciudades(request):
 			retorno['ciudad2'] = request.POST['ciudad2']
 			ciudad1 = Ciudad.objects.get(nombre=retorno['ciudad1'])
 			ciudad2 = Ciudad.objects.get(nombre=retorno['ciudad2'])
-			print ciudad1
-			print ciudad2
 
 			ind_a_considerar = request.POST.getlist('indicadores')
 			ind_resultantes = []

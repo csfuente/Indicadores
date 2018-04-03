@@ -29,6 +29,8 @@ class Ciudad(models.Model):
 	imagen = models.ImageField(null=True,blank=True)
 	descripcion = models.CharField(max_length=600,default="")
 	static_img = models.CharField(max_length=30,default="")
+	ciudad_padre = models.ForeignKey('self',blank=True,null=True,default=None)
+	activado = models.BooleanField(default=True)
 	def __unicode__(self):
 		return self.nombre
 
