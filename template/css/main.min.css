@@ -88,14 +88,14 @@
 .iconos-mapa {
   z-index: 800;
   position: absolute;
-  height: 41px;
-  bottom: 65px;
+  bottom: 33px;
   right: 6px;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 .iconos-mapa img {
-  width: 70px;
+  height: 7vmax;
+  width: auto;
 }
 
 .iconos-mapa img:nth-child(1) {
