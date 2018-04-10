@@ -94,12 +94,15 @@
 }
 
 .iconos-mapa img {
-  height: 7vmax;
+  height: 10vmax;
   width: auto;
+  margin-right: 7px;
 }
 
-.iconos-mapa img:nth-child(1) {
-  margin-right: 9px;
+@media screen and (min-width: 1100px) {
+  .iconos-mapa img {
+    height: 5vmax !important;
+  }
 }
 
 .contenedor-panel {
@@ -730,8 +733,19 @@ footer p {
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
 
+  .iconos-mapa {
+    -ms-transform: translate(56%, -3%);
+  }
+
 	.iconos-mapa img {
-		height: calc(7 * (1vw + 1vh - 1vmin));
-	}
+		height: calc(10 * (1vw + 1vh - 1vmin));
+  }
+  
+  @media screen and (min-width: 1100px) {
+    .iconos-mapa img {
+      height: calc(5 * (1vw + 1vh - 1vmin)) !important;
+    }
+  }
+
 
 }
