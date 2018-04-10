@@ -722,3 +722,16 @@ footer p {
 #irTop:hover {
   opacity: 0.8;
 }
+
+
+/******************
+	IE
+******************/
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+	.iconos-mapa img {
+		height: calc(7 * (1vw + 1vh - 1vmin));
+	}
+
+}
