@@ -89,13 +89,13 @@
   z-index: 800;
   position: absolute;
   height: 41px;
-  bottom: 43px;
-  right: 20px;
+  bottom: 65px;
+  right: 6px;
   opacity: 0.5;
 }
 
 .iconos-mapa img {
-  width: 50px;
+  width: 70px;
 }
 
 .iconos-mapa img:nth-child(1) {
