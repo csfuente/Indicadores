@@ -49,15 +49,15 @@ function topFunction() {
 
     function listFilter(filtroCiudad, lista) {
         var form = $("<form>").attr({ "class": "filterform", "action": "#" }),
-            input = $("<input>").attr({ "class": "filterinput", "type": "text" });
+            input = $("<input>").attr({ "class": "filterinput", "type": "text", "placeholder": "Buscar ciudad" });
         $(form).append(input).appendTo(filtroCiudad);
 
         $(input)
             .change(function () {
                 var filtrar = $(this).val();
                 if (filtrar) {
-                    $(lista).find(".nombreCiudad:not(:Contains(" + filtrar + "))"). find(".listado").addClass("filtrado");
-                    $(lista).find(".nombreCiudad:Contains(" + filtrar + ")").find(".listado").removeClass("filtrado");
+                    $(lista).find(".nombreCiudad:not(:Contains(" + filtrar + "))").parents(".listado").addClass("filtrado");
+                    $(lista).find(".nombreCiudad:Contains(" + filtrar + ")").parents(".listado").removeClass("filtrado");
                 } else {
                     $(lista).find(".listado").removeClass("filtrado");
                 }
