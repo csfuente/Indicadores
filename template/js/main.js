@@ -56,8 +56,8 @@ function topFunction() {
             .change(function () {
                 var filtrar = $(this).val();
                 if (filtrar) {
-                    $(lista).find(".nombreCiudad:not(:Contains(" + filtrar + "))").parent().addClass("filtrado");
-                    $(lista).find(".nombreCiudad:Contains(" + filtrar + ")").parent().removeClass("filtrado");
+                    $(lista).find(".nombreCiudad:not(:Contains(" + filtrar + "))"). find(".listado").addClass("filtrado");
+                    $(lista).find(".nombreCiudad:Contains(" + filtrar + ")").find(".listado").removeClass("filtrado");
                 } else {
                     $(lista).find(".listado").removeClass("filtrado");
                 }
