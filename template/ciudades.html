@@ -114,15 +114,16 @@
     <!-- FIN MODAL CONTACTO -->
 
     <div class="container listado-ciudades">
-      <div class="row">
+      <div id="lista" class="row">
+        <h3 id="filtroCiudad">Buscar ciudad</h3>
         {% for ciudad in ciudades %}
         <div class="col-xl-4 col-lg-6 col-md-6 col-xs-12 listado">
           <div class="ciudad-imagen">
             <a href="/ciudad/{{ciudad.url}}">
               <img class="img-fluid" src="{% static ciudad.static_img %}" alt="imagen ciudad" />
               <span>
-              <h4>{{ciudad.nombre}}</h4>
-            </span>
+                <h4 class="nombreCiudad">{{ciudad.nombre}}</h4>
+              </span>
             </a>
           </div>
         </div>

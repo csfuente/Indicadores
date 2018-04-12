@@ -38,3 +38,35 @@ function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
+
+// filtro ciudades
+
+jQuery.expr[':'].Contains = function (a, i, m) {
+    return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
+};
+
+function listFilter(filtroCiudad, lista) {
+    var form = $("<form>").attr({ "class": "filterform", "action": "#" }),
+        input = $("<input>").attr({ "class": "filterinput", "type": "text" });
+    $(form).append(input).appendTo(filtroCiudad);
+
+    $(input)
+        .change(function () {
+            var filtrar = $(this).val();
+            if (filtrar) {
+                $(lista).find(".nombreCiudad:not(:Contains(" + filtrar + "))").parent().addClass("filtrado");
+                $(lista).find(".nombreCiudad:Contains(" + filtrar + ")").parent().removeClass("filtrado");
+            } else {
+                $(lista).find(".listado").removeClass("filtrado");
+            }
+            return false;
+        })
+        .keyup(function () {
+            $(this).change();
+        });
+}
+
+$(function () {
+    listFilter($("#filtroCiudad"), $("#lista"));
+});
+}(jQuery));

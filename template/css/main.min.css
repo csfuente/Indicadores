@@ -697,7 +697,8 @@ footer p {
   padding-left: 7px;
 }
 
-.tab-tit { 
+.tab-tit,
+.filtrado { 
   display: none;
 }
 
