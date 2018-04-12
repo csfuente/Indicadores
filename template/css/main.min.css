@@ -253,6 +253,17 @@
   filter: grayscale(100%);
 }
 
+.input-filtro {
+  display: block;
+  margin: 0 auto 20px auto;
+  border: none;
+  height: 50px;
+  text-align: center;
+  background: #C9C9C9;
+  color: #4470B4;
+  font-weight: bold;
+}
+
 
 /******************
 	CIUDAD - INDICADORES

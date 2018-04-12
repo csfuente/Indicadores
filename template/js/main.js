@@ -47,9 +47,9 @@ function topFunction() {
         return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
     };
 
-    function listFilter(filtroCiudad, lista) {
-        var form = $("<form>").attr({ "class": "filterform", "action": "#" }),
-            input = $("<input>").attr({ "class": "filterinput", "type": "text", "placeholder": "Buscar ciudad" });
+    function filtroCiudades(filtroCiudad, lista) {
+        var form = $("<form>").attr({ "class": "form-filtro", "action": "#" }),
+            input = $("<input>").attr({ "class": "form-input", "type": "text", "placeholder": "Buscar ciudad" });
         $(form).append(input).appendTo(filtroCiudad);
 
         $(input)
@@ -69,6 +69,6 @@ function topFunction() {
     }
 
     $(function () {
-        listFilter($("#filtroCiudad"), $("#lista"));
+        filtroCiudades($("#filtroCiudad"), $("#lista"));
     });
 }(jQuery));
