@@ -49,7 +49,7 @@ function topFunction() {
 
     function filtroCiudades(filtroCiudad, lista) {
         var form = $("<form>").attr({ "class": "form-filtro", "action": "#" }),
-            input = $("<input>").attr({ "class": "form-input", "type": "text", "placeholder": "Buscar ciudad" });
+            input = $("<input>").attr({ "class": "input-filtro", "type": "text", "placeholder": "Buscar ciudad" });
         $(form).append(input).appendTo(filtroCiudad);
 
         $(input)
