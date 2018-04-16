@@ -2,237 +2,110 @@
 <html>
 
   <head>
+    {% load static %}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- inicio favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="manifest.json">
-    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="theme-color" content="#ffffff">
-    <!-- fin favicon -->
+    {% include 'templates/favicon.html' %}
     <title>Comparador</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-combobox.css">
-    <link rel="stylesheet" href="css/bootstrap-multiselect.css">
-    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-combobox.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-multiselect.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.min.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
   </head>
 
   <body>
-    <!-- INICIO HEADER -->
-    <nav class="navbar navbar-expand-xl header navbar-light">
-      <!-- inicio logo -->
-      <a class="navbar-brand" href="index.html">
-        <img src="img/logo.svg" alt="logo indicadores" />
-      </a>
-      <!-- fin logo -->
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#contenidoNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="contenidoNavbar">
-        <!-- inicio menú -->
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="ciudades.html">
-              <img src="img/ciudades_icono.svg" /> Ciudades
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="indicadores.html">
-              <img src="img/indicadores_icono.svg" /> Indicadores
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="comparador.html">
-              <img src="img/compararindicadores_icono.svg" /> Comparar Ciudades
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="nosotros.html">
-              <img src="img/nosotros_icono.svg" /> Nosotros
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#myModal" data-toggle="modal" data-target="#myModal">
-              <img src="img/contacto_icono.svg" /> Contacto
-            </a>
-          </li>
-        </ul>
-        <div class="separador-nav">
-        </div>
-        <ul class="navbar-nav">
-          <li class="nav-item buscador">
-            <a class="nav-link" href="#">
-              <img src="img/busqueda_icono.svg" />
-            </a>
-          </li>
-        </ul>
-        <!-- fin menú -->
-      </div>
-    </nav>
-    <!-- FIN HEADER -->
+    <div class="wrapper">
 
-    <!-- INICIO MODAL CONTACTO -->
-    <div class="modal fade" id="myModal">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Contacto</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <form>
-            <div class="modal-body">
-              <div class="form-group">
-                <label>Nombre</label>
-                <input type="text" class="form-control" placeholder="Alexis Sánchez">
-              </div>
-              <div class="form-group">
-                <label>Telefono</label>
-                <input type="tel" class="form-control" placeholder="9 1234 5678">
-              </div>
-              <div class="form-group">
-                <label>Email</label>
-                <input type="email" class="form-control" placeholder="mi@email.cl">
-              </div>
-              <div class="form-group">
-                <label>Mensaje</label>
-                <textarea class="form-control" rows="3" placeholder="Hola..."></textarea>
-              </div>
+      {% include 'templates/header.html' %}
+      {% include 'templates/contacto.html' %}
+
+      <!-- INICIO COMPARADOR -->
+      <div class="container comparar">
+        <h2>COMPARAR CIUDADES</h2>
+        <form id="formComparar" method="POST" action="/comparar_ciudades/">
+          {% csrf_token %}
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <label class="titulo-form">Ciudad 1</label>
+              <select class="combobox input-large form-control" name="ciudad1">
+                <option value="" selected="selected">Selecciona una ciudad</option>
+                {% for ciudad in ciudades %}
+                <option>{{ ciudad.nombre }}</option>
+                {% endfor %}
+              </select>
             </div>
-            <div class="modal-footer">
-              <button type="submit" class="btn btn-primary">Enviar</button>
+            <div class="col-sm-12 col-md-6">
+              <label class="titulo-form">Ciudad 2</label>
+              <select class="combobox input-large form-control" name="ciudad2">
+                <option value="" selected="selected">Selecciona una ciudad</option>
+                {% for ciudad in ciudades %}
+                <option>{{ ciudad.nombre }}</option>
+                {% endfor %}
+              </select>
             </div>
-          </form>
+          </div>
+          <div class="row">
+            <div class="col-md-12 col-lg-11">
+              <label class="titulo-form">Indicadores</label>
+              <select id="indicadores-multiples" class="input-large form-control" multiple="multiple" name="indicadores">
+              {% for categoria in categorias %}
+                <optgroup label="{{categoria.nombre}}">
+                {% for indicador in indicadores %}
+                  {% if indicador.categoria == categoria %}
+                  <option>{{ indicador.variable }}</option>
+                  {% endif %}
+                {% endfor %}
+                </optgroup>
+              {% endfor %}
+              </select>
+            </div>
+            <div class="col-md-12 col-lg-1 boton-sbt">
+              <button class="btn btn-primary btn-md" type="submit">
+                <img src="{% static 'img/buscar.svg' %}" />
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- FIN COMPARADOR -->
+
+      <!-- INICIO RESULTADOS -->
+      <div class="container resultados" id="oculta" style="display: none;">
+        <h2>RESULTADOS</h2>
+        <div class="interior-resultados">
+          <div class="row">
+            <div class="col-lg-6 col-sm-0 espaciador"></div>
+            <div class="col ciudad1">
+              <h3>{{ ciudad1 }}</h3>
+            </div>
+            <div class="col ciudad2">
+              <h3>{{ ciudad2 }}</h3>
+            </div>
+          </div>
+          {% for indicador in indicadores_r %}
+          <div class="row">
+            <div class="col-lg-6 col-md-12 indicador">{{ indicador.0 }}</div>
+            <div class="col ciudada">{{ indicador.1 }}</div>
+            <div class="col ciudadb">{{ indicador.2 }}</div>
+          </div>
+          {% endfor %}
         </div>
       </div>
+      <!-- FIN RESULTADOS -->
+
+      {% include 'templates/footer.html' %} 
+      {% include 'templates/subir.html' %}
+
     </div>
-    <!-- FIN MODAL CONTACTO -->
 
-    <!-- INICIO COMPARADOR -->
-    <div class="container comparar">
-      <h2>COMPARAR CIUDADES</h2>
-      <form id="formComparar">
-        <div class="row">
-          <div class="col-sm-12 col-md-6">
-            <label class="titulo-form">Ciudad 1</label>
-            <select class="combobox input-large form-control" name="ciudad1">
-              <option value="" selected="selected">Selecciona una ciudad</option>
-              <option>Gran Santiago</option>
-              <option>Temuco</option>
-              <option>Copiapó</option>
-              <option>La Serena</option>
-              <option>Gran Concepción</option>
-              <option>Valdivia</option>
-            </select>
-          </div>
-          <div class="col-sm-12 col-md-6">
-            <label class="titulo-form">Ciudad 2</label>
-            <select class="combobox input-large form-control" name="ciudad2">
-              <option value="" selected="selected">Selecciona una ciudad</option>
-              <option>Gran Santiago</option>
-              <option>Temuco</option>
-              <option>Copiapó</option>
-              <option>La Serena</option>
-              <option>Gran Concepción</option>
-              <option>Valdivia</option>
-            </select>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 col-lg-11">
-            <label class="titulo-form">Indicadores</label>
-            <select id="indicadores-multiples" class="input-large form-control" multiple="multiple" name="indicadores">
-              <optgroup label="Medio Ambiente">
-                <option>Calidad de agua</option>
-                <option>Calidad de aguas servidas tratadas</option>
-                <option>Consumo de agua</option>
-                <option>Calidad de aire</option>
-                <option>Generación de residuos sólidos</option>
-                <option>Superficie de áreas verdes per cápita</option>
-              </optgroup>
-              <optgroup label="Salud">
-                <option>Calidad de salud</option>
-                <option>Estado de salud del adulto</option>
-                <option>Estado de salud del infante</option>
-              </optgroup>
-              <optgroup label="Gobernancia">
-                <option>Participación ciudadana: % participación electoral</option>
-                <option>Participación ciudadana: % Solicitudes transparencia respondida</option>
-                <option>Dependencia del fondo común municipal</option>
-                <option>Capacidad de respuesta organismos de seguridad - Carabineros</option>
-              </optgroup>
-              <optgroup label="Equidad">
-                <option>Pobreza infantil</option>
-                <option>Acceso a tecnologías de la información</option>
-                <option>Vivienda - Hogares en campamentos</option>
-                <option>Vivienda - Hacinamiento</option>
-                <option>Acceso y calidad de educación</option>
-              </optgroup>
-              <optgroup label="Accesibilidad">
-                <option>Acceso a equipamiento deportivo</option>
-                <option>Tiempos de viaje</option>
-                <option>Accesibilidad áreas verdes</option>
-              </optgroup>
-            </select>
-          </div>
-          <div class="col-md-12 col-lg-1 boton-sbt">
-            <button class="btn btn-primary btn-md" type="submit">
-              <img src="img/buscar.svg" />
-            </button>
-          </div>
-        </div>
-      </form>
-    </div>
-    <!-- FIN COMPARADOR -->
-
-    <!-- INICIO RESULTADOS -->
-    <div class="container resultados" id="oculta" style="display: none;">
-      <h2>RESULTADOS</h2>
-      <div class="interior-resultados">
-        <div class="row">
-          <div class="col-lg-6 col-sm-0 espaciador"></div>
-          <div class="col ciudad1">
-            <h3>Gran Santiago</h3>
-          </div>
-          <div class="col ciudad2">
-            <h3>Gran Concepción</h3>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6 col-md-12 indicador">Nombre indicador</div>
-          <div class="col ciudada">Indicador ciudad1</div>
-          <div class="col ciudadb">Indicador ciudad2</div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6 col-md-12 indicador">Nombre indicador</div>
-          <div class="col ciudada">Indicador ciudad1</div>
-          <div class="col ciudadb">Indicador ciudad2</div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6 col-md-12 indicador">Nombre indicador</div>
-          <div class="col ciudada">Indicador ciudad1</div>
-          <div class="col ciudadb">Indicador ciudad2</div>
-        </div>
-      </div>
-    </div>
-    <!-- FIN RESULTADOS -->
-
-    <!-- INICIO FOOTER -->
-    <footer>
-      <p><a href="http://www.cedeus.cl" target="_blank">Cedeus</a> <span id="anio"></span></p>
-    </footer>
-    <!-- FIN FOOTER -->
-
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/bootstrap-combobox.min.js"></script>
-    <script src="js/bootstrap-multiselect.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap-combobox.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap-multiselect.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
 
     <script>
       $(document).ready(function() {
@@ -247,6 +120,8 @@
       });
 
     </script>
+
+    {% if mostrar %}<script>$("#oculta").show();</script>{% endif %}
   </body>
 
 </html>
