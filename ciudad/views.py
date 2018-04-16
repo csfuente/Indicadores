@@ -5,21 +5,20 @@ from ciudad.models import Ciudad, Indicador, Dato, Categoria
 from django.template.context import RequestContext
 from ciudad.utils import ultimosDatos
 from django.db.models import FloatField
-# Create your views here.
 
 # Pagina principal con mapa de fondo "/"
 def index(request):
 	ciudades = Ciudad.objects.filter(activado=True)
-	return render_to_response('index.html',{'ciudades':ciudades},context_instance=RequestContext(request))
+	return render_to_response('index.html',{'ciudades':ciudades})
 
 # Definicion de CEDEUS "/nosotros"
 def nosotros(request):
-	return render_to_response('nosotros.html',context_instance=RequestContext(request))
+	return render_to_response('nosotros.html')
 
 # Pagina con la lista de ciudades desplayadas con una imagen "/ciudades"
 def ciudades(request):
 	ciudades = Ciudad.objects.filter(activado=True)
-	return render_to_response('ciudades.html',{'ciudades':ciudades},context_instance=RequestContext(request))
+	return render_to_response('ciudades.html',{'ciudades':ciudades})
 
 # Pagina con los cados de una ciudad en especifica "/ciudad/<url>"
 def santiago(request,url):
@@ -37,7 +36,7 @@ def santiago(request,url):
                     'categorias': categorias,
                     'datos': datos,
                     }
-		return render_to_response('ciudad.html',retorno,context_instance=RequestContext(request))
+		return render_to_response('ciudad.html',retorno)
 	else:
 		return redirect('/ciudades')
 
@@ -45,7 +44,7 @@ def santiago(request,url):
 def indicadores(request):
 	indicadores = Indicador.objects.filter(activado=True)
 	categorias = Categoria.objects.all()
-	return render_to_response('indicadores.html',{'indicadores':indicadores,'categorias':categorias},context_instance=RequestContext(request))
+	return render_to_response('indicadores.html',{'indicadores':indicadores,'categorias':categorias})
 
 # Compara indicadores entre dos ciudades "/comparar_ciudades"
 def comparar_ciudades(request):
@@ -89,4 +88,4 @@ def comparar_ciudades(request):
 			retorno['mostrar'] = True
 			retorno['indicadores_r'] = ind_resultantes
 
-	return render_to_response('comparador.html',retorno,context_instance=RequestContext(request))
+	return render(request,'comparador.html',retorno)

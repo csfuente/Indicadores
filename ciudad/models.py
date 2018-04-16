@@ -31,9 +31,10 @@ class Ciudad(models.Model):
 	static_img = models.CharField(max_length=30,default="")
 	ciudad_padre = models.ForeignKey('self',blank=True,null=True,default=None)
 	activado = models.BooleanField(default=True)
-        lat = models.CharField(max_length=25, default='')
-        lon = models.CharField(max_length=25, default='')
-        nombre_simple = models.CharField(max_length=120, default='')
+        lat = models.CharField(max_length=25, default='', null=True)
+        lon = models.CharField(max_length=25, default='', null=True)
+        nombre_simple = models.CharField(max_length=120, default='',null=True)
+
 	def __unicode__(self):
 		return self.nombre
 
