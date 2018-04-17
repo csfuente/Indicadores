@@ -74,91 +74,38 @@
   <script>
       function initMap() {
 
-        var santiago = { lat: -33.45, lng: -70.666667 };
-        var serena = { lat: -29.9, lng: -71.25 };
-        var temuco = { lat: -38.75, lng: -72.666667 };
-        var valdivia = { lat: -39.8, lng: -73.233333 };
-        var copiapo = { lat: -27.366667, lng: -70.316667 };
-        var concepcion = { lat: -36.783333, lng: -73.116667 };
-
         var mapa = new google.maps.Map(document.getElementById('mapa'), {
           zoom: 5,
-          center: santiago
+          center: { lat: -33.45, lng: -70.666667 },
+          disableDefaultUI: true
         });
 
-        {% for ciudad in ciudades %}
+        var image = {
+          size: new google.maps.Size(31, 40),
+          url: '{% static 'img/marker_indicadores.png' %}'
+        };
+
+        {% for ciudad in ciudades %}  
+        var {{ ciudad.nombre_simple}} = { lat: {{ ciudad.lat }}, lng: {{ ciudad.lon }} };
+
         var {{ ciudad.url }} = '<p>{{ ciudad.nombre }}</p>' +
         '<a href="/ciudad/{{ ciudad.url }}">Ir a perfil</a>';
 
-      var popup{{ ciudad.url }} = new google.maps.InfoWindow({
-        content: {{ ciudad.url }}
+        var {{ ciudad.nombre_simple }}Popup = new google.maps.InfoWindow({
+          content: {{ ciudad.url }}
         });
-      {% endfor %}
 
-      var image = {
-        size: new google.maps.Size(31, 40),
-        url: '{% static 'img/marker_indicadores.png' %}'
-      };
+        var {{ ciudad.nombre_simple }}Marker = new google.maps.Marker({
+          position: {{ ciudad.nombre_simple }},
+          map: mapa,
+          title: "{{ ciudad_nombre }}",
+          icon: image
+        });
 
-      var marker = new google.maps.Marker({
-        position: santiago,
-        map: mapa,
-        title: "Gran Santiago",
-        icon: image
-      });
-      marker.addListener('click', function () {
-        popupGran_Santiago.open(mapa, marker);
-      });
-
-      var marker1 = new google.maps.Marker({
-        position: concepcion,
-        map: mapa,
-        title: "Gran Concepción",
-        icon: image
-      });
-      marker1.addListener('click', function () {
-        popupGran_Concepcion.open(mapa, marker1);
-      });
-
-      var marker2 = new google.maps.Marker({
-        position: serena,
-        map: mapa,
-        title: "La Serena",
-        icon: image
-      });
-      marker2.addListener('click', function () {
-        popupLa_Serena.open(mapa, marker2);
-      });
-
-      var marker3 = new google.maps.Marker({
-        position: temuco,
-        map: mapa,
-        title: "Temuco",
-        icon: image
-      });
-      marker3.addListener('click', function () {
-        popupTemuco.open(mapa, marker3);
-      });
-
-      var marker4 = new google.maps.Marker({
-        position: valdivia,
-        map: mapa,
-        title: "Valdivia",
-        icon: image
-      });
-      marker4.addListener('click', function () {
-        popupValdivia.open(mapa, marker4);
-      });
-
-      var marker5 = new google.maps.Marker({
-        position: copiapo,
-        map: mapa,
-        title: "Copiapó",
-        icon: image
-      });
-      marker5.addListener('click', function () {
-        popupCopiapo.open(mapa, marker5);
-      });
+        {{ ciudad.nombre_simple }}Marker.addListener('click', function () {
+          {{ ciudad.nombre_simple }}Popup.open(mapa, {{ ciudad.nombre_simple }}Marker);
+        });
+        {% endfor %}
       }
       
   </script>
