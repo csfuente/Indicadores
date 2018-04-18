@@ -21,7 +21,7 @@ h3 {
 }
 
 p {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   font-weight: 300;
 }
 
@@ -42,7 +42,7 @@ p {
 }
 
 .bajada h2 {
-  font-weight: 600;
+  font-weight: 700;
   margin: 0;
   position: absolute;
   top: 50%;
@@ -187,6 +187,10 @@ header {
   color: #009dd2;
 }
 
+.index #particles-js .intro p {
+  font-size: 1.4rem;
+}
+
 .index .contadores {
   text-align: center;
   padding-bottom: 40px;
@@ -217,14 +221,12 @@ header {
 }
 
 .texto-index {
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
   padding: 30px 20px 40px 20px;
 }
 
 .texto-index p {
-  font-size: 1.4rem;
-  font-weight: 300;
   text-align: justify;
 }
 
@@ -635,6 +637,8 @@ header {
   padding-top: 35px;
   padding-bottom: 20px;
   margin-bottom: 30px;
+  z-index: 1020;
+  margin-bottom: 100px;
 }
 
 .comparar .multiselect-all label {
@@ -744,17 +748,16 @@ header {
 	NOSOTROS
 ******************/
 
-.nosotros h1 {
-  font-size: 1.3rem;
-  font-weight: bold;
+.img-nosotros {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
 }
 
-.nosotros h3 {
-  font-size: 1.1rem;
-}
-
-.nosotros img {
-  margin-bottom: 35px;
+.nosotros .col { 
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: justify;
 }
 
 
