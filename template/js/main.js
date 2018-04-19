@@ -26,9 +26,10 @@ jQuery(document).ready(function ($) {
 
                 });
         });
+
+
+        $(".multiselect-container").prepend("<div class='cerrar'><a>Listo</a></div>");
     }, 200);
-
-
 
     // cambiar color imagen li menú
     $("header .nav-item").hover(function () {
@@ -115,48 +116,64 @@ jQuery(document).ready(function ($) {
             filtroCiudades($("#filtroCiudad"), $("#lista"));
         });
     }(jQuery));
-    
+
+    // session storage para indicadores - options
+    $('.indicators').change(function () {
+        var selected = [];
+        $('.indicators option').each(function () {
+            if (this.selected) {
+                selected.push(this.value);
+            }
+        });
+        sessionStorage.setItem('indicators', JSON.stringify(selected));
+    });
+
+    var stored_indicators = JSON.parse(sessionStorage.getItem('indicators'));
+    if (stored_indicators !== null) {
+        $('.indicators option').each(function () {
+            for (var i = 0; i < stored_indicators.length; i++) {
+                if (this.value == stored_indicators[i]) {
+                    this.selected = true;
+                }
+            }
+        });
+    }
+
 });
 
 // session storage para ciudad1
-$(function() {
-    $('.city1').change(function() {
+$(function () {
+    $('#lacity1').change(function () {
         sessionStorage.setItem('city1', this.value);
     });
-    if(sessionStorage.getItem('city1')){
-        $('.city1').val(sessionStorage.getItem('city1'));
+    if (sessionStorage.getItem('city1')) {
+        $('#lacity1').val(sessionStorage.getItem('city1'));
     }
 });
 
 // session storage para ciudad2
-$(function() {
-    $('.city2').change(function() {
+$(function () {
+    $('#lacity2').change(function () {
         sessionStorage.setItem('city2', this.value);
     });
-    if(sessionStorage.getItem('city2')){
-        $('.city2').val(sessionStorage.getItem('city2'));
+    if (sessionStorage.getItem('city2')) {
+        $('#lacity2').val(sessionStorage.getItem('city2'));
     }
 });
 
-// session storage para indicadores
-$('.indicators').change(function() {
-	var selected = [];
-	$('.indicators option').each(function() {
-		if (this.selected) {
-			selected.push(this.value);
-		}
-	});
-	sessionStorage.setItem('indicators', JSON.stringify(selected));
-});
-
-var stored_indicators = JSON.parse(sessionStorage.getItem('indicators'));
-if (stored_indicators !== null) {
-	$('.indicators option').each(function() {
-		for (var i = 0; i < stored_indicators.length; i++) {
-			if (this.value == stored_indicators[i]) {
-				this.selected = true;
-			}
-		}
-	});
+// Validar que no sea elegida la misma ciudad en el comparador
+function validarForm() {
+    var x = document.forms["comparar"]["ciudad1"].value;
+    var y = document.forms["comparar"]["ciudad2"].value;
+    if (x == y) {
+        $("#errorCiudad").modal("show");
+        return false;
+    }
 }
+
+
+
+
+
+
 

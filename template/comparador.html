@@ -27,22 +27,22 @@
 
       <!-- INICIO COMPARADOR -->
       <div class="container comparar">
-        <form id="formComparar" method="POST" action="/comparar_ciudades/">
+        <form id="formComparar" method="POST" action="/comparar_ciudades/#resultados" name="comparar" onsubmit="return validarForm()">
           {% csrf_token %}
           <div class="row">
             <div class="col-sm-12 col-md-6">
               <label class="titulo-form">Ciudad 1</label>
-              <select class="combobox input-large form-control city1" name="ciudad1" required>
-                <option value="" selected="selected">Selecciona una ciudad</option>
+              <select class="input-large form-control combobox city1" id="lacity1" name="ciudad1" required>
+                <option value="" class="laciudad" selected="selected">Selecciona una ciudad</option>
                 {% for ciudad in ciudades %}
-                <option value"{{ ciudad.nombre }}">{{ ciudad.nombre }}</option>
+                <option value="{{ ciudad.nombre }}">{{ ciudad.nombre }}</option>
                 {% endfor %}
               </select>
             </div>
             <div class="col-sm-12 col-md-6">
               <label class="titulo-form">Ciudad 2</label>
-              <select class="combobox input-large form-control city2" name="ciudad2" required>
-                <option value="" selected="selected">Selecciona una ciudad</option>
+              <select class="input-large form-control combobox city2" id="lacity2" name="ciudad2" required>
+                <option value="" class="laciudad2" selected="selected">Selecciona una ciudad</option>
                 {% for ciudad in ciudades %}
                 <option value="{{ ciudad.nombre }}">{{ ciudad.nombre }}</option>
                 {% endfor %}
@@ -54,7 +54,7 @@
               <label class="titulo-form">Indicadores</label>
               <select id="indicadores-multiples" class="input-large form-control indicators" multiple="multiple" name="indicadores" required>
               {% for categoria in categorias %}
-                <optgroup label="{{categoria.nombre}}">
+                <optgroup label="{{categoria.nombre}}" value="{{ categoria.nombre }}">
                 {% for indicador in indicadores %}
                   {% if indicador.categoria == categoria %}
                   <option value="{{ indicador.variable }}">{{ indicador.variable }}</option>
@@ -75,7 +75,7 @@
       <!-- FIN COMPARADOR -->
 
       <!-- INICIO RESULTADOS -->
-      <div class="container resultados" id="oculta" style="display: none;">
+      <div class="container resultados" id="resultados" style="display: none;">
         <h2>RESULTADOS</h2>
         <div class="interior-resultados">
           <div class="row">
@@ -98,6 +98,19 @@
       </div>
       <!-- FIN RESULTADOS -->
 
+        <!-- INICIO MODAL ERROR ELEGIR DISTINTA CIUDAD -->
+        <div class="modal fade" id="errorCiudad" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <span>Debe seleccionar ciudades distintas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- INICIO MODAL ERROR ELEGIR DISTINTA CIUDAD -->
+
       {% include 'templates/footer.html' %} 
       {% include 'templates/subir.html' %}
 
@@ -111,20 +124,30 @@
     <script src="{% static 'js/main.js' %}"></script>
 
     <script>
-      $(document).ready(function() {
-        $('.combobox').combobox()
-      });
+
+      {% if mostrar %}$("#resultados").show();{% endif %}
 
       $(document).ready(function() {
+        $('.combobox').combobox();      
+
         $('#indicadores-multiples').multiselect({
           enableClickableOptGroups: true,
-          includeSelectAllOption: true
+          includeSelectAllOption: true,
+          maxHeight: 350,
+          nonSelectedText: 'Seleccionar',
+          nSelectedText: 'seleccionados',
+          allSelectedText: 'Todos seleccionados',
+          resetText: 'Desmarcar todo',
+          selectAllText: ' Todos',
+          includeResetOption: true,
+          template: {
+            resetButton: '<li class="multiselect-reset text-center"><div class="input-group"><a class="btn btn-default btn-block"></a></div></li>'                                                                                                                                              
+          }
         });
       });
 
-    </script>
+   </script>
 
-    {% if mostrar %}<script>$("#oculta").show();</script>{% endif %}
   </body>
 
 </html>

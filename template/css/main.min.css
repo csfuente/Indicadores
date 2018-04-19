@@ -590,8 +590,6 @@ header {
   margin-bottom: 0px;
 }
 
-
-
 .comparar .dropdown-menu {
   width: 100%;
 }
@@ -607,10 +605,6 @@ header {
   padding-top: 15px;
 }
 
-.comparar .multiselect-native-select {
-  display: block;
-}
-
 .comparar .btn-group,
 .comparar .btn-group .multiselect {
   width: 100%;
@@ -618,13 +612,57 @@ header {
   background: white;
 }
 
-.comparar .cerrar {
+.multiselect-all .checkbox {
+  padding-left: 20px !important;
+}
+
+.multiselect-reset { 
+  position: sticky;
+}
+
+.multiselect-reset {
   position: absolute;
-  top: 9px;
-  left: 20px;
-  color: #4093C3;
+  top: 40px;
+  width: 100%;
+  height: 36px
+}
+
+.multiselect-reset .input-group {
+  margin: 0;
+}
+
+.multiselect-reset a {
+  text-align: left !important;
+  cursor: pointer;
+  background: #ff2007b0;
+  color: white !important;
+  width: 100%;
+  text-align: center !important;
+  font-size: 0.8rem;
+  border-radius: 0;
+}
+
+.multiselect-all {
+  padding-top: 30px !important;
+}
+
+.comparar .cerrar {
+  position: sticky;
+  padding-right: 10px;
+  text-align: center;
+  color: white;
+  background-color: #58d647ed;  
   font-weight: bold;
   cursor: pointer;
+  height: 40px;
+  padding-top: 6px;
+  margin-bottom: 10px;
+  top: 0;
+  z-index: 10;
+}
+
+.comparar .cerrar input {
+  display: none;
 }
 
 .comparar .btn-group {
@@ -634,15 +672,12 @@ header {
 }
 
 .comparar .multiselect-container {
-  padding-top: 35px;
   padding-bottom: 20px;
-  margin-bottom: 30px;
   z-index: 1020;
-  margin-bottom: 100px;
 }
 
-.comparar .multiselect-all label {
-  padding-left: 20px;
+#errorCiudad {
+  margin-top: 30vh;
 }
 
 .comparar .multiselect-selected-text {
