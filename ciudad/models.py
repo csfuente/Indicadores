@@ -52,10 +52,6 @@ class Indicador(models.Model):
 	unidad_medida = models.CharField(max_length=100,blank=True,null=True,default='')
 	estado = models.CharField(max_length=10) #provisorio
 	categoria = models.ForeignKey(Categoria)
-	limite_inferior=models.FloatField(null=True,blank=True)
-	limite_inferior_semi=models.FloatField(null=True,blank=True)
-	limite_semi_superior=models.FloatField(null=True,blank=True)
-	limite_superior=models.FloatField(null=True,blank=True)
 	descripcion_corta=models.CharField(max_length=250,blank=True,null=True,default='')
 	metodo=models.CharField(max_length=1500,blank=True,null=True,default='')
 	icono = models.ImageField(null=True,blank=True)
@@ -64,16 +60,8 @@ class Indicador(models.Model):
 		return self.categoria.nombre + ' - '  +self.variable
 
 class Dato(models.Model):
-	TIPO = (
-		('char','caracter'),
-		('int','numero entero'),
-		('float','numero con pocos decimales'),
-	)
 	ciudad = models.ForeignKey(Ciudad)
 	indicador = models.ForeignKey(Indicador)
-	tipo_variable = models.CharField(max_length=6,choices=TIPO)
-	var_int = models.IntegerField(null=True,blank=True)
-	var_char = models.CharField(max_length=10,null=True,blank=True)
 	var_float = models.FloatField(null=True,blank=True)
 	creado = models.DateTimeField(null=True,blank=True,editable=False)
 	modificado = models.DateTimeField(null=True,editable=False)
@@ -85,3 +73,19 @@ class Dato(models.Model):
 		return super(Dato,self).save(*args, **kwargs)
 	def __unicode__(self):
 		return self.ciudad.nombre + ' - ' + self.indicador.variable + ' - ' + str(self.var_float or 'Sin Dato')
+
+class Umbral(models.Model):
+	TIPO = (
+		('max','Valor maximo es el mejor'),
+		('min','Valor minimo es el mejor'),
+		('center','Valor central es el mejor'),
+	)
+	tipo = models.CharField(max_length=6, choices=TIPO)
+	indicador = models.OneToOneField(Indicador)
+	lim1 = models.FloatField()
+	lim2 = models.FloatField()
+	lim3 = models.FloatField()
+	lim4 = models.FloatField(null=True, blank=True)
+
+	def __unicode__(self):
+		return self.tipo + ' - ' + self.indicador.variable

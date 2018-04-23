@@ -65,10 +65,19 @@
                     <td>{% for dato in datos %}{%if dato.indicador == indicador %}{{dato.var_float}}{% endif %}{% endfor %}</td>
                     <td>{{indicador.descripcion}}</td>
                     <td>
+                      {% for key,value in umbrales.items %}
+                      {% if key == indicador.variable %}
+                      {% if value.result == 0 %}
                       <img src="{% static 'img/sustentablex.svg' %}" alt="grado de sustentabilidad" />
-                      <!--<img src="{% static 'img/caminoasersustentable_icono.svg' %}" alt="grado de sustentabilidad" />
+                      {% elif value.result == 1 %}
+                      <img src="{% static 'img/nosustentable_icono.svg' %}" alt="grado de sustentabilidad" />
+                      {% elif value.result == 2 %}
+                      <img src="{% static 'img/caminoasersustentable_icono.svg' %}" alt="grado de sustentabilidad" />
+                      {% elif value.result == 3 %}
                       <img src="{% static 'img/sustentable_icono.svg' %}" alt="grado de sustentabilidad" />
-                      <img src="{% static 'img/nosustentable_icono.svg' %}" alt="grado de sustentabilidad" />-->
+                      {% endif %}
+                      {% endif %}
+                      {% endfor %}
                     </td>
                   </tr>
                   {% endif %} {% endfor %}

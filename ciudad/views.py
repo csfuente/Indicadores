@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from django.shortcuts import render_to_response, redirect,render
-from ciudad.models import Ciudad, Indicador, Dato, Categoria
+from ciudad.models import Ciudad, Indicador, Dato, Categoria, Umbral
 from django.template.context import RequestContext
 from ciudad.utils import ultimosDatos
 from django.db.models import FloatField
@@ -29,16 +29,52 @@ def santiago(request,url):
 		datos = []
 		for ind in indicadores:
 			datos.append(Dato.objects.filter(ciudad=ciudad,indicador=ind).last())
-		#datos = Dato.objects.filter(ciudad=ciudad)
+		umbrales = Umbral.objects.filter(indicador__in=indicadores)
+		umb = dict()
+		for indicador in indicadores:
+			umb[indicador.variable] = {'result':0,'umbral':[]}
+		for umbral in umbrales:
+			umb[umbral.indicador.variable] = resultado_umbral(umbral, datos)
 		retorno = {
                     'ciudad':ciudad,
                     'indicadores':indicadores,
                     'categorias': categorias,
                     'datos': datos,
+		    'umbrales': umb,
                     }
 		return render_to_response('ciudad.html',retorno)
 	else:
 		return redirect('/ciudades')
+
+def resultado_umbral(umbral, datos):
+	for dato in datos:
+		if dato.indicador == umbral.indicador:
+			if umbral.tipo == 'max':
+				if dato.var_float < umbral.lim1:
+					return {'result':0,'umbral':umbral}
+				elif dato.var_float < umbral.lim2:
+					return {'result':1,'umbral':umbral}
+				elif dato.var_float < umbral.lim3:
+					return {'result':2,'umbral':umbral}
+				else:
+					return {'result':3,'umbral':umbral}
+			elif umbral.tipo == 'min':
+                                if dato.var_float < umbral.lim1:
+                                        return {'result':3,'umbral':umbral}
+                                elif dato.var_float < umbral.lim2:
+                                        return {'result':2,'umbral':umbral}
+                                elif dato.var_float < umbral.lim3:
+                                        return {'result':1,'umbral':umbral}
+                                else:
+                                        return {'result':0,'umbral':umbral}
+			elif umbral.tipo == 'center':
+				if dato.var_float < umbral.lim1 or dato.var_float > umbral.lim4:
+					return {'result':1,'umbral':umbral}
+				elif dato.var_float < umbral.lim2 or dato.var_float > umbral.lim3:
+					return {'result':2,'umbral':umbral}
+				else:
+					return {'result':3,'umbral':umbral}
+	return {'result':0,'umbral':[]}
 
 # Pagina que muestra todos los indicadores "/indicadores"
 def indicadores(request):

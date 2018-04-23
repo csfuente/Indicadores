@@ -7,6 +7,7 @@ admin.site.register(Ciudad)
 admin.site.register(Categoria)
 admin.site.register(Indicador)
 admin.site.register(Dato)
+admin.site.register(Umbral)
 # Register your models here.
 
 
