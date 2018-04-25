@@ -1,5 +1,5 @@
 {% if value.umbral.tipo == "max" %}
-<span data-toggle="tooltip" data-html="true" data-placement="top" title="
+<span class="le-tooltip" data-toggle="tooltip" data-html="true" data-placement="top" title="
 Sustentable<span style='font-size: 1.2em'> ≥ {{ value.umbral.lim3 }} </span>
 <br />
 <br />
@@ -15,7 +15,7 @@ Insostenible <span style='font-size: 1.2em'>< {{ value.umbral.lim1 }}</span>
 </span>
 
 {% elif value.umbral.tipo == "min" %}
-<span data-toggle="tooltip" data-html="true" data-placement="top" title="
+<span class="le-tooltip" data-toggle="tooltip" data-html="true" data-placement="top" title="
 Sustentable<span style='font-size: 1.2em'> ≤ {{ value.umbral.lim1 }} </span>
 <br />
 <br />
@@ -32,7 +32,18 @@ Insostenible <span style='font-size: 1.2em'>> {{ value.umbral.lim3 }}</span>
 </span>
 
 {% elif value.umbral.tipo == "center" %}
-<span data-toggle="tooltip" data-html="true" data-placement="top" title="{{value.umbral.lim1}}">
+<span class="le-tooltip" data-toggle="tooltip" data-html="true" data-placement="top" title="
+Sustentable<span style='font-size: 1.2em'> ≥ {{ value.umbral.lim2 }} y ≤ {{ value.umbral.lim3 }} </span>
+<br />
+<br />
+En camino <span style='font-size: 1.2em'>> {{ value.umbral.lim1 }} y ≤ {{ value.umbral.lim2 }}</span>
+<br />
+<br />
+No sustentable <span style='font-size: 1.2em'>> {{ value.umbral.lim2 }} y ≤ {{ value.umbral.lim3 }}</span>
+<br />
+<br />
+Insostenible <span style='font-size: 1.2em'>> {{ value.umbral.lim3 }}</span>
+">
 ?
 </span>
 
