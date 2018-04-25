@@ -54,7 +54,7 @@
                   <tr>
                     <th>Nombre</th>
                     <th>Valor</th>
-                    <th>Información</th>
+                    <th>Descripción</th>
                     <th>Estado</th>
                   </tr>
                 </thead>
@@ -62,7 +62,12 @@
                   {% for indicador in indicadores %} {% if indicador.categoria == categoria %}
                   <tr>
                     <td>{{indicador.variable}}</td>
-                    <td>{% for dato in datos %}{%if dato.indicador == indicador %}{{dato.var_float}}{% endif %}{% endfor %}</td>
+                    <td>{% for dato in datos %}{%if dato.indicador == indicador %}{{dato.var_float}}{% endif %}{% endfor %}
+                      <br /> 
+                      <span class="unidad-medida">
+                        {{ indicador.unidad_medida }}
+                      </span>
+                    </td>
                     <td>{{indicador.descripcion}}</td>
                     <td>
                       {% for key,value in umbrales.items %}
@@ -76,6 +81,7 @@
                       {% elif value.result == 3 %}
                       <img src="{% static 'img/sustentable_icono.svg' %}" alt="grado de sustentabilidad" />
                       {% endif %}
+                      {% include 'templates/tooltip_umbral.html' %}
                       {% endif %}
                       {% endfor %}
                     </td>
@@ -95,8 +101,14 @@
     {% include 'templates/subir.html' %}
 
   </div>
-
   {% include 'templates/js.html' %}
+
+  <script>
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
 </body>
 
 </html>
