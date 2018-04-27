@@ -89,7 +89,9 @@
           </div>
           {% for indicador in indicadores_r %}
           <div class="row">
-            <div class="col-lg-6 col-md-12 indicador">{{ indicador.0 }}</div>
+            <div class="col-lg-6 col-md-12 indicador">
+              {{ indicador.0 }} 
+            </div>
             <div class="col ciudada">{{ indicador.1 }}</div>
             <div class="col ciudadb">{{ indicador.2 }}</div>
           </div>
@@ -124,6 +126,10 @@
     <script src="{% static 'js/main.js' %}"></script>
 
     <script>
+
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
 
       {% if mostrar %}$("#resultados").show();{% endif %}
 

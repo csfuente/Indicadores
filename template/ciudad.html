@@ -21,10 +21,10 @@
     <!-- INICIO INFO CIUDAD -->
     <div class="ciudad-info container">
       <div class="row">
-        <div class="col-md-6 col-lg-6 col-xl-4 perfil">
+        <div class="col-md-6 col-lg-6 col-xl-3 perfil">
           <h3>Perfil de ciudad</h3>
         </div>
-        <div class="col-md-6 col-lg-6 col-xl-8 perfil-detalles">
+        <div class="col-md-6 col-lg-6 col-xl-9 perfil-detalles">
           <row>
             <div class="col">
               <span>Población:</span> {{ciudad.habitantes}}
@@ -40,7 +40,9 @@
 
     <div class="container indicadores-ciudad">
       <div class="row">
+        <h4 class="tab-tit">Categorías</h4>
         <div class="col-xl-3 col-lg-12 scroll-indicadores">
+          <h4 class="tab-tit v2">Categorías</h4>
           {% include 'templates/menu_categorias.html' %}
         </div>
         <div class="col-xl-9 col-lg-12 contenedor-tabla">
@@ -52,23 +54,28 @@
               <table class="table">
                 <thead>
                   <tr>
-                    <th>Nombre</th>
+                    <th>Indicador</th>
                     <th>Valor</th>
-                    <th>Descripción</th>
-                    <th>Estado</th>
+                    <!-- <th>Estado</th> -->
                   </tr>
                 </thead>
                 <tbody>
                   {% for indicador in indicadores %} {% if indicador.categoria == categoria %}
                   <tr>
-                    <td>{{indicador.variable}}</td>
-                    <td>{% for dato in datos %}{%if dato.indicador == indicador %}{{dato.var_float}}{% endif %}{% endfor %}
-                      <br /> 
-                      <span class="unidad-medida">
+                    <td>
+                      <span class="el-nombre">{{indicador.variable}}</span>
+                      <br />
+                      <span class="la-descripcion">{{indicador.descripcion}}</span>
+                    </td>
+                    <td>                      
+                      <span class="el-valor {% for key,value in umbrales.items %}{% if key == indicador.variable %}{% if value.result == 0 %}sin-data{% elif value.result == 1 %}no-sustentable{% elif value.result == 2 %}camino{% elif value.result == 3 %}sustentable{% endif %}{% endif %}{% endfor %}" data-toggle="tooltip" data-html="true" data-placement="top" title="{% include 'templates/tooltip_umbral.html' %}">
+                      {% for dato in datos %}{%if dato.indicador == indicador %}{{dato.var_float}}{% endif %}{% endfor %}
+                      </span>
+                      <span class="la-unidad">
                         {{ indicador.unidad_medida }}
                       </span>
                     </td>
-                    <td>{{indicador.descripcion}}</td>
+                    <!--  
                     <td>
                       {% for key,value in umbrales.items %}
                       {% if key == indicador.variable %}
@@ -85,6 +92,7 @@
                       {% endif %}
                       {% endfor %}
                     </td>
+                  -->
                   </tr>
                   {% endif %} {% endfor %}
                 </tbody>

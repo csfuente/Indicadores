@@ -1,50 +1,56 @@
-{% if value.umbral.tipo == "max" %}
-<span class="le-tooltip" data-toggle="tooltip" data-html="true" data-placement="top" title="
-Sustentable<span style='font-size: 1.2em'> ≥ {{ value.umbral.lim3 }} </span>
-<br />
-<br />
-En camino <span style='font-size: 1.2em'>≥ {{ value.umbral.lim2 }} y < {{ value.umbral.lim3 }}</span>
-<br />
-<br />
-No sustentable <span style='font-size: 1.2em'>≥ {{ value.umbral.lim1 }} y < {{ value.umbral.lim2 }}</span>
-<br />
-<br />
-Insostenible <span style='font-size: 1.2em'>< {{ value.umbral.lim1 }}</span>
-">
-?
-</span>
+{% for key,value in umbrales.items %}
 
-{% elif value.umbral.tipo == "min" %}
-<span class="le-tooltip" data-toggle="tooltip" data-html="true" data-placement="top" title="
-Sustentable<span style='font-size: 1.2em'> ≤ {{ value.umbral.lim1 }} </span>
-<br />
-<br />
-En camino <span style='font-size: 1.2em'>> {{ value.umbral.lim1 }} y ≤ {{ value.umbral.lim2 }}</span>
-<br />
-<br />
-No sustentable <span style='font-size: 1.2em'>> {{ value.umbral.lim2 }} y ≤ {{ value.umbral.lim3 }}</span>
-<br />
-<br />
-Insostenible <span style='font-size: 1.2em'>> {{ value.umbral.lim3 }}</span>
-">
-">
-?
-</span>
+    {% if key == indicador.variable %}
 
-{% elif value.umbral.tipo == "center" %}
-<span class="le-tooltip" data-toggle="tooltip" data-html="true" data-placement="top" title="
-Sustentable<span style='font-size: 1.2em'> ≥ {{ value.umbral.lim2 }} y ≤ {{ value.umbral.lim3 }} </span>
-<br />
-<br />
-En camino <span style='font-size: 1.2em'>> {{ value.umbral.lim1 }} y ≤ {{ value.umbral.lim2 }}</span>
-<br />
-<br />
-No sustentable <span style='font-size: 1.2em'>> {{ value.umbral.lim2 }} y ≤ {{ value.umbral.lim3 }}</span>
-<br />
-<br />
-Insostenible <span style='font-size: 1.2em'>> {{ value.umbral.lim3 }}</span>
-">
-?
-</span>
+        {% if value.umbral.tipo == "max" %}
+            Sustentable
+            <br />
+            <span style='font-size: 1.2em'> ≥ {{ value.umbral.lim3 }} </span>
+            <br />
+            <br />
+            En camino
+            <br /> 
+            <span style='font-size: 1.2em'>≥ {{ value.umbral.lim2 }} y < {{ value.umbral.lim3 }}</span>
+            <br />
+            <br />
+            No sustentable 
+            <br />
+            <span style='font-size: 1.2em'>≥ {{ value.umbral.lim1 }} y < {{ value.umbral.lim2 }}</span>
 
-{% endif %}
+
+        {% elif value.umbral.tipo == "min" %}
+            Sustentable
+            <br />
+            <span style='font-size: 1.2em'> ≤ {{ value.umbral.lim1 }} </span>
+            <br />
+            <br />
+            En camino 
+            <br />
+            <span style='font-size: 1.2em'>> {{ value.umbral.lim1 }} y ≤ {{ value.umbral.lim2 }}</span>
+            <br />
+            <br />
+            No sustentable
+            <br />
+            <span style='font-size: 1.2em'>> {{ value.umbral.lim2 }} y ≤ {{ value.umbral.lim3 }}</span>
+
+
+        {% elif value.umbral.tipo == "center" %}
+            Sustentable
+            <br />
+            <span style='font-size: 1.2em'> ≥ {{ value.umbral.lim2 }} y ≤ {{ value.umbral.lim3 }} </span>
+            <br />
+            <br />
+            En camino
+            <br />
+            <span style='font-size: 1.2em'>> {{ value.umbral.lim1 }} y ≤ {{ value.umbral.lim2 }}</span>
+            <br />
+            <br />
+            No sustentable
+            <br />
+            <span style='font-size: 1.2em'>> {{ value.umbral.lim2 }} y ≤ {{ value.umbral.lim3 }}</span>
+
+        {% endif %}
+
+    {% endif %}
+    
+{% endfor %}

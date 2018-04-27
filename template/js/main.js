@@ -35,7 +35,7 @@ jQuery(document).ready(function ($) {
     $("header .nav-item").hover(function () {
         $(this).find("img").toggleClass("toblack");
     });
-
+    
     const mq = window.matchMedia("(max-width: 1200px)");
 
     if (mq.matches) {
