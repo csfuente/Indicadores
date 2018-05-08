@@ -139,14 +139,6 @@ header {
 
 
 /******************
-	MAPA
-******************/
-
-
-
-
-
-/******************
 	INICIO
 ******************/
 
@@ -189,6 +181,14 @@ header {
   padding-bottom: 40px;
   padding-top: 40px;
   font-size: 1.3rem;
+}
+
+.index .contadores a {
+  color: initial;
+}
+
+.index .contadores a:hover {
+  text-decoration: none;
 }
 
 #mapa {
@@ -569,6 +569,7 @@ header {
 .scroll-ind {
   padding-bottom: 40px;
 }
+
 
 /******************
 	COMPARAR CIUDADES

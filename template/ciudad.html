@@ -62,12 +62,12 @@
                 <tbody>
                   {% for indicador in indicadores %} {% if indicador.categoria == categoria %}
                   <tr>
-                    <td>
+                    <td data-label="Indicador">
                       <span class="el-nombre">{{indicador.variable}}</span>
                       <br />
                       <span class="la-descripcion">{{indicador.descripcion}}</span>
                     </td>
-                    <td>                      
+                    <td data-label="Valor">                      
                       <span class="el-valor {% for key,value in umbrales.items %}{% if key == indicador.variable %}{% if value.result == 0 %}sin-data{% elif value.result == 1 %}no-sustentable{% elif value.result == 2 %}camino{% elif value.result == 3 %}sustentable{% endif %}{% endif %}{% endfor %}" data-toggle="tooltip" data-html="true" data-placement="top" title="{% include 'templates/tooltip_umbral.html' %}">
                       {% for dato in datos %}{%if dato.indicador == indicador %}{{dato.var_float}}{% endif %}{% endfor %}
                       </span>
