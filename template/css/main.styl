@@ -1,198 +1,161 @@
 // variables
+azul = #1e73be  
 azulClaro = #009dd2
 grisClaro = #f6f6f6
+
+// mixing
+transform(n)
+    -webkit-transform n
+    -moz-transform n
+    -ms-transform n
+    -o-transform n
+    transform n
+transition(n)
+    -webkit-transition n
+    -moz-transition n
+    -o-transition n 
+    transition n
+filter(n)
+    -webkit-filter n
+    filter n
 
 // generales
 html
 body
-    height: 100%
+    height 100%
     .wrapper
-        min-height: 100%
-        position: relative
-        padding-bottom: 224px
+        min-height 100%
+        position relative
+        padding-bottom 224px
     .container
-        max-width: 1274px
-        padding-top: 64px
+        max-width 1274px
+        padding-top 64px
     .bajada
-        width: 100%
-        min-height: 80px
-        background-color: grisClaro
-        color: azulClaro
-        position: relative
-        text-align: center
-        padding: 0 10px
+        width 100%
+        min-height 80px
+        background-color grisClaro
+        color azulClaro
+        position relative
+        text-align center
+        padding 0 10px
         h2
-            font-weight: 700
-            margin: 0
-            position: absolute
-            top: 50%
-            left: 50%
-            margin-right: -50%
-            transform: translate(-50%, -50%)   
+            font-weight 700
+            margin 0
+            position absolute
+            top 50%
+            left 50%
+            margin-right -50%
+            transform(translate(-50%, -50%))   
     *
-        font-family: 'Roboto', sans-serif
+        font-family 'Roboto', sans-serif
     h3
-        font-weight: 400
+        font-weight 400
+        color #6C6C70
     p 
-        font-size: 1.1rem
-        font-weight: 300
+        font-size 1.1rem
+        font-weight 300
+    .texto-index 
+        max-width 700px
+        margin 0 auto
+        padding 40px 20px 40px 20px
+        p 
+            text-align justify
+        h3 
+            text-align center
+            margin-bottom 15px
     .contacto .modal-header
-        background: grisClaro
-        border-bottom: none
-        color: azulClaro
+        background grisClaro
+        border-bottom none
+        color azulClaro
 
 // header
+header 
+    width 100%
+    background rgba(255, 255, 255, 0.9)
+    z-index 1000;
+    border-bottom 1px solid rgba(221,221,221,0.9)
+    position relative
+    .header
+        padding-top 10px
+        padding-bottom 10px
+        max-width 1274px
+        margin 0 auto
+        transition(padding-top 0.5s, padding-bottom 0.5s)
+        .navbar-brand img
+            height 51px
+        .nav-link img
+            width 37px
+            height 37px
+        li a
+            font-weight 600
+            color rgba(0,0,0,0.6)
+            .toblack
+                filter(saturate(0%) brightness(0%) contrast(100%))           
+    .peque 
+        padding-bottom 0px
+        padding-top 0px
 
 
-/******************
-	HEADER
-******************/
-
-header {
-  width: 100%;
-  background: rgba(255, 255, 255, 0.9);
-  z-index: 1000;
-  border-bottom: 1px solid rgba(221,221,221,0.9);
-  position: relative;
-}
-
-.header {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  max-width: 1274px;
-  margin: 0 auto;
-  transition: padding-top 0.5s, padding-bottom 0.5s;
-  -webkit-transition: padding-top 0.5s, padding-bottom 0.5s;
-  -moz-transition: padding-top 0.5s, padding-bottom 0.5s;
-}
-
-.peque {
-  padding-bottom: 0px;
-  padding-top: 0px;
-}
-
-.header .navbar-brand img {
-  height: 51px;
-}
-
-.header .nav-link img {
-  width: 37px;
-  height: 37px;
-}
-
-.header .buscador img {
-  width: 38px;
-  height: 38px;
-}
-
-.header li a {
-  font-weight: 600;
-  color: rgba(0,0,0,0.6);
-}
-
-.toblack {
-  -webkit-filter: saturate(0%) brightness(0%) contrast(100%);
-  filter: saturate(0%) brightness(0%) contrast(100%);
-}
-
-.header .separador-nav {
-  position: absolute;
-  right: 72px;
-  top: -3px;
-  height: 68px;
-  border-left: 2px solid white;
-}
-
-
-/******************
-	INICIO
-******************/
-
-.index #particles-js {
-  height: 350px;
-  background-color: #f6f6f6;
-  position: relative;
-}
-
-.index .particles-js-canvas-el {
-  height: 350px;
-}
-
-.index #particles-js .intro {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-  color: rgba(0,0,0,.5);
-  font-size: 2.5vh;
-  padding: 0 20px;
-  text-align: center;
-  z-index: 100;
-}
-
-.index #particles-js .intro h1{
-  font-weight: 700;
-  font-size: 4.5vh;
-  color: #009dd2;
-}
-
-.index #particles-js .intro p {
-  font-size: 1.4rem;
-}
-
-.index .contadores {
-  text-align: center;
-  padding-bottom: 40px;
-  padding-top: 40px;
-  font-size: 1.3rem;
-}
-
-.index .contadores a {
-  color: initial;
-}
-
-.index .contadores a:hover {
-  text-decoration: none;
-}
-
-#mapa {
-  width: 100%;
-  height: 600px;
-  margin-bottom: -48px;
-}
-
-.titulo-mapa {
-  text-align: center;
-  padding: 10px 20px;
-  margin-bottom: 0px;
-  color: white;
-  background-color: #1e73be;
-}
-
-.separador {
-  width: 40px;
-  height: 1px;
-  border: 3px solid #1e73be;
-  margin: 10px auto;
-  display: block;
-}
-
-.texto-index {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 30px 20px 40px 20px;
-}
-
-.texto-index p {
-  text-align: justify;
-}
-
+// inicio
+.index 
+    #particles-js
+        height 350px
+        background-color grisClaro
+        position relative
+        .intro
+            margin 0
+            position absolute
+            top 50%
+            left 50%
+            margin-right -50%
+            transform(translate(-50%, -50%))
+            color rgba(0,0,0,.5)
+            font-size 2.5vh
+            padding 0 20px
+            text-align center
+            z-index 100
+            h1
+                font-weight 700
+                font-size 4.5vh
+                color azulClaro
+            p 
+                font-size 1.4rem                
+        .particles-js-canvas-el
+            height 350px
+    .contadores
+        text-align center
+        padding-bottom 40px
+        padding-top 40px
+        font-size 1.3rem
+        a
+            color initial
+            &:hover 
+                text-decoration none
+    .separador 
+        width 40px
+        height 1px
+        border 3px solid azul
+        margin 10px auto
+        display block      
+    #mapa
+        width 100%
+        height 600px
+        margin-bottom 48px
+    .titulo-mapa
+        text-align center
+        padding 10px 20px
+        margin-bottom 0px
+        margin-top: 20px
+        color white
+        background-color azul 
 
 /******************
 	CIUDADES
 ******************/
+
+.listado-ciudades {
+    padding-top: 10px !important;
+}
 
 .listado-ciudades .ciudad-imagen span {
   margin: 0;
@@ -247,7 +210,7 @@ header {
 }
 
 .ciudad-info {
-  padding-top: 0px;
+  padding-top: 0px !important;
 }
 
 .ciudad-info .perfil {
@@ -296,6 +259,10 @@ header {
 
 .indicadores-ciudad h1 {
   margin-bottom: 43px;
+}
+
+.indicadores-detalle {
+    padding-top: 10px !important;    
 }
 
 .banner-ciudad {
@@ -552,6 +519,10 @@ header {
   padding: 10px 20px 10px 20px;
 }
 
+.comparar {
+    padding-top: 10px !important;    
+}
+
 .comparar h2 {
   margin-bottom: 0px;
 }
@@ -689,7 +660,6 @@ header {
 .resultados .ciudada,
 .resultados .ciudadb {
   margin-bottom: 10px;
-  font-size: 12px;
   padding-top: 16px;
   padding-bottom: 16px;
   border: 2px solid #4093c3;
@@ -872,7 +842,7 @@ footer img {
 
 @media (max-width: 325px) {
   .header .navbar-brand img {
-    height: 47px;
+    height: 47px !important;
   }
 }
 
