@@ -83,6 +83,8 @@ header
         transition(padding-top 0.5s, padding-bottom 0.5s)
         .navbar-brand img
             height 51px
+            @media (max-width: 340px)
+                height 45px 
         .nav-link img
             width 37px
             height 37px
@@ -140,7 +142,7 @@ header
     #mapa
         width 100%
         height 600px
-        margin-bottom 48px
+        margin-bottom -48px
     .titulo-mapa
         text-align center
         padding 10px 20px
@@ -809,83 +811,44 @@ footer img {
 
 }
 
-/******************
-	MEDIAS
-******************/
 
-@media (min-width: 993px) {
-  .resultados .ciudad1,
-  .resultados .ciudada {
-    margin-left: 20px;
-  }
-}
-
-@media (max-width: 992px) {
-  .resultados .indicador {
-    text-align: center;
-    background: #f1f1f1;
-  }
-  .buscador {
-    margin-right: -16px;
-  }
-  .header .nav-item {
-    margin-left: 8px;
-  }
-}
-
-@media (max-width: 576px) {
-  .resultados .ciudad1 h3,
-  .resultados .ciudad2 h3 {
-    font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 325px) {
-  .header .navbar-brand img {
-    height: 47px !important;
-  }
-}
-
-@media (min-width: 1200px) {
-  .buscador {
-    margin-right: -16px;
-  }
-}
-
-@media (max-width: 1200px) {
-  .separador-nav {
-    display: none;
-  }
-}
-
-@media (max-width: 1284px) {
-  .indicadores-ciudad .titulo-cat {
-    display: none;
-  }
-  .indicadores-ciudad .cat-prin {
-    text-align: center;
-    font-size: 20px;
-    color: #6e6e6e;
-    font-weight: 400;
-  }
-  .indicadores-ciudad .titulo-catb {
-    display: initial;
-  }
-}
-
-@media (min-width: 1283px) {
-  .indicadores-ciudad .titulo-cat {
-    display: inline-block;
-    min-width: 50%;
-    margin-left: 7px;
-    font-size: 1.1em;
-    color: #6e6e6e;
-    font-weight: 500;
-  }
-  .indicadores-ciudad .titulo-catb {
-    display: none;
-  }
-  .indicadores-ciudad .cat-prin img {
-    margin-left: 27px;
-  }
-}
+// media
+@media (min-width: 993px)
+    .resultados .ciudad1
+    .resultados .ciudada
+        margin-left 20px
+@media (max-width: 992px)
+    .resultados .indicador
+        text-align center
+        background #f1f1f1
+    .header .nav-item
+        margin-left 8px
+@media (max-width: 576px)
+    .resultados .ciudad1 h3
+    .resultados .ciudad2 h3 
+        font-size 1.2rem
+@media (max-width: 1284px)
+    .indicadores-ciudad 
+        .titulo-cat 
+            display none
+        .cat-prin
+            text-align center
+            font-size 20px
+            color #6e6e6e
+            font-weight 400
+        .titulo-catb
+            display initial  
+@media (min-width: 1283px)
+  .indicadores-ciudad 
+    .titulo-cat 
+        display inline-block
+        min-width 50%
+        margin-left 7px
+        font-size 1.1em
+        color #6e6e6e
+        font-weight 500
+    .titulo-catb
+        display none
+    .cat-prin img 
+        margin-left 27px
+  
