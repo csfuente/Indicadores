@@ -18,61 +18,73 @@ transition(n)
 filter(n)
     -webkit-filter n
     filter n
+border-radius(n)
+    -webkit-border-radius n
+    -moz-border-radius n 
+    border-radius n
+border-top-left-radius(n)
+    -webkit-border-top-left-radius n
+    -moz-border-top-left-radius n
+    border-top-left-radius n
+border-top-right-radius(n)
+    -webkit-border-top-right-radius n
+    -moz-border-top-right-radius n
+    border-top-right-radius n
 
 // generales
 html
 body
     height 100%
-    .wrapper
-        min-height 100%
-        position relative
-        padding-bottom 224px
-    .container
-        max-width 1274px
-        padding-top 64px
-    .bajada
-        width 100%
-        min-height 80px
-        background-color grisClaro
-        color azulClaro
-        position relative
-        text-align center
-        padding 0 10px
-        h2
-            font-weight 700
-            margin 0
-            position absolute
-            top 50%
-            left 50%
-            margin-right -50%
-            transform(translate(-50%, -50%))   
-    *
-        font-family 'Roboto', sans-serif
-    h3
-        font-weight 400
-        color #6C6C70
+.wrapper
+    min-height 100%
+    position relative
+    padding-bottom 224px
+.container
+    max-width 1274px
+    padding-top 64px
+.bajada
+    width 100%
+    min-height 80px
+    background-color grisClaro
+    color azulClaro
+    position relative
+    text-align center
+    padding 0 10px
+    h2
+        font-weight 700
+        margin 0
+        position absolute
+        top 50%
+        left 50%
+        margin-right -50%
+        transform(translate(-50%, -50%))   
+*
+    font-family 'Roboto', sans-serif
+h3
+    font-weight 400
+    color #6C6C70
+p 
+    font-size 1.1rem
+    font-weight 300
+.texto-index 
+    max-width 700px
+    margin 0 auto
+    padding 40px 20px 40px 20px
     p 
-        font-size 1.1rem
-        font-weight 300
-    .texto-index 
-        max-width 700px
-        margin 0 auto
-        padding 40px 20px 40px 20px
-        p 
-            text-align justify
-        h3 
-            text-align center
-            margin-bottom 15px
-    .contacto .modal-header
-        background grisClaro
-        border-bottom none
-        color azulClaro
+        text-align justify
+    h3 
+        text-align center
+        margin-bottom 15px
+.contacto .modal-header
+    background grisClaro
+    border-bottom none
+    color azulClaro
 
 // header
 header 
     width 100%
     background rgba(255, 255, 255, 0.9)
-    z-index 1000;
+    z-index 1000
     border-bottom 1px solid rgba(221,221,221,0.9)
     position relative
     .header
@@ -147,363 +159,220 @@ header
         text-align center
         padding 10px 20px
         margin-bottom 0px
-        margin-top: 20px
+        margin-top 20px
         color white
         background-color azul 
 
-/******************
-	CIUDADES
-******************/
-
-.listado-ciudades {
-    padding-top: 10px !important;
-}
-
-.listado-ciudades .ciudad-imagen span {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-  width: 92%;
-  height: 85%;
-  border: 2px solid white;
-}
-
-.listado-ciudades .ciudad-imagen h4 {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-  font-weight: bold;
-  color: white;
-  font-size: 30px;
-  text-align: center;
-}
-
-.listado-ciudades .ciudad-imagen {
-  display: block;
-  position: relative;
-  margin: 0 auto;
-  max-width: 375px;
-  transition: filter .3s ease-in-out;
-  -webkit-filter: grayscale(0%);
-  filter: grayscale(0%);
-}
-
-.listado-ciudades .listado {
-  padding-bottom: 40px;
-}
-
-.listado-ciudades .ciudad-imagen:hover {
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
-}
-
-.ciudad-info p {
-  margin-bottom: 0px;
-}
-
-.ciudad-info span {
-  font-weight: bold;
-}
-
-.ciudad-info {
-  padding-top: 0px !important;
-}
-
-.ciudad-info .perfil {
-  padding: 30px;
-  color: grey;
-  border: 2px solid #C9C9C9;
-  min-height: 50px;
-}
-
-.ciudad-info .perfil h3 {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%); 
-  text-align: center; 
-}
-
-.ciudad-info .perfil-detalles {
-  color: white;
-  background: #4470B4;
-  padding: 20px;
-}
-
-.listado-ciudades .ciudad-imagen:hover {
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
-}
-
-.input-filtro {
-  display: block;
-  margin: 0 auto 20px auto;
-  border: none;
-  height: 50px;
-  text-align: center;
-  background: #C9C9C9;
-  color: #4470B4;
-  font-weight: bold;
-}
-
-
-/******************
-	CIUDAD - INDICADORES
-******************/
-
-.indicadores-ciudad h1 {
-  margin-bottom: 43px;
-}
-
-.indicadores-detalle {
-    padding-top: 10px !important;    
-}
-
-.banner-ciudad {
-  display: block;
-  position: relative;
-  margin: 0 auto;
-  max-width: 1274px;
-}
-
-.banner-ciudad img {
-  display: block;
-  margin: 0 auto;
-}
-
-.banner-ciudad span {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-  width: 94%;
-  height: 87%;
-  border: 4px solid white;
-}
-
-.banner-ciudad h2 {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-  font-weight: bold;
-  color: white;
-  font-size: 8vmin;
-  text-align: center;
-}
-
-.indicadores-ciudad {
-  padding-top: 44px;
-  padding-bottom: 44px;
-}
-
-.indicadores-ciudad .nav-tabs .active {
-  border: 2px solid #4470b4 !important;
-  position: relative;
-  z-index: 10;
-}
-
-.indicadores-ciudad .nav-tabs .active .titulo-cat,
-.indicadores-ciudad .nav-tabs .active .titulo-catb {
-  color: #4470b4 !important;
-  font-weight: bold;
-}
-
-.indicadores-ciudad ul {
-  border-bottom: none;
-}
-
-.indicadores-ciudad .cat-prin {
-  border-radius: 0px;
-  border-top-left-radius: 0px !important;
-  border-top-right-radius: 0px !important;
-  border: 1px solid #bdc3c7 !important;
-}
-
-.indicadores-ciudad li {
-  height: 59px;
-}
-
-.indicadores-ciudad li:hover {
-  opacity: 0.6;
-}
-
-.indicadores-ciudad ul img {
-  width: 40px;
-  height: 40px;
-}
-
-.indicadores-ciudad .card {
-  padding: 15px;
-}
-
-
-.indicadores-ciudad .tab-pane {
-  overflow-x: auto;
-}
-
-.indicadores-ciudad .table {
-  min-width: 700px;
-  border: 1px solid #bdc3c7;
-}
-
-.indicadores-ciudad .table th {
-  color: grey;
-  border: 1px solid #bdc3c7;
-  border-bottom: 1px solid #bdc3c7;
-  font-weight: 400;
-}
-
-.indicadores-ciudad table th:first-child {
-  width: 75%;
-}
-
-.indicadores-ciudad .table td {
-  vertical-align: middle;
-  border: 1px solid #bdc3c7;
-}
-
-.indicadores-ciudad .table td,
-.indicadores-ciudad .table th {
-  padding: 1.4rem;
-}
-
-.indicadores-ciudad .table th {
-  background: #4470B4;
-  color: white;
-  font-weight: bold;
-}
-
-.indicadores-ciudad .table img {
-  width: 45px;
-  height: 45px;
-}
-
-.indicadores-ciudad .card-header {
-  border: none;
-  background: none;
-}
-
-.indicadores-ciudad .card-header {
-  text-align: center;
-}
-
-.indicadores-ciudad .card {
-  margin-bottom: 10px;
-}
-
-.indicadores-ciudad .mb-0 a {
-  color: #6e6e6e;
-  text-decoration: none;
-}
-
-.indicadores-ciudad .mb-0 a[aria-expanded="true"] {
-  color: #4093c3;
-}
-
-.indicadores-ciudad .card-header {
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
-
-.indicadores-ciudad .card .nav-tabs {
-  padding-top: 20px;
-}
-
-.indicadores-ciudad .card .nav-item {
-  max-height: 65px;
-}
-
-.indicadores-ciudad .card .nav-item a {
-  color: #6e6e6e;
-  font-weight: bold;
-}
-
-.indicadores-ciudad .collapse {
-  overflow-x: auto;
-}
-
-.indicadores-ciudad .card-block {
-  min-width: 337px;
-}
-
-.indicadores-ciudad .card .tab-pane {
-  padding-bottom: 15px;
-}
-
-.indicadores-ciudad .la-unidad {
-  font-size: 0.9em;
-  color: #6e6e6e;
-}
-
-.indicadores-ciudad .el-valor {
-  font-weight: bold;
-  font-size: 1.2em;
-  cursor: pointer;
-}
-
-.indicadores-ciudad .el-nombre {
-  font-weight: bold;
-  color: #6e6e6e;
-}
-
-.indicadores-ciudad .la-descripcion {
-  font-weight: 300;
-}
-
-.sustentable {
-  color: #2ecc71;
-}
-
-.camino {
-  color: #f1c40f  ;
-}
-
-.no-sustentable {
-  color: #e74c3c;
-}
-
-.no-data {}
-
-.tab-tit,
-.filtrado { 
-  display: none;
-  padding: 15px 10px;
-}
-
-.tab-tit,
-.v2 {
-  text-align: center;
-  color: #009dd2;
-  background: #F6F6F6;
-  margin-bottom: 0px;
-  font-weight: bold;
-}
-
-.v2 {
-  display: block;
-}
-
-.active .tab-tit {
-  display: block;
-}
-
-.scroll-indicadores,
-.scroll-ind {
-  padding-bottom: 40px;
-}
+//ciudades
+.listado-ciudades
+    padding-top 10px !important
+    .ciudad-imagen
+        display block
+        position relative
+        margin: 0 auto
+        max-width 375px
+        transition(filter .3s ease-in-out)
+        filter(grayscale(0%))
+        &:hover
+            filter(grayscale(100%))
+        span 
+            margin 0
+            position absolute
+            top 50%
+            left 50%
+            margin-right -50%
+            transform(translate(-50%, -50%))
+            width 92%
+            height 85%
+            border 2px solid white
+            h4 
+                margin 0
+                position absolute
+                top 50%
+                left 50%
+                margin-right -50%
+                transform(translate(-50%, -50%))
+                font-weight bold
+                color white
+                font-size 30px
+                text-align center
+    .listado
+        padding-bottom 40px
+    p
+        margin-bottom 0px
+.ciudad-info
+    padding-top 0px !important
+    span 
+        font-weight bold
+    .perfil
+        padding 30px;
+        color grey
+        border 2px solid #C9C9C9
+        min-height 50px
+        h3 
+            margin 0
+            position absolute
+            top 50%
+            left 50%
+            margin-right -50%
+            transform(translate(-50%, -50%)) 
+            text-align center
+    .perfil-detalles 
+        color white
+        background #4470B4
+        padding 20px
+.input-filtro 
+    display block
+    margin 0 auto 20px auto
+    border none
+    height 50px
+    text-align center
+    background #C9C9C9
+    color #4470B4
+    font-weight bold
+
+// ciudades - indicadores
+.indicadores-ciudad
+    padding-top 44px
+    padding-bottom 44px
+    h1
+        margin-bottom 43px
+    .nav-tabs .active
+        border 2px solid #4470b4 !important
+        position relative
+        z-index 10
+        .titulo-cat
+        .titulo-catb 
+            color #4470b4 !important
+            font-weight bold
+    ul
+        border-bottom none
+    .cat-prin 
+        border-radius(0px)
+        border-top-left-radius(0px !important)
+        border-top-right-radius(0px !important)
+        border 1px solid #bdc3c7 !important
+    li
+        height 59px
+        &:hover
+            opacity 0.6
+    ul img
+        width 40px
+        height 40px
+    .card
+        padding 15px
+    .tab-pane 
+        overflow-x auto
+    .table
+        min-width 700px
+        border 1px solid #bdc3c7
+        th
+            color white
+            border 1px solid #bdc3c7
+            border-bottom 1px solid #bdc3c7
+            font-weight 400
+            background #4470b4
+        td
+            vertical-align middle
+            border 1px solid #bdc3c7
+        td
+        th
+            padding 1.4rem
+    table th:first-child
+        width 75%
+    .card-header
+        border none
+        background none
+        text-align center
+        padding-top 0px
+        padding-bottom 0px
+    .card
+        margin-bottom 10px
+        .nav-tabs
+            padding-top 20px
+        .nav-item
+            max-height 65px
+        .tab-pane
+            padding-bottom 15px       
+            a
+                color grisClaro
+                font-weight bold
+    .mb-0 a
+        color gray
+        text-decoration none
+        &[aria-expanded="true"]
+            color #4093c3
+    .collapse
+        overflow-x auto
+    .card-block
+        min-width 337px
+    .la-unidad
+        font-size 0.9em
+        color grisClaro
+    .el-valor
+        font-weight bold
+        font-size 1.2rem
+        cursor pointer
+    .el-nombre
+        font-weight bold
+        color grisClaro
+    .la-descripcion
+        font-weight 300
+.indicadores-detalle
+    padding-top 10px !important    
+.banner-ciudad 
+    display block
+    position relative
+    margin 0 auto
+    max-width 1274px
+    img
+        display block
+        margin 0 auto
+    span
+        margin 0
+        position absolute
+        top 50%
+        left 50%
+        margin-right -50%
+        transform(translate(-50%, -50%))
+        width 94%
+        height 87%
+        border 4px solid white
+    h2
+        margin 0
+        position absolute
+        top 50%
+        left 50%
+        margin-right -50%
+        transform translate(-50%, -50%)
+        font-weight bold
+        color white
+        font-size 8vmin
+        text-align center
+.sustentable 
+    color #2ecc71
+.camino
+    color #f1c40f
+.no-sustentable
+    color #e74c3c
+.tab-tit
+.filtrado  
+    display none
+    padding 15px 10px
+.tab-tit
+.v2 
+    text-align center
+    color azulClaro
+    background grisClaro
+    margin-bottom 0px
+    font-weight bold
+.v2 
+    display block
+.active .tab-tit
+    display block
+.scroll-indicadores
+.scroll-ind
+    padding-bottom 40px
 
 
 /******************
