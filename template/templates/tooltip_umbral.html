@@ -42,12 +42,13 @@
             <br />
             En camino
             <br />
-            <span style='font-size: 1.2em'>> {{ value.umbral.lim1 }} y ≤ {{ value.umbral.lim2 }}</span>
+            <span style='font-size: 1.2em'>( ≥ {{ value.umbral.lim1 }} y < {{ value.umbral.lim2 }} )</span>
+            <span style='font-size: 1.2em'>( > {{ value.umbral.lim3 }} y ≤ {{ value.umbral.lim4 }} )</span>
             <br />
             <br />
             No sustentable
             <br />
-            <span style='font-size: 1.2em'>> {{ value.umbral.lim2 }} y ≤ {{ value.umbral.lim3 }}</span>
+            <span style='font-size: 1.2em'> < {{ value.umbral.lim1 }} y > {{ value.umbral.lim4 }}</span>
 
         {% endif %}
 
