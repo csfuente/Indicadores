@@ -5,7 +5,7 @@
   {% load static %}
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   {% include 'templates/favicon.html' %}
   <title>Inicio</title>
   {% include 'templates/css.html' %}
@@ -15,7 +15,7 @@
 
   <div class="wrapper">
 
-    {% include 'templates/header.html' %} 
+    {% include 'templates/header.html' %}
     {% include 'templates/contacto.html' %}
 
     <div id="particles-js">
@@ -60,23 +60,30 @@
 
     <div class="texto-index">
       <h3>Nuestro objetivo (o el por qué)</h3>
-      <p>Dada la falta de indicadores de sustentabilidad urbana en Chile y la necesidad de monitorear su estado, ya sea
-        por el gobierno, academia y tomadores de decisiones, se creó un grupo de trabajo con investigadores de
-        CEDEUS de diferentes disciplinas para desarrollar un conjunto de indicadores. </p>
-    </div>
+      <p>El desarrollo y la aplicación de indicadores que describen y monitorean la sostenibilidad de las
+        ciudades ha cobrado impulso en los últimos años, debido a que éstos pueden proporcionar una imagen general,
+         comprensible y confiable del estado de una ciudad o país, que pueden utilizarse a su vez para informar la toma de decisiones.
+      </p>
+      <p>
+        Dada la falta de indicadores de sostenibilidad urbana para Chile y la necesidad emergente de su monitoreo por parte de investigadores,
+        gobierno y tomadores de decisiones, el Centro de Desarrollo Urbano Sostenible (CEDEUS) conformó un grupo de trabajo con investigadores
+        de diferentes disciplinas para desarrollar un conjunto de 29 indicadores que caracterizan la sostenibilidad de 6 ciudades chilenas,
+        los cuales podrán ser un insumo para orientar las futuras acciones en su planificación y gestión.
+      </p>
+      </div>
 
     <div class="texto-index">
         <h3>Metodología</h3>
         <p>Dada la falta de indicadores de sustentabilidad urbana en Chile y la necesidad de monitorear su estado, ya sea
           por el gobierno, academia y tomadores de decisiones, se creó un grupo de trabajo con investigadores de
           CEDEUS de diferentes disciplinas para desarrollar un conjunto de indicadores. </p>
-        <img class="img-fluid" src="https://via.placeholder.com/660x200?text=imagen+explica+gráficamente+los+pasos" /> 
+        <img class="img-fluid" src="https://via.placeholder.com/660x200?text=imagen+explica+gráficamente+los+pasos" />
       </div>
 
     <h3 class="titulo-mapa">Ciudades investigadas</h3>
     <div id="mapa"></div>
 
-    {% include 'templates/footer.html' %} 
+    {% include 'templates/footer.html' %}
     {% include 'templates/subir.html' %}
 
   </div>
@@ -102,7 +109,7 @@
           url: '{% static 'img/marker_indicadores.png' %}'
         };
 
-        {% for ciudad in ciudades %}  
+        {% for ciudad in ciudades %}
         var {{ ciudad.nombre_simple}} = { lat: {{ ciudad.lat }}, lng: {{ ciudad.lon }} };
 
         var {{ ciudad.url }} = '<p>{{ ciudad.nombre }}</p>' +
@@ -124,7 +131,7 @@
         });
         {% endfor %}
       }
-      
+
   </script>
 
 </body>
