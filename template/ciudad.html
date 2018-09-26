@@ -25,14 +25,14 @@
           <h3>Perfil de ciudad</h3>
         </div>
         <div class="col-md-6 col-lg-6 col-xl-9 perfil-detalles">
-          <row>
+          <div class="row">
             <div class="col">
               <span>Población:</span> {{ciudad.habitantes}}
             </div>
             <div class="col">
               <span>Clima:</span> {{ciudad.clima}}
             </div>
-          </row>
+          </div>
         </div>
       </div>
     </div>
@@ -68,14 +68,14 @@
                       <span class="la-descripcion">{{indicador.descripcion}}</span>
                     </td>
                     <td data-label="Valor">                      
-                      <span class="el-valor {% for key,value in umbrales.items %}{% if key == indicador.variable %}{% if value.result == 0 %}sin-data{% elif value.result == 1 %}no-sustentable{% elif value.result == 2 %}camino{% elif value.result == 3 %}sustentable{% endif %}{% endif %}{% endfor %}" data-toggle="tooltip" data-html="true" data-placement="top" title="{% include 'templates/tooltip_umbral.html' %}">
+                      <span class="el-valor">
                       {% for dato in datos %}{%if dato.indicador == indicador %}{{dato.var_float}}{% endif %}{% endfor %}
                       </span>
                       <span class="la-unidad">
                         {{ indicador.unidad_medida }}
                       </span>
                     </td>
-                    <!--  
+                    <!--
                     <td>
                       {% for key,value in umbrales.items %}
                       {% if key == indicador.variable %}
@@ -120,3 +120,6 @@
 </body>
 
 </html>
+<!--  clase y demases para el-valor
+{% for key,value in umbrales.items %}{% if key == indicador.variable %}{% if value.result == 0 %}sin-data{% elif value.result == 1 %}no-sustentable{% elif value.result == 2 %}camino{% elif value.result == 3 %}sustentable{% endif %}{% endif %}{% endfor %}" data-toggle="tooltip" data-html="true" data-placement="top" title="{% include 'templates/tooltip_umbral.html' %}"
+ -->
